@@ -3,12 +3,22 @@ import requests
 import time
 import paho.mqtt.client as paho
 import numpy as np
+import sys
 
-devices = np.array(["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7", "ch8"])
+n_pmu_analog_channels = 8  # determined by number of chanells in DAQ
+n_pmu_streams_to_cloud = 40  # 8x5 from each channel with have magn, ang, freq, rocof, time, ... (?)
+
+channel_names = np.array(["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7", "ch8"])
+
 fiware_service = "grid_uc"
+device_type = "PMU"
+device_id = "pmu001"
 
-broker = "10.12.0.10"
+# cloud_ip = "10.12.0.10"
+cloud_ip = "127.0.0.1"
+broker_ip = cloud_ip
 port = 1883
+api_key = "asd1234"
 
 
 def on_publish(client,userdata,result):             #create function for callback
@@ -16,33 +26,33 @@ def on_publish(client,userdata,result):             #create function for callbac
     pass
 
 
-client1 = paho.Client("control1")  # create client object
-client1.on_publish = on_publish  # assign function to callback
-client1.connect(broker, port)  # establish connection
-
+## provisioning device>mqtt borker>orion>quantum leap>crate>grafana communication
 
 # 1. pushing the model
 print("\n --> 1. data model")
 
-url = 'http://10.12.0.10:1026/v2/entities'
+url = 'http://' + cloud_ip + ':1026/v2/entities'
 h = {'Content-Type': 'application/json',
-     'fiware-service': ''+ fiware_service + '',
+     'fiware-service': fiware_service,
      'fiware-servicepath': '/'}
 
 d = {
         "id": "Simulation:1",
-        "type": "pmu",
-        "slackP": {
-          "value": 17.23
+        "type": "" + device_type + "",
+        "v1a_magnitude": {
+          "value": 0.0
         },
-        "pQLoadProfileP": {
-          "value": 1.23
+        "v1a_angle": {
+          "value": 0.0
         },
-        "solarGeneratorP": {
-          "value": 1.23
+        "v1a_frequency": {
+          "value": 0.0
         },
-        "SimTime": {
-          "value": 0
+        "v1a_rocof": {
+          "value": 0.0
+        },
+        "v1a_timestamp": {
+          "value": 0.0
         }
 }
 
@@ -57,16 +67,16 @@ time.sleep(1)
 # 2. provisioning a service group for mqtt
 print("\n --> 2. provisioning a service group for mqtt")
 
-url = 'http://10.12.0.10:4041/iot/services'
+url = 'http://' + cloud_ip + ':4041/iot/services'
 h = {'Content-Type': 'application/json',
-     'fiware-service': 'fmu',
+     'fiware-service': fiware_service,
      'fiware-servicepath': '/'}
 d = {
     "services": [
        {
-           "apikey": "1234",
+           "apikey": api_key,
            "cbroker": "http://orion:1026",
-           "entity_type": "FMU",
+           "entity_type": device_type,
            "resource": "/iot/d"
        }
     ]
@@ -83,24 +93,25 @@ time.sleep(1)
 # 3. provisioning sensors
 print("\n --> 3. provisioning sensors")
 
-url = 'http://10.12.0.10:4041/iot/devices'
+url = 'http://' + cloud_ip + ':4041/iot/devices'
 h = {'Content-Type': 'application/json',
-     'fiware-service': 'fmu',
+     'fiware-service': fiware_service,
      'fiware-servicepath': '/'}
 d = {
 "devices": [
    {
-     "device_id":   "fmu",
+     "device_id":   "" + device_id + "",
      "entity_name": "Simulation:1",
-     "entity_type": "FMU",
+     "entity_type": "" + device_type + "",
      "protocol":    "PDI-IoTA-UltraLight",
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
-       { "object_id": "sp", "name": "slackP", "type": "Number" },
-       { "object_id": "pqp", "name": "pQLoadProfileP", "type": "Number" },
-       { "object_id": "sgp", "name": "solarGeneratorP", "type": "Number" },
-       { "object_id": "st", "name": "SimTime", "type": "Number" }
+       { "object_id": "v1a_m", "name": "v1a_magnitude", "type": "Number" },
+       { "object_id": "v1a_a", "name": "v1a_angle", "type": "Number" },
+       { "object_id": "v1a_f", "name": "v1a_frequency", "type": "Number" },
+       { "object_id": "v1a_r", "name": "v1a_rocof", "type": "Number" },
+       { "object_id": "v1a_t", "name": "v1a_timestamp", "type": "Number" }
     ]
    }
 ]
@@ -117,32 +128,34 @@ time.sleep(1)
 # 4. making subscriptions of QL
 print("\n --> 4. making subscriptions of QL")
 
-url = 'http://10.12.0.10:1026/v2/subscriptions/'
+url = 'http://' + cloud_ip + ':1026/v2/subscriptions/'
 h = {'Content-Type': 'application/json',
-     'fiware-service': 'fmu',
+     'fiware-service': fiware_service,
      'fiware-servicepath': '/'}
 d = {
        "description": "Notification Quantumleap",
        "subject": {
            "entities": [
-               {"id": "Simulation:1", "type": "FMU"}
+               {"id": "Simulation:1", "type": device_type}
            ],
            "condition": {
                "attrs": [
-                   "slackP",
-                   "pQLoadProfileP",
-                   "solarGeneratorP",
-                   "SimTime"
+                   "v1a_magnitude",
+                   "v1a_angle",
+                   "v1a_frequency",
+                   "v1a_rocof",
+                   "v1a_timestamp"
                ]
            }
                },
            "notification": {
                 "http": {"url": "http://quantumleap:8668/v2/notify"},
                 "attrs": [
-                   "slackP",
-                   "pQLoadProfileP",
-                   "solarGeneratorP",
-                   "SimTime"
+                   "v1a_magnitude",
+                   "v1a_angle",
+                   "v1a_frequency",
+                   "v1a_rocof",
+                   "v1a_timestamp"
                ],
             "metadata": ["dateCreated", "dateModifid"]
            },
@@ -155,4 +168,9 @@ response = requests.post(url, data=d, headers=h)
 print(response.status_code, response.reason)  # HTTP
 print(response.text)  # TEXT/HTML
 
-ret = client1.publish("/1234/fmu/attrs", "sp|1|pqp|1|sgp|1|st|1")
+
+client1 = paho.Client("control1")  # create client object
+client1.on_publish = on_publish  # assign function to callback
+client1.connect(broker_ip, port)  # establish connection
+
+ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", "v1a_m|80.11|v1a_a|0.11|v1a_f|50.11|v1a_r|0.0011|v1a_t|11111111")
