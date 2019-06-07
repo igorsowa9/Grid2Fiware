@@ -107,11 +107,11 @@ d = {
      "transport":   "MQTT",
      "timezone":    "Europe/Berlin",
      "attributes": [
-       { "object_id": "v1a_m", "name": "v1a_magnitude", "type": "Number" },
-       { "object_id": "v1a_a", "name": "v1a_angle", "type": "Number" },
-       { "object_id": "v1a_f", "name": "v1a_frequency", "type": "Number" },
-       { "object_id": "v1a_r", "name": "v1a_rocof", "type": "Number" },
-       { "object_id": "v1a_t", "name": "v1a_timestamp", "type": "Number" }
+       { "object_id": "ch1a", "name": "v1a_magnitude", "type": "Number" },
+       { "object_id": "ch1b", "name": "v1a_angle", "type": "Number" },
+       { "object_id": "ch1c", "name": "v1a_frequency", "type": "Number" },
+       { "object_id": "ch1d", "name": "v1a_rocof", "type": "Number" },
+       { "object_id": "ch1e", "name": "v1a_timestamp", "type": "Number" }
     ]
    }
 ]
@@ -173,4 +173,4 @@ client1 = paho.Client("control1")  # create client object
 client1.on_publish = on_publish  # assign function to callback
 client1.connect(broker_ip, port)  # establish connection
 
-ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", "v1a_m|80.11|v1a_a|0.11|v1a_f|50.11|v1a_r|0.0011|v1a_t|11111111")
+ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", "ch1a|80.11|ch1b|0.11|ch1c|50.11|ch1d|0.0011|ch1e|11111111")
