@@ -42,10 +42,10 @@ d = {
         "v1a_magnitude": {
           "value": 0.0
         },
-        "v1a_angle": {
+        "v1a_frequency": {
           "value": 0.0
         },
-        "v1a_frequency": {
+        "v1a_angle": {
           "value": 0.0
         },
         "v1a_rocof": {
@@ -108,8 +108,8 @@ d = {
      "timezone":    "Europe/Berlin",
      "attributes": [
        { "object_id": "ch1a", "name": "v1a_magnitude", "type": "Number" },
-       { "object_id": "ch1b", "name": "v1a_angle", "type": "Number" },
-       { "object_id": "ch1c", "name": "v1a_frequency", "type": "Number" },
+       { "object_id": "ch1b", "name": "v1a_frequency", "type": "Number" },
+       { "object_id": "ch1c", "name": "v1a_angle", "type": "Number" },
        { "object_id": "ch1d", "name": "v1a_rocof", "type": "Number" },
        { "object_id": "ch1e", "name": "v1a_timestamp", "type": "Number" }
     ]
@@ -141,8 +141,8 @@ d = {
            "condition": {
                "attrs": [
                    "v1a_magnitude",
-                   "v1a_angle",
                    "v1a_frequency",
+                   "v1a_angle",
                    "v1a_rocof",
                    "v1a_timestamp"
                ]
@@ -152,8 +152,8 @@ d = {
                 "http": {"url": "http://quantumleap:8668/v2/notify"},
                 "attrs": [
                    "v1a_magnitude",
-                   "v1a_angle",
                    "v1a_frequency",
+                   "v1a_angle",
                    "v1a_rocof",
                    "v1a_timestamp"
                ],
