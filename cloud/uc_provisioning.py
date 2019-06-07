@@ -21,7 +21,7 @@ print("\n --> 1. data model")
 url = 'http://10.12.0.10:1026/v2/entities'
 h = {'Content-Type': 'application/json',
      'fiware-service': 'fmu',
-     'fiware-servicepath': ' /'}
+     'fiware-servicepath': '/'}
 d = {
         "id": "Simulation:1",
         "type": "FMU",
@@ -53,7 +53,7 @@ print("\n --> 2. provisioning a service group for mqtt")
 url = 'http://10.12.0.10:4041/iot/services'
 h = {'Content-Type': 'application/json',
      'fiware-service': 'fmu',
-     'fiware-servicepath': ' /'}
+     'fiware-servicepath': '/'}
 d = {
     "services": [
        {
@@ -79,7 +79,7 @@ print("\n --> 3. provisioning sensors")
 url = 'http://10.12.0.10:4041/iot/devices'
 h = {'Content-Type': 'application/json',
      'fiware-service': 'fmu',
-     'fiware-servicepath': ' /'}
+     'fiware-servicepath': '/'}
 d = {
 "devices": [
    {
@@ -113,7 +113,7 @@ print("\n --> 4. making subscriptions of QL")
 url = 'http://10.12.0.10:1026/v2/subscriptions/'
 h = {'Content-Type': 'application/json',
      'fiware-service': 'fmu',
-     'fiware-servicepath': ' /'}
+     'fiware-servicepath': '/'}
 d = {
        "description": "Notification Quantumleap",
        "subject": {
