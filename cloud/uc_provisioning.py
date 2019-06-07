@@ -2,8 +2,14 @@ import json
 import requests
 import time
 import paho.mqtt.client as paho
+import numpy as np
+
+devices = np.array(["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7", "ch8"])
+fiware_service = "grid_uc"
+
 broker = "10.12.0.10"
 port = 1883
+
 
 def on_publish(client,userdata,result):             #create function for callback
     print("My data published! \n")
@@ -20,11 +26,12 @@ print("\n --> 1. data model")
 
 url = 'http://10.12.0.10:1026/v2/entities'
 h = {'Content-Type': 'application/json',
-     'fiware-service': 'fmu',
+     'fiware-service': ''+ fiware_service + '',
      'fiware-servicepath': '/'}
+
 d = {
         "id": "Simulation:1",
-        "type": "FMU",
+        "type": "pmu",
         "slackP": {
           "value": 17.23
         },
