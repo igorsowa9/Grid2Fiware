@@ -250,4 +250,15 @@ client1 = paho.Client("control1")  # create client object
 client1.on_publish = on_publish  # assign function to callback
 client1.connect(broker_ip, port)  # establish connection
 
+test_payload = ""
+for ch in np.arange(len(channel_names)):
+    ch_n = channel_names[ch]
+    for sub in np.arange(len(sub_names)):
+        sn = sub_names[sub]
+        test_payload += ch_n + sn + "|" + "0.0"
+        if not ch == len(channel_names) and sub == len(sub_names):
+            test_payload += "|"
+
+print("test_payload: \n" + str(test_payload))
+
 ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", "ch1a|80.11|ch1b|0.11|ch1c|50.11|ch1d|0.0011|ch1e|11111111")
