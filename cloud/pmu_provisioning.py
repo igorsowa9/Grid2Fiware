@@ -256,9 +256,9 @@ for ch in np.arange(len(channel_names)):
     for sub in np.arange(len(sub_names)):
         sn = sub_names[sub]
         test_payload += ch_n + sn + "|" + "0.0"
-        if not ch == len(channel_names) and sub == len(sub_names):
+        if not (ch == len(channel_names)-1 and sub == len(sub_names)-1):
             test_payload += "|"
 
 print("test_payload: \n" + str(test_payload))
 
-ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", "ch1a|80.11|ch1b|0.11|ch1c|50.11|ch1d|0.0011|ch1e|11111111")
+ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
