@@ -13,7 +13,7 @@ IP_receive = '134.130.169.12' # should be updated by the current public (dependi
 Port_send = 12334
 Port_receive = 12334
 
-NumData = 3
+NumData = 18
 # name, mtype, phaseid, nodeid, // others: time1, measurementvalue, accuracyvalue
 default_accuracy = 1
 settings_fromRTDS = [['P5max', 28, 'ABCN', 4], ['P5min', 29, 'ABCN', 4], ['Q5max', 30, 'ABCN', 4], ['Q5min', 31, 'ABCN', 4],

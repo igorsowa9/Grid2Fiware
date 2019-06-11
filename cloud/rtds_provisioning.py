@@ -9,6 +9,10 @@ n_pmu_analog_channels = 8  # determined by number of chanells in DAQ
 n_pmu_streams_to_cloud = 40  # 8x5 from each channel with have magn, ang, freq, rocof, time, ... (?)
 
 channel_names = np.array(["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7", "ch8"])
+channel_signals = np.array(["v1a", "v3a", "v5a", "v6a", "v7a", "v8a", "v9a", "v10a"])
+
+rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7", "rtds8", "rtds9", "rtds10", "rtds11", "rtds12", "rtds13", "rtds14", "rtds15", "rtds16", "rtds17", "rtds18"])
+rtds_signals = np.array(["pload2", "qload2", "pload3", "qload3", "pload4", "qload4", "pload5", "qload5", "pload6", "qload6", "pload7", "qload7", "pload8", "qload8", "pload9", "qload9", "pload10", "qload10"])
 
 fiware_service = "grid_uc"
 device_type = "PMU"
