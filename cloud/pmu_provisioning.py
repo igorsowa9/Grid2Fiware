@@ -76,10 +76,10 @@ for ch in np.arange(len(channel_names)):
 # }
 
 d = json.dumps(d).encode('utf8')
-# response = requests.post(url, data=d, headers=h)
+response = requests.post(url, data=d, headers=h)
 
-# print(response.status_code, response.reason)  # HTTP
-# print(response.text)  # TEXT/HTML
+print(response.status_code, response.reason)  # HTTP
+print(response.text)  # TEXT/HTML
 
 time.sleep(1)
 
@@ -102,10 +102,10 @@ d = {
 }
 
 d = json.dumps(d).encode('utf8')
-# response = requests.post(url, data=d, headers=h)
+response = requests.post(url, data=d, headers=h)
 
-# print(response.status_code, response.reason)  # HTTP
-# print(response.text)  # TEXT/HTML
+print(response.status_code, response.reason)  # HTTP
+print(response.text)  # TEXT/HTML
 
 time.sleep(1)
 
