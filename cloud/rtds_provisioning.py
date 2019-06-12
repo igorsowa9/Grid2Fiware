@@ -242,5 +242,6 @@ for r in np.arange(len(rtds_names)):
         test_payload += "|"
 
 print("test_payload: \n" + str(test_payload))
+print("mosquitto_pub -h "+broker_ip+" -t \"/"+api_key+"/"+device_id+"/attrs\" -m \""+test_payload+"\" ")
 
-ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
+# ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)

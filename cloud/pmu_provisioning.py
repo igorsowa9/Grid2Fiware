@@ -259,6 +259,7 @@ for ch in np.arange(len(channel_names)):
         if not (ch == len(channel_names)-1 and sub == len(sub_names)-1):
             test_payload += "|"
 
-print("test_payload: \n" + str(test_payload))
+print("test command (not executed): \n" + str(test_payload))
+print("mosquitto_pub -h "+broker_ip+" -t \"/"+api_key+"/"+device_id+"/attrs\" -m \""+test_payload+"\" ")
 
-ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
+# ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
