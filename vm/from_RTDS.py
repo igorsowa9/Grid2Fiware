@@ -62,7 +62,7 @@ def storedata_once():
 def storedata_repeatedly():
     while True:
         storedata_once()
-        time.sleep(0.2)
+        # time.sleep(0.1)
 
 
 storedata_repeatedly()
