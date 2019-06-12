@@ -19,7 +19,7 @@ cloud_ip = "10.12.0.10"
 # cloud_ip = "127.0.0.1"
 broker_ip = cloud_ip
 port = 1883
-api_key = "asd1234"
+api_key = "asd1234rtds"
 
 
 def on_publish(client,userdata,result):             #create function for callback
