@@ -49,14 +49,15 @@ def storedata_attempt():
 
 def storedata_once():
     while True:
-        try:
-            storedata_attempt()
-        except:
-            print("Unexpected error:", sys.exc_info())
-            # logging.error(" When: " + str(datetime.now()) + " --- " + "Error in storedataOnce(): ", sys.exc_info())
-            pass
-        else:
-            break
+        storedata_attempt()
+#        try:
+#            storedata_attempt()
+#        except:
+#            print("Unexpected error:", sys.exc_info())
+#            # logging.error(" When: " + str(datetime.now()) + " --- " + "Error in storedataOnce(): ", sys.exc_info())
+#            pass
+#        else:
+#            break
 
 
 def storedata_repeatedly():
