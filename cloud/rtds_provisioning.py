@@ -15,7 +15,7 @@ fiware_service = "grid_uc"
 device_type = "RTDS"
 device_id = "rtds001"
 
-cloud_ip = "10.12.0.10"
+cloud_ip = "localhost"
 # cloud_ip = "127.0.0.1"
 broker_ip = cloud_ip
 port = 1883
