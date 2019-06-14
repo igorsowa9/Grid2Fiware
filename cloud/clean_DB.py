@@ -15,14 +15,14 @@ def db_connection(dbname):
         sys.exit(0)
 
 
-def case_load_static():
+def clean():
 
     conn = psycopg2.connect("dbname='" + dbname + "' user='' host='10.12.0.10' password=''")
     cursor = conn.cursor()
     np.set_printoptions(suppress=True)
-    cursor.execute(
-        "DELETE FROM mtgrid_uc.etpmu; DELETE FROM mtgrid_uc.etrtds;"
-    )
+    cursor.execute("ALTER TABLE mtgrid_uc.etpmu SET (\"blocks.read_only_allow_delete\" = null);")
+    cursor.execute("ALTER TABLE mtgrid_uc.etrtds SET (\"blocks.read_only_allow_delete\" = null);")
+    cursor.execute("DELETE FROM mtgrid_uc.etpmu; DELETE FROM mtgrid_uc.etrtds;");
 
 
-case_load_static()
+clean()
