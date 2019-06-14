@@ -3,8 +3,8 @@ import paho.mqtt.client as paho
 import time
 
 # import own RPI2 scripts
-from vm.receive import receive
-from vm.settings import *
+from receive import receive
+from settings import *
 
 rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7", "rtds8", "rtds9", "rtds10", "rtds11", "rtds12", "rtds13", "rtds14", "rtds15", "rtds16", "rtds17", "rtds18"])
 rtds_signals = np.array(["pload2", "qload2", "pload3", "qload3", "pload4", "qload4", "pload5", "qload5", "pload6", "qload6", "pload7", "qload7", "pload8", "qload8", "pload9", "qload9", "pload10", "qload10"])

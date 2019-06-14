@@ -1,5 +1,5 @@
 import socket
-from vm.tofloat import tofloat
+from tofloat import tofloat
 
 
 def receive(IP, Port, NumData):
