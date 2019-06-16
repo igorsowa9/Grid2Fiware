@@ -11,7 +11,7 @@ n_pmu_streams_to_cloud = 40  # 8x5 from each channel with have magn, ang, freq, 
 channel_names = np.array(["ch0", "ch1", "ch2", "ch3", "ch4", "ch5"])
 sub_names = np.array(["a", "b", "c", "d", "e"])
 
-channel_signals = np.array(["v1a", "v3a", "v5a", "v8a", "v9a", "v10a"])
+channel_signals = np.array(["v1a", "v3a", "v9a", "v9b", "v9c", "v10a"])
 sub_signals = np.array(["magnitude", "frequency", "angle", "rocof", "timestamp"])
 
 fiware_service = "grid_uc"
