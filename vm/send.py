@@ -15,10 +15,10 @@ def send(data, IP, Port):
 
 	# create the array
 	a = struct.pack('>f', data[0])
-	for i in range(1,NumElements):
+	for i in range(1, NumElements):
 			a += struct.pack('>f', data[i])
 
 	sent = sock.sendto(a, server_address)
-	print("RPI2, send: data sent ot RTDS(",IP,Port,"): ", data)
+	print("RPI2, send: data sent ot RTDS(", IP, Port, "): ", data)
 	
 	return a, server_address

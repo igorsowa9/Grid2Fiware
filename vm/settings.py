@@ -8,8 +8,8 @@ dbname = 'SAU_PC'
 #        IPinput = '137.226.124.77'
 #else: IPinput = '134.130.169.61' # for raspberry
 
-# IP_send = '134.130.169.61' # of GTNET?
-IP_receive = '134.130.169.12' # should be updated by the current public (depending on configuration) IP address?
+IP_send = '134.130.169.96'  # of GTNET, not rack, not own IP
+IP_receive = '134.130.169.12'  # should be updated by the current public (depending on configuration) IP address?
 Port_send = 12334
 Port_receive = 12334
 

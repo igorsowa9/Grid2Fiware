@@ -40,7 +40,6 @@ h = {'Content-Type': 'application/json',
      'fiware-service': fiware_service,
      'fiware-servicepath': '/'}
 
-
 d = {
         "id": "Simulation:1",
         "type": device_type}
