@@ -13,23 +13,35 @@ device_ip = "10.12.0.10"
 api_key = "asd1234rtds"
 
 # test message: sending a value to device example
-print("\n --> test patch request to device")
-url = 'http://' + device_ip + ':1026/v2/entities/Simulation:1/attrs?type=' + device_type
-h = {'Content-Type': 'application/json',
-     'fiware-service': fiware_service,
-     'fiware-servicepath': '/'}
-d = {
-      "setpoint": {
-          "type": "command",
-          "value": "16.33"
-      }
-    }
-d = json.dumps(d).encode('utf8')
-response = requests.patch(url, d, headers=h)
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
+if True:
+    print("\n --> test patch request to device")
+    url = 'http://' + device_ip + ':1026/v2/entities/Simulation:1/attrs?type=' + device_type
+    h = {'Content-Type': 'application/json',
+         'fiware-service': fiware_service,
+         'fiware-servicepath': '/'}
+    d = {
+          "setpoint": {
+              "type": "command",
+              "value": "16.33"
+          }
+        }
+    d = json.dumps(d).encode('utf8')
+    response = requests.patch(url, d, headers=h)
+    print(response.status_code, response.reason)  # HTTP
+    print(response.text)  # TEXT/HTML
+    sys.exit()
 
-sys.exit()
+# query data over ID from OrionCB - i.e. when i need to take measurements to the controller
+if False:
+    print("\n --> query data over ID from OrionCB:")
+    url = 'http://' + device_ip + ':1026/v2/entities'#/Simulation:1'
+    h = {'Content-Type': 'application/json',
+         'fiware-service': fiware_service,
+         'fiware-servicepath': '/'}
+    response = requests.get(url)
+    print(response.status_code, response.reason)  # HTTP
+    print(response.text)  # TEXT/HTML
+    sys.exit()
 
 # 2. provisioning a service group for actuators - exactly the same as in the sensors
 
@@ -48,7 +60,7 @@ d = {
              "device_id": device_id,  # (this will be your topic fort he subscriber)
              "entity_name": "Simulation:1",
              "entity_type": device_type,
-             "protocol": "PDI-IoTA-JSON",  # (or PDI-IoTA-Ultralight  )
+             "protocol": "PDI-IoTA-JSON",  # (or PDI-IoTA-Ultralight  )PDI-IoTA-JSON
              "transport": "MQTT",
              "timezone": "Europe/Berlin",
              "commands":
