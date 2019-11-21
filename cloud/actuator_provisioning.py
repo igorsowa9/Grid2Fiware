@@ -13,7 +13,7 @@ device_ip = "10.12.0.10"
 api_key = "asd1234rtds"
 
 # test message: sending a value to device example
-if True:
+if False:
     print("\n --> test patch request to device")
     url = 'http://' + device_ip + ':1026/v2/entities/Simulation:1/attrs?type=' + device_type
     h = {'Content-Type': 'application/json',
@@ -34,11 +34,11 @@ if True:
 # query data over ID from OrionCB - i.e. when i need to take measurements to the controller
 if False:
     print("\n --> query data over ID from OrionCB:")
-    url = 'http://' + device_ip + ':1026/v2/entities'#/Simulation:1'
-    h = {'Content-Type': 'application/json',
-         'fiware-service': fiware_service,
+    # url = 'http://' + device_ip + ':1026/v2/'#entities'#/Simulation:1'
+    url = 'http://' + device_ip + ':1026/v2/entities/Simulation:1'
+    h = {'fiware-service': fiware_service,
          'fiware-servicepath': '/'}
-    response = requests.get(url)
+    response = requests.get(url, headers=h)
     print(response.status_code, response.reason)  # HTTP
     print(response.text)  # TEXT/HTML
     sys.exit()

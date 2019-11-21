@@ -24,7 +24,6 @@ def on_publish(client, userdata, result):  # create function for callback
     print("My data published! \n")
     pass
 
-
 def storedata_attempt():
     # receive from RTDS:
     npdata = np.array(receive(IP_receive, Port_receive, NumData))
