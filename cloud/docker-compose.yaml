@@ -42,7 +42,7 @@ services:
   orion:
   # Sometimes the newest builds fail. Hence, we fixed a stable version that
   # probably will be updated once in a while
-    image: fiware/orion:2.2.0
+    image: fiware/orion:2.3.0
     hostname: orion
     container_name: "orion"
     depends_on:
