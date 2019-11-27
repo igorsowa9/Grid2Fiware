@@ -127,7 +127,8 @@ d = {
        "protocol":    "PDI-IoTA-UltraLight",
        "transport":   "MQTT",
        "timezone":    "Europe/Berlin",
-       "attributes":  attributes,
+       "attributes":  attributes
+       ,
        "commands":  # provisioning of actuators
        [
             {
@@ -145,32 +146,7 @@ d = {
 ]
 }
 
-
-# d = {
-# "devices": [
-#    {
-#      "device_id":   "" + device_id + "",
-#      "entity_name": "Simulation:1",
-#      "entity_type": "" + device_type + "",
-#      "protocol":    "PDI-IoTA-UltraLight",
-#      "transport":   "MQTT",
-#      "timezone":    "Europe/Berlin",
-#      "attributes": [
-#        {"object_id": "ch1a", "name": "v1a_magnitude", "type": "Number"},
-#        {"object_id": "ch1b", "name": "v1a_frequency", "type": "Number"},
-#        {"object_id": "ch1c", "name": "v1a_angle", "type": "Number"},
-#        {"object_id": "ch1d", "name": "v1a_rocof", "type": "Number"},
-#        {"object_id": "ch1e", "name": "v1a_timestamp", "type": "Number"}
-#     ]
-#    }
-# ]
-# }
-
 d = json.dumps(d).encode('utf8')
-
-print(d)
-print(h)
-print(url)
 
 if True:
     response = requests.post(url, data=d, headers=h)
@@ -213,59 +189,27 @@ d = {
        "throttling": 0
 }
 
-# d = {
-#        "description": "Notification Quantumleap",
-#        "subject": {
-#            "entities": [
-#                {"id": "Simulation:1", "type": device_type}
-#            ],
-#            "condition": {
-#                "attrs": [
-#                    "v1a_magnitude",
-#                    "v1a_frequency",
-#                    "v1a_angle",
-#                    "v1a_rocof",
-#                    "v1a_timestamp"
-#                ]
-#            }
-#                },
-#            "notification": {
-#                 "http": {"url": "http://quantumleap:8668/v2/notify"},
-#                 "attrs": [
-#                    "v1a_magnitude",
-#                    "v1a_frequency",
-#                    "v1a_angle",
-#                    "v1a_rocof",
-#                    "v1a_timestamp"
-#                ],
-#             "metadata": ["dateCreated", "dateModifid"]
-#            },
-#        "throttling": 0
-# }
-
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
 
 print(response.status_code, response.reason)  # HTTP
 print(response.text)  # TEXT/HTML
 
-
 client1 = paho.Client("control1")  # create client object
 client1.on_publish = on_publish  # assign function to callback
 client1.connect(broker_ip, port)  # establish connection
 
-test_payload = ""
-for r in np.arange(len(rtds_names)):
-    rn = rtds_names[r]
-    test_payload += rn + "|" + "0.0"
-    if not r == len(rtds_names)-1:
-        test_payload += "|"
-
-print("test_payload: \n" + str(test_payload))
-print("mosquitto_pub -h "+broker_ip+" -t \"/"+api_key+"/"+device_id+"/attrs\" -m \""+test_payload+"\" ")
+# test_payload = ""
+# for r in np.arange(len(rtds_names)):
+#     rn = rtds_names[r]
+#     test_payload += rn + "|" + "0.0"
+#     if not r == len(rtds_names)-1:
+#         test_payload += "|"
+#
+# print("test_payload: \n" + str(test_payload))
+# print("mosquitto_pub -h "+broker_ip+" -t \"/"+api_key+"/"+device_id+"/attrs\" -m \""+test_payload+"\" ")
 
 # ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
-
 
 time.sleep(1)
 

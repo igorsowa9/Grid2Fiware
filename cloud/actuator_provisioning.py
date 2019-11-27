@@ -13,7 +13,7 @@ cloud_ip = "10.12.0.10"
 api_key_actuators = "asd1234rtds"
 
 # test message: sending a value to device example
-if False:
+if True:
     print("\n --> test patch request to device")
     url = 'http://' + cloud_ip + ':1026/v2/entities/Simulation:1/attrs?type=' + device_type
     h = {'Content-Type': 'application/json',
