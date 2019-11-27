@@ -102,8 +102,8 @@ print(response.text)  # TEXT/HTML
 
 time.sleep(1)
 
-# 3. provisioning sensors
-print("\n --> 3. provisioning sensors")
+# 3. provisioning sensors - this provisioning causes problems with actuators
+print("\n --> 3. provisioning sensors AND acutuators")
 
 url = 'http://' + cloud_ip + ':4041/iot/devices'
 h = {'Content-Type': 'application/json',
@@ -121,16 +121,30 @@ for ch in np.arange(len(rtds_names)):
 d = {
 "devices": [
    {
-     "device_id":   "" + device_id + "",
-     "entity_name": "Simulation:1",
-     "entity_type": "" + device_type + "",
-     "protocol":    "PDI-IoTA-UltraLight",
-     "transport":   "MQTT",
-     "timezone":    "Europe/Berlin",
-     "attributes": attributes
+       "device_id":   device_id,  # rtds001
+       "entity_name": "Simulation:1",
+       "entity_type": device_type,  # RTDS
+       "protocol":    "PDI-IoTA-UltraLight",
+       "transport":   "MQTT",
+       "timezone":    "Europe/Berlin",
+       "attributes":  attributes,
+       "commands":  # provisioning of actuators
+       [
+            {
+               "name": "setpoint1",
+               "type": "command",
+               "value": "Number"
+            },
+            {
+               "name": "setpoint2",
+               "type": "command",
+               "value": "Number"
+            }
+       ]
    }
 ]
 }
+
 
 # d = {
 # "devices": [
@@ -153,12 +167,18 @@ d = {
 # }
 
 d = json.dumps(d).encode('utf8')
-response = requests.post(url, data=d, headers=h)
 
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
+print(d)
+print(h)
+print(url)
 
-time.sleep(1)
+if True:
+    response = requests.post(url, data=d, headers=h)
+
+    print(response.status_code, response.reason)  # HTTP
+    print(response.text)  # TEXT/HTML
+
+    time.sleep(1)
 
 # 4. making subscriptions of QL
 print("\n --> 4. making subscriptions of QL")
@@ -245,3 +265,41 @@ print("test_payload: \n" + str(test_payload))
 print("mosquitto_pub -h "+broker_ip+" -t \"/"+api_key+"/"+device_id+"/attrs\" -m \""+test_payload+"\" ")
 
 # ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
+
+
+time.sleep(1)
+
+# enabling context broker commands -ACTUATORS
+# "ENABLING CONTEXT BROKER COMMANDS" in tutorial https://fiware-tutorials.readthedocs.io/en/latest/iot-over-mqtt/index.html
+# Once the commands have been registered it will be possible to actuate by sending requests to the Orion Context Broker,
+# rather than sending UltraLight 2.0 requests directly the IoT devices.
+
+print("\n --> 2.2. enabling context broker commands")
+url = 'http://' + cloud_ip + ':1026/v2/registrations'
+h = {'Content-Type': 'application/json',
+     'fiware-service': fiware_service,
+     'fiware-servicepath': '/'}
+
+d = {
+      "description": "Setpoints Commands",
+      "dataProvided": {
+        "entities": [
+          {
+            "id": "Simulation:1", "type": device_type
+          }
+        ],
+        "attrs": ["setpoint"]
+      },
+      "provider": {
+        "http": {"url": "http://orion:1026/v1"},
+        "legacyForwarding": True
+      }
+    }
+
+d = json.dumps(d).encode('utf8')
+response = requests.post(url, data=d, headers=h)
+
+print(response.status_code, response.reason)  # HTTP
+print(response.text)  # TEXT/HTML
+
+time.sleep(1)
