@@ -17,9 +17,9 @@ def receive(IP, Port, NumData):
 
 	print('\nWaiting to receive message')
 	data, address = sock.recvfrom(4096)
-	#print('received {} bytes from {}'.format(len(data), address))
+	# print('received {} bytes from {}'.format(len(data), address))
 	#print('Original type of data: ', type(data))
-	print('...received from RTDS!')
+	# print('...received from RTDS!')
 
 	ldata = [round(tofloat(data[(4*x):(4+4*x)]),6) for x in range(0, NumData)]
 	#print('Type of ldata: ', type(ldata))

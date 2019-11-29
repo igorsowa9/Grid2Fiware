@@ -8,8 +8,10 @@ import sys
 n_pmu_analog_channels = 8  # determined by number of chanells in DAQ
 n_pmu_streams_to_cloud = 40  # 8x5 from each channel with have magn, ang, freq, rocof, time, ... (?)
 
-rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7", "rtds8", "rtds9", "rtds10", "rtds11", "rtds12", "rtds13", "rtds14", "rtds15", "rtds16", "rtds17", "rtds18"])
-rtds_signals = np.array(["pload2", "qload2", "pload3", "qload3", "pload4", "qload4", "pload5", "qload5", "pload6", "qload6", "pload7", "qload7", "pload8", "qload8", "pload9", "qload9", "pload10", "qload10"])
+# rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7", "rtds8", "rtds9", "rtds10", "rtds11", "rtds12", "rtds13", "rtds14", "rtds15", "rtds16", "rtds17", "rtds18"])
+rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4"])
+# rtds_signals = np.array(["pload2", "qload2", "pload3", "qload3", "pload4", "qload4", "pload5", "qload5", "pload6", "qload6", "pload7", "qload7", "pload8", "qload8", "pload9", "qload9", "pload10", "qload10"])
+rtds_signals = np.array(["p2meas", "q2meas", "p3meas", "q3meas"])
 
 fiware_service = "grid_uc"
 device_type = "RTDS"
@@ -172,7 +174,7 @@ for r in np.arange(len(rtds_names)):
     attrs.append(value2)
 
 d = {
-       "description": "Notification Quantumleap",
+       "description": "Notification Quantumleap: sensors from RTDS",
        "subject": {
            "entities": [
                {"id": "Simulation:1", "type": device_type}
@@ -184,7 +186,7 @@ d = {
            "notification": {
                 "http": {"url": "http://quantumleap:8668/v2/notify"},
                 "attrs": attrs,
-            "metadata": ["dateCreated", "dateModifid"]
+            "metadata": ["dateCreated", "dateModified"]
            },
        "throttling": 0
 }

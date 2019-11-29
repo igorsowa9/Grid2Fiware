@@ -13,7 +13,7 @@ from settings import *
 
 manager = multiprocessing.Manager()
 
-data_to_RTDS = manager.list([0.0, 0.0])
+data_to_RTDS = manager.list([0.01, 0.01])
 
 
 # subscribe to the setpoints from the cloud and receive them
@@ -68,8 +68,8 @@ def mqtt_loop():
 def send_to_RTDS():
     print('send to RTDS: starting')
     while True:
-        # send(data_to_RTDS, IP_send, Port_send)
         print(data_to_RTDS)
+        send(data_to_RTDS, IP_send, Port_send)
         time.sleep(1)
 
 
