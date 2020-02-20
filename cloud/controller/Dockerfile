@@ -2,6 +2,6 @@ FROM python:3
 
 RUN pip install requests
 
-ADD test_post.py /
+ADD controller_main.py /
 
-CMD [ "python", "./test_post.py" ]
+CMD [ "python", "./controller_main.py" ]

@@ -8,10 +8,11 @@ import sys
 n_pmu_analog_channels = 8  # determined by number of chanells in DAQ
 n_pmu_streams_to_cloud = 40  # 8x5 from each channel with have magn, ang, freq, rocof, time, ... (?)
 
-# rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7", "rtds8", "rtds9", "rtds10", "rtds11", "rtds12", "rtds13", "rtds14", "rtds15", "rtds16", "rtds17", "rtds18"])
 rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4"])
-# rtds_signals = np.array(["pload2", "qload2", "pload3", "qload3", "pload4", "qload4", "pload5", "qload5", "pload6", "qload6", "pload7", "qload7", "pload8", "qload8", "pload9", "qload9", "pload10", "qload10"])
+rtds_text = np.array(["ts1", "add1"])
+
 rtds_signals = np.array(["p2meas", "q2meas", "p3meas", "q3meas"])
+rtds_tsignals = np.array(["ts_measurement", "notes"])
 
 fiware_service = "grid_uc"
 device_type = "RTDS"
@@ -27,7 +28,6 @@ api_key = "asd1234rtds"
 def on_publish(client,userdata,result):             #create function for callback
     print("My data published! \n")
     pass
-
 
 ## provisioning device>mqtt borker>orion>quantum leap>crate>grafana communication
 
@@ -49,26 +49,6 @@ for r in np.arange(len(rtds_signals)):
     value = {"value": 0.0}
     d2 = {rs: value}
     d.update(d2)
-
-# d = {
-#         "id": "Simulation:1",
-#         "type": device_type,
-#         "v1a_magnitude": {
-#           "value": 0.0
-#         },
-#         "v1a_frequency": {
-#           "value": 0.0
-#         },
-#         "v1a_angle": {
-#           "value": 0.0
-#         },
-#         "v1a_rocof": {
-#           "value": 0.0
-#         },
-#         "v1a_timestamp": {
-#           "value": 0.0
-#         }
-# }
 
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
@@ -104,7 +84,7 @@ print(response.text)  # TEXT/HTML
 
 time.sleep(1)
 
-# 3. provisioning sensors - this provisioning causes problems with actuators
+# 3. provisioning sensors and actuatros
 print("\n --> 3. provisioning sensors AND acutuators")
 
 url = 'http://' + cloud_ip + ':4041/iot/devices'
@@ -115,11 +95,11 @@ h = {'Content-Type': 'application/json',
 attributes = []
 
 for ch in np.arange(len(rtds_names)):
-    value1 = rtds_names[ch]
-    value2 = rtds_signals[ch]
-    di = {"object_id": value1, "name": value2, "type": "Number"}
-    attributes.append(di)
+    attributes.append({"object_id": rtds_names[ch], "name": rtds_signals[ch], "type": "Number"})
 
+for ch in np.arange(len(rtds_text)):
+    attributes.append({"object_id": rtds_text[ch], "name": rtds_tsignals[ch], "type": "Text"})
+print(attributes)
 d = {
 "devices": [
    {
@@ -129,8 +109,7 @@ d = {
        "protocol":    "PDI-IoTA-UltraLight",
        "transport":   "MQTT",
        "timezone":    "Europe/Berlin",
-       "attributes":  attributes
-       ,
+       "attributes":  attributes,
        "commands":  # provisioning of actuators
        [
             {
@@ -169,9 +148,10 @@ h = {'Content-Type': 'application/json',
 attrs = []
 
 for r in np.arange(len(rtds_names)):
-    rs = rtds_signals[r]
-    value2 = rs
-    attrs.append(value2)
+    attrs.append(rtds_signals[r])
+
+for r in np.arange(len(rtds_text)):
+    attrs.append(rtds_tsignals[r])
 
 d = {
        "description": "Notification Quantumleap: sensors from RTDS",

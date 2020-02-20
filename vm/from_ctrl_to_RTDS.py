@@ -28,7 +28,7 @@ def on_connect(client, userdata, flags, rc):
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    print("Topic: " + msg.topic+" Payload: "+str(msg.payload))
+    # print("Topic: " + msg.topic+" Payload: "+str(msg.payload))
 
     now = datetime.utcnow()
     entire_str = msg.payload.decode("utf-8")
@@ -68,9 +68,9 @@ def mqtt_loop():
 def send_to_RTDS():
     print('send to RTDS: starting')
     while True:
-        print(data_to_RTDS)
+        print(data_to_RTDS[0])
         send(data_to_RTDS, IP_send, Port_send)
-        time.sleep(1)
+        time.sleep(0.5)
 
 
 if __name__ == '__main__':
