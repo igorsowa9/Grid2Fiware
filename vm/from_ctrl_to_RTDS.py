@@ -13,7 +13,9 @@ from settings import *
 
 manager = multiprocessing.Manager()
 
-data_to_RTDS = manager.list([0.01, 0.01])
+data_to_RTDS = manager.list([1.00, 1.00, 1.00, 1.00, 1.00, 1.00])
+rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3", "sc_brk4", "sc_brk5", "sc_brk6"])
+
 
 
 # subscribe to the setpoints from the cloud and receive them
@@ -32,13 +34,26 @@ def on_message(client, userdata, msg):
 
     now = datetime.utcnow()
     entire_str = msg.payload.decode("utf-8")
+    # print(entire_str)
 
-    if "rtds001@setpoint1|" in entire_str:
-        value = float(entire_str.replace("rtds001@setpoint1|", ""))
+    if "rtds001@sc_brk1|" in entire_str:
+        value = float(entire_str.replace("rtds001@sc_brk1|", ""))
         data_to_RTDS[0] = value
-    elif "rtds001@setpoint2|" in entire_str:
-        value = float(entire_str.replace("rtds001@setpoint2|", ""))
+    elif "rtds001@sc_brk2|" in entire_str:
+        value = float(entire_str.replace("rtds001@sc_brk2|", ""))
         data_to_RTDS[1] = value
+    elif "rtds001@sc_brk3|" in entire_str:
+        value = float(entire_str.replace("rtds001@sc_brk3|", ""))
+        data_to_RTDS[2] = value
+    elif "rtds001@sc_brk4|" in entire_str:
+        value = float(entire_str.replace("rtds001@sc_brk4|", ""))
+        data_to_RTDS[3] = value
+    elif "rtds001@sc_brk5|" in entire_str:
+        value = float(entire_str.replace("rtds001@sc_brk5|", ""))
+        data_to_RTDS[4] = value
+    elif "rtds001@sc_brk6|" in entire_str:
+        value = float(entire_str.replace("rtds001@sc_brk6|", ""))
+        data_to_RTDS[5] = value
     else:
         print("another setpoint than exepcted")
 
@@ -68,7 +83,7 @@ def mqtt_loop():
 def send_to_RTDS():
     print('send to RTDS: starting')
     while True:
-        print(data_to_RTDS[0])
+        print(data_to_RTDS)
         send(data_to_RTDS, IP_send, Port_send)
         time.sleep(0.5)
 

@@ -8,15 +8,15 @@ import pandas as pd
 from receive import receive
 from settings import *
 
-rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4"])
+rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7", "rtds8"])
 rtds_text = np.array(["ts1", "add1"])
 
-rtds_signals = np.array(["p2meas", "q2meas", "p3meas", "q3meas"])
+rtds_signals = np.array(["w1", "f_vc1a", "rocof_vc1a", "vc1rms", "vo1rms", "vc2rms", "vo2rms", "v3rms"])
 rtds_tsignals = np.array(["ts_measurement", "notes"])
-NumData_fromRTDS = 4
+NumData_fromRTDS = 8
 
 fiware_service = "grid_uc"
-device_type = "RTDS"
+device_type = "rtds1"
 device_id = "rtds001"
 
 cloud_ip = "10.12.0.10"
@@ -34,7 +34,10 @@ def storedata_attempt(client1):
     global c
     # receive from RTDS:
     npdata = np.round(np.array(receive(IP_receive, Port_receive, NumData_fromRTDS)),4)
-    other_data = np.array([datetime.now().timestamp(), pd.Timestamp(datetime.now().timestamp(), unit='s')])
+    ts_prec = 3
+    ts_m = np.round(datetime.now().timestamp(), ts_prec)
+    ts_ms = np.round(np.round(datetime.now().timestamp(), ts_prec) * 10**ts_prec)
+    other_data = np.array([ts_ms, pd.Timestamp(ts_m, unit='s')])
     print("Values received from RTDS: ", npdata)
     print("other_data: ", other_data)
 

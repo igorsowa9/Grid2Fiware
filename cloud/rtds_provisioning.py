@@ -8,14 +8,16 @@ import sys
 n_pmu_analog_channels = 8  # determined by number of chanells in DAQ
 n_pmu_streams_to_cloud = 40  # 8x5 from each channel with have magn, ang, freq, rocof, time, ... (?)
 
-rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4"])
+rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7", "rtds8"])
 rtds_text = np.array(["ts1", "add1"])
 
-rtds_signals = np.array(["p2meas", "q2meas", "p3meas", "q3meas"])
+rtds_signals = np.array(["w1", "f_vc1a", "rocof_vc1a", "vc1rms", "vo1rms", "vc2rms", "vo2rms", "v3rms"])
 rtds_tsignals = np.array(["ts_measurement", "notes"])
 
+rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3", "sc_brk4", "sc_brk5", "sc_brk6"])
+
 fiware_service = "grid_uc"
-device_type = "RTDS"
+device_type = "rtds1"
 device_id = "rtds001"
 
 cloud_ip = "10.12.0.10"
@@ -100,6 +102,12 @@ for ch in np.arange(len(rtds_names)):
 for ch in np.arange(len(rtds_text)):
     attributes.append({"object_id": rtds_text[ch], "name": rtds_tsignals[ch], "type": "Text"})
 print(attributes)
+
+commands = []
+for ch in np.arange(len(rtds_commands)):
+    commands.append({"name": rtds_commands[ch], "type": "command", "value": "Number"})
+
+
 d = {
 "devices": [
    {
@@ -110,19 +118,19 @@ d = {
        "transport":   "MQTT",
        "timezone":    "Europe/Berlin",
        "attributes":  attributes,
-       "commands":  # provisioning of actuators
-       [
-            {
-               "name": "setpoint1",
-               "type": "command",
-               "value": "Number"
-            },
-            {
-               "name": "setpoint2",
-               "type": "command",
-               "value": "Number"
-            }
-       ]
+       "commands":  commands  # provisioning of actuators
+       # [
+       #      {
+       #         "name": "setpoint1",
+       #         "type": "command",
+       #         "value": "Number"
+       #      },
+       #      {
+       #         "name": "setpoint2",
+       #         "type": "command",
+       #         "value": "Number"
+       #      }
+       # ]
    }
 ]
 }

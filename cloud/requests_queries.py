@@ -7,7 +7,7 @@ import sys
 import timeit
 
 fiware_service = "grid_uc"  # only with different fiware_service, the actuators works with sensors
-device_type = "RTDS"
+device_type = "rtds1"
 controller_type = "CONTROLLER"
 # device_id = "inverter001"
 
