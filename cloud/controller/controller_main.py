@@ -47,14 +47,17 @@ def pdc():
     response = requests.post(url, data=d, headers=h)
 
     # print(response.status_code, response.reason)  # HTTP
-    print(response.text)  # TEXT/HTML
+    # print(response.text)  # TEXT/HTML
 
     parsed = json.loads(response.text)
     # print(parsed['rows'])
 
     ts_measurement = parsed['rows'][0][7]
     delay = datetime.utcnow().timestamp()*1000 - float(ts_measurement)
-    print("delay (measurement -> pdc): " + str(np.round(delay/1000, 3)) + " s")
+    # print("\n\ndelay (measurement ("+str(ts_measurement)+") -> pdc): " + str(np.round(delay/1000, 3)) + " s")
+    print("\n")
+    print(ts_measurement)
+    print(np.round(delay/1000, 3))
     global meas_set
 
     meas_set = [parsed['rows'][0][7],  # ts in ms
@@ -110,8 +113,10 @@ def scs(ts_ms):
     response = requests.patch(url, d, headers=h)
     # print(response.status_code, response.reason)  # HTTP
     # print(response.text)  # TEXT/HTML
+    print(ts_ms)
     delay = datetime.utcnow().timestamp()*1000 - float(ts_ms)
-    print("SCS Implemented! Delay measurement -> control implementation: " + str(np.round(delay/1000, 3)) + " s")
+    # print("SCS Implemented! Delay measurement ("+str(ts_ms)+") -> control implementation: " + str(np.round(delay/1000, 3)) + " s")
+    print(np.round(delay/1000,3))
     global f_alert
     global v_alert
     f_alert = 0
@@ -132,10 +137,10 @@ while True:
     if any(x < v_constr[0] for x in meas_set[4:9]) or any(x > v_constr[1] for x in meas_set[4:9]):
         v_alert = 1
 
-    print("alerts: f:" + str(f_alert) + " v:" + str(v_alert))
+    # print("alerts: f:" + str(f_alert) + " v:" + str(v_alert))
     if any(x == 1 for x in [v_alert, f_alert]):
         scs(meas_set[0])
-
+    scs(meas_set[0])
     # if meas_set[4:8]
 
 
