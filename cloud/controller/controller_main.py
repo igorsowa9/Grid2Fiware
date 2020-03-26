@@ -11,7 +11,8 @@ device_type = "rtds1"
 cloud_ip = "10.12.0.10"
 api_key = "asd1234rtds"
 
-rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3", "sc_brk4", "sc_brk5", "sc_brk6"])
+rtds_signals = np.array(["w3", "f_v3a", "rocof_v3a", "vo1llrms", "vo2llrms", "vo3llrms", "vo4llrms"])
+rtds_tsignals = np.array(["ts_measurement", "notes"])
 
 # parallel proceses: PDC, detection and controller (at trigger from detection).
 
@@ -42,33 +43,39 @@ def pdc():
     # ts_down_ms = np.round(now*1000)-1000
     # ts_up_ms = np.round(now*1000)+1000
     # d = {"stmt":"SELECT * FROM mtgrid_uc.etrtds1 WHERE ts_measurement > "+str(int(np.round(ts_down_ms)))+" AND ts_measurement < "+str(int(np.round(ts_up_ms)))+" ORDER BY ts_measurement DESC"}
-    d = {"stmt": "SELECT * FROM mtgrid_uc.etrtds1 ORDER BY ts_measurement DESC LIMIT 1"}
+
+    rtds_all_signals = np.concatenate((rtds_signals, rtds_tsignals))
+    strg = ""
+    n_sig = len(rtds_all_signals)
+    for si in range(n_sig):
+        strg = strg + rtds_all_signals[si]
+        if not si == n_sig-1:
+            strg = strg + ", "
+
+    d = {"stmt": "SELECT "+strg+" FROM mtgrid_uc.etrtds1 ORDER BY ts_measurement DESC LIMIT 1"}
     d = json.dumps(d).encode('utf8')
     response = requests.post(url, data=d, headers=h)
 
-    # print(response.status_code, response.reason)  # HTTP
-    # print(response.text)  # TEXT/HTML
+    print(response.status_code, response.reason)  # HTTP
+    print(response.text)  # TEXT/HTML
 
     parsed = json.loads(response.text)
-    # print(parsed['rows'])
+    print(np.array(parsed['rows'][0]))
 
-    ts_measurement = parsed['rows'][0][7]
+    global meas_set
+    meas_set = np.array(parsed['rows'][0])
+
+    ts_measurement = meas_set[7]
+    print(ts_measurement)
+    print(datetime.utcnow())
+
     delay = datetime.utcnow().timestamp()*1000 - float(ts_measurement)
-    # print("\n\ndelay (measurement ("+str(ts_measurement)+") -> pdc): " + str(np.round(delay/1000, 3)) + " s")
+    print("\n\ndelay (measurement ("+str(ts_measurement)+") -> pdc): " + str(np.round(delay/1000, 3)) + " s")
     print("\n")
     print(ts_measurement)
     print(np.round(delay/1000, 3))
-    global meas_set
+    sys.exit()
 
-    meas_set = [parsed['rows'][0][7],  # ts in ms
-                parsed['rows'][0][13],  # w1
-                parsed['rows'][0][2],  # f_vc1a
-                parsed['rows'][0][5],  # rocof_vc1a
-                parsed['rows'][0][9],  # vc1rms
-                parsed['rows'][0][11],  # vo1rms
-                parsed['rows'][0][10],  # vc2rms
-                parsed['rows'][0][12],  # vo2rms
-                parsed['rows'][0][8]]  # v3rms
     return
 
     # Alternative download of data through API of fiware
