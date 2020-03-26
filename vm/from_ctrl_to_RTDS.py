@@ -13,9 +13,11 @@ from settings import *
 
 manager = multiprocessing.Manager()
 
-data_to_RTDS = manager.list([1.00, 1.00, 1.00, 1.00, 1.00, 1.00])
-rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3", "sc_brk4", "sc_brk5", "sc_brk6"])
-
+# Default values
+data_to_RTDS = manager.list([1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3",
+                          "pref1", "pref2", "pref3", "pref4",
+                          "qref1", "qref2", "qref3", "qref4"])
 
 
 # subscribe to the setpoints from the cloud and receive them
@@ -34,7 +36,7 @@ def on_message(client, userdata, msg):
 
     now = datetime.utcnow()
     entire_str = msg.payload.decode("utf-8")
-    # print(entire_str)
+    print(entire_str)
 
     if "rtds001@sc_brk1|" in entire_str:
         value = float(entire_str.replace("rtds001@sc_brk1|", ""))
@@ -45,15 +47,30 @@ def on_message(client, userdata, msg):
     elif "rtds001@sc_brk3|" in entire_str:
         value = float(entire_str.replace("rtds001@sc_brk3|", ""))
         data_to_RTDS[2] = value
-    elif "rtds001@sc_brk4|" in entire_str:
-        value = float(entire_str.replace("rtds001@sc_brk4|", ""))
+    elif "rtds001@pref1|" in entire_str:
+        value = float(entire_str.replace("rtds001@pref1|", ""))
         data_to_RTDS[3] = value
-    elif "rtds001@sc_brk5|" in entire_str:
-        value = float(entire_str.replace("rtds001@sc_brk5|", ""))
+    elif "rtds001@pref2|" in entire_str:
+        value = float(entire_str.replace("rtds001@pref2|", ""))
         data_to_RTDS[4] = value
-    elif "rtds001@sc_brk6|" in entire_str:
-        value = float(entire_str.replace("rtds001@sc_brk6|", ""))
+    elif "rtds001@pref3|" in entire_str:
+        value = float(entire_str.replace("rtds001@pref3|", ""))
         data_to_RTDS[5] = value
+    elif "rtds001@pref4|" in entire_str:
+        value = float(entire_str.replace("rtds001@pref4|", ""))
+        data_to_RTDS[6] = value
+    elif "rtds001@qref1|" in entire_str:
+        value = float(entire_str.replace("rtds001@qref1|", ""))
+        data_to_RTDS[7] = value
+    elif "rtds001@qref2|" in entire_str:
+        value = float(entire_str.replace("rtds001@qref2|", ""))
+        data_to_RTDS[8] = value
+    elif "rtds001@qref3|" in entire_str:
+        value = float(entire_str.replace("rtds001@qref3|", ""))
+        data_to_RTDS[9] = value
+    elif "rtds001@qref4|" in entire_str:
+        value = float(entire_str.replace("rtds001@qref4|", ""))
+        data_to_RTDS[10] = value
     else:
         print("another setpoint than exepcted")
 
@@ -84,7 +101,7 @@ def send_to_RTDS():
     print('send to RTDS: starting')
     while True:
         print(data_to_RTDS)
-        send(data_to_RTDS, IP_send, Port_send)
+        # send(data_to_RTDS, IP_send, Port_send)
         time.sleep(0.5)
 
 
