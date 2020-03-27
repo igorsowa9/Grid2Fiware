@@ -22,22 +22,6 @@ from controller_config import *
 # Recursive behaviour if none of samples come for the required time stamp.
 
 
-ras = np.concatenate((rtds_signals, rtds_tsignals))
-# Variables for live update:
-meas_set = np.array([])
-f1_alert = 0
-f2_alert = 0
-f3_alert = 0
-v_alert = 0
-
-# message to RTDS:
-# ["sc_brk1", "sc_brk2", "sc_brk3", "pref1", "pref2", "pref3", "pref4", "qref1", "qref2", "qref3", "qref4"]
-setpoints = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-url = 'http://' + cloud_ip + ':1026/v2/entities/Simulation:1/attrs?type=' + device_type
-h = {'Content-Type': 'application/json',
-     'fiware-service': fiware_service,
-     'fiware-servicepath': '/'}
-
 def pdc_newest():
     while True:
         # Get the data (through QL API but it could be also SQL request)
@@ -50,6 +34,18 @@ def pdc_newest():
         # ts_down_ms = np.round(now*1000)-1000
         # ts_up_ms = np.round(now*1000)+1000
         # d = {"stmt":"SELECT * FROM mtgrid_uc.etrtds1 WHERE ts_measurement > "+str(int(np.round(ts_down_ms)))+" AND ts_measurement < "+str(int(np.round(ts_up_ms)))+" ORDER BY ts_measurement DESC"}
+
+        # # Alternatively download of data through API of fiware
+        # url = 'http://' + cloud_ip + ':8668/v2/entities/Simulation:1/attrs/ts_measurement?lastN=1'
+        # h = {
+        #     'Accept': 'application/json',
+        #     'fiware-service': fiware_service,
+        #     'fiware-servicepath': '/'
+        # }
+        # response = requests.get(url, headers=h)
+        # parsed = json.loads(response.text)
+        # print(parsed)
+        # continue
 
         strg = ""
         n_sig = len(ras)
@@ -69,18 +65,9 @@ def pdc_newest():
         global meas_set
         meas_set = np.array(parsed['rows'][0])
         ts_measurement = meas_set[ras == "ts_measurement"][0]
+        # print(ts_measurement)
         delay = datetime.utcnow().timestamp()*1000 - float(ts_measurement)
-        print("\n\ndelay (measurement ("+str(ts_measurement)+") -> pdc): " + str(np.round(delay/1000, 3)) + " s\n")
-
-        # Alternatively download of data through API of fiware
-        # url = 'http://' + cloud_ip + ':8668/v2/entities/Simulation:1/attrs/w1?lastN=1'
-        # h = {
-        #     'Accept': 'application/json',
-        #     'fiware-service': fiware_service,
-        #     'fiware-servicepath': '/'
-        # }
-        # response = requests.get(url, headers=h)
-        # parsed = json.loads(response.text)
+        print("\ndelay (measurement ("+str(ts_measurement)+") -> pdc): " + str(np.round(delay/1000, 3)) + " s")
 
 
 def shedding_detector():
@@ -101,6 +88,11 @@ def shedding_detector():
         v_alert = 1
 
 
+def sc_continous():
+    # Continous operation of the secondary controller with continous setpoints for DG in normal secondary control
+    pass
+
+
 def send_setpoints(ts):
     d = {}
     for rc in range(len(rtds_commands)):
@@ -115,32 +107,45 @@ def send_setpoints(ts):
         response = requests.patch(url, d, headers=h)
         print(response.status_code, response.reason)  # HTTP
         print(response.text)  # TEXT/HTML
-        delay = datetime.utcnow().timestamp() * 1000 - float(ts)
+
         # print("SCS Implemented! Delay measurement ("+str(ts_ms)+") -> control implementation: " + str(np.round(delay/1000, 3)) + " s")
         print(np.round(delay / 1000, 3))
-
+    delay = datetime.utcnow().timestamp() * 1000 - float(ts)
+    print("Setpoints sent: delay: " + str(np.round(delay / 1000, 3)) + " s (between measurement and control setpoints "
+                                                                       "derivation")
     # time.sleep(0.01)
-
-
-def sc_continous(ts_ms):
-    # Continous operation of the secondary controller which derives the setpoints for the DGs
-    pass
 
 
 if __name__ == '__main__':
 
-    send_setpoints(123123)
+    ras = np.concatenate((rtds_signals, rtds_tsignals))
+    # Variables for live update:
+    meas_set = np.zeros(len(ras))
+    f1_alert = 0
+    f2_alert = 0
+    f3_alert = 0
+    v_alert = 0
 
-    sys.exit()
+    setpoints = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # see config for what is what
+
+    # message to RTDS:
+    url = 'http://' + cloud_ip + ':1026/v2/entities/Simulation:1/attrs?type=' + device_type
+    h = {'Content-Type': 'application/json',
+         'fiware-service': fiware_service,
+         'fiware-servicepath': '/'}
 
     p1 = multiprocessing.Process(target=pdc_newest)
     p1.start()
-    p2 = multiprocessing.Process(target=sc_continous)
-    p2.start()
-    p3 = multiprocessing.Process(target=shedding_detector)
-    p3.start()
+    p12 = multiprocessing.Process(target=pdc_newest)
+    p12.start()
+    # p2 = multiprocessing.Process(target=sc_continous)
+    # p2.start()
+    # p3 = multiprocessing.Process(target=shedding_detector)
+    # p3.start()
 
     p1.join()
-    p2.join()
+    p12.join()
+    # p2.join()
+    # p3.join()
 
 
