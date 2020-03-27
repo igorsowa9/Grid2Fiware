@@ -6,6 +6,7 @@ import numpy as np
 from datetime import datetime
 import multiprocessing
 from controller_config import *
+import paho.mqtt.client as paho
 
 # parallel proceses: PDC, detection and controller (at trigger from detection).
 
@@ -20,6 +21,61 @@ from controller_config import *
 # In other words: recursive behaviour in terms of local parameter (V, angle) and interpolative for the global
 # paramenters (f, rocof).
 # Recursive behaviour if none of samples come for the required time stamp.
+
+
+def on_connect(client, userdata, flags, rc):
+    print("Connected with result code "+str(rc))
+    client.subscribe("/asd1234rtds/rtds001/attrs") # Subscribing in on_connect() means that if we lose the connection and reconnect then subscriptions will be renewed.
+
+
+# The callback for when a PUBLISH message is received from the server.
+def on_message(client, userdata, msg):
+    # print("Topic: " + msg.topic+" Payload: "+str(msg.payload))
+    global meas_set
+
+    now = datetime.utcnow()
+    entire_str = msg.payload.decode("utf-8")
+    print(entire_str)
+
+    for ri in range(len(ran)):
+        print(ran)
+        print(ran[ri])
+        if not ri == len(ran)-1:
+            val = find_between(str(entire_str+"|end"), ran[ri]+"|", "|"+ran[ri+1])
+        else:
+            val = find_between(str(entire_str + "|end"), ran[ri] + "|", "|end")
+
+        # meas_set[ras == ras[ri]] = 0
+        try:
+            meas_set[ras == ras[ri]] = val
+        except ValueError:
+            meas_set[ras == ras[ri]] = 0
+    print(meas_set)
+    return
+
+    if "rtds001@sc_brk1|" in entire_str:
+        value = float(entire_str.replace("rtds001@sc_brk1|", ""))
+        data_to_RTDS[0] = value
+    else:
+        print("Cannot parse the message.")
+
+
+def find_between(s, first, last):
+    try:
+        start = s.index(first) + len(first)
+        end = s.index(last, start)
+        return s[start:end]
+    except ValueError:
+        return ""
+
+
+def mqtt_loop():
+    client = paho.Client()
+    client.on_connect = on_connect
+    client.on_message = on_message
+    client.connect("10.12.0.10", 1883, 60)
+    print('mqtt loop: starting')
+    client.loop_forever()
 
 
 def pdc_newest():
@@ -118,15 +174,18 @@ def send_setpoints(ts):
 
 if __name__ == '__main__':
 
+    ran = np.concatenate((rtds_names, rtds_text))
     ras = np.concatenate((rtds_signals, rtds_tsignals))
+
     # Variables for live update:
-    meas_set = np.zeros(len(ras))
+    meas_set = np.zeros(len(ras))  # measurements from RTDS and PMU to update
     f1_alert = 0
     f2_alert = 0
     f3_alert = 0
     v_alert = 0
 
-    setpoints = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # see config for what is what
+    setpoints = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # Setpoints updated by different modules and
+    # sent. See config for what is what
 
     # message to RTDS:
     url = 'http://' + cloud_ip + ':1026/v2/entities/Simulation:1/attrs?type=' + device_type
@@ -134,17 +193,17 @@ if __name__ == '__main__':
          'fiware-service': fiware_service,
          'fiware-servicepath': '/'}
 
-    p1 = multiprocessing.Process(target=pdc_newest)
+    p1 = multiprocessing.Process(target=mqtt_loop)
     p1.start()
-    p12 = multiprocessing.Process(target=pdc_newest)
-    p12.start()
+    # p2 = multiprocessing.Process(target=pdc_newest)
+    # p2.start()
     # p2 = multiprocessing.Process(target=sc_continous)
     # p2.start()
     # p3 = multiprocessing.Process(target=shedding_detector)
     # p3.start()
 
     p1.join()
-    p12.join()
+    # p12.join()
     # p2.join()
     # p3.join()
 
