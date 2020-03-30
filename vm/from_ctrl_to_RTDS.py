@@ -20,11 +20,6 @@ rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3",
                           "qref1", "qref2", "qref3", "qref4"])
 
 
-# subscribe to the setpoints from the cloud and receive them
-# (any storing in DB for grafana necessary?)
-# The callback for when the client receives a CONNACK response from the server.
-
-
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
     client.subscribe("/asd1234rtds/rtds001/cmd") # Subscribing in on_connect() means that if we lose the connection and reconnect then subscriptions will be renewed.
@@ -36,7 +31,6 @@ def on_message(client, userdata, msg):
 
     now = datetime.utcnow()
     entire_str = msg.payload.decode("utf-8")
-    print(entire_str)
 
     if "rtds001@sc_brk1|" in entire_str:
         value = float(entire_str.replace("rtds001@sc_brk1|", ""))
@@ -72,7 +66,7 @@ def on_message(client, userdata, msg):
         value = float(entire_str.replace("rtds001@qref4|", ""))
         data_to_RTDS[10] = value
     else:
-        print("another setpoint than exepcted")
+        print("another setpoint than exepeted")
 
 
 def find_between(s, first, last):
@@ -90,19 +84,15 @@ def mqtt_loop():
     client.on_message = on_message
     client.connect("10.12.0.10", 1883, 60)
     print('mqtt loop: starting')
-    # Blocking call that processes network traffic, dispatches callbacks and
-    # handles reconnecting.
-    # Other loop*() functions are available that give a threaded interface and a
-    # manual interface.
     client.loop_forever()
 
 
 def send_to_RTDS():
-    print('send to RTDS: starting')
+    print('Sending to RTDS: starting')
     while True:
-        print(data_to_RTDS)
-        # send(data_to_RTDS, IP_send, Port_send)
-        time.sleep(0.5)
+        send(data_to_RTDS, IP_send, Port_send)
+        print("Sent.")
+        time.sleep(0.1)
 
 
 if __name__ == '__main__':
