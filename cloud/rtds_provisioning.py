@@ -26,22 +26,22 @@ broker_ip = cloud_ip
 port = 1883
 api_key = "asd1234rtds"
 
-
 def on_publish(client,userdata,result):             #create function for callback
     print("My data published! \n")
     pass
 
-## provisioning device>mqtt borker>orion>quantum leap>crate>grafana communication
+## provisioning communication: device(mqtt)-though MQTT Broker and Orion- to Quantum Leap + Crate DB + Grafana
+print("\n Provisioning communication:"
+      "\n\t\t - RTDS measurements to FIWARE"
+      "\n\t\t - Controller (in FIWARE) control settings to RTDS acutators")
 
-# 1. pushing the model
-print("\n --> 1. data model")
+# 1. push data model
+print("\n--> 1. Provisioning RTDS data model.")
 
 url = 'http://' + cloud_ip + ':1026/v2/entities'
 h = {'Content-Type': 'application/json',
      'fiware-service': fiware_service,
      'fiware-servicepath': '/'}
-
-
 d = {
         "id": "Simulation:1",
         "type": device_type}
@@ -54,14 +54,12 @@ for r in np.arange(len(rtds_signals)):
 
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
-
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
+print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
 
 time.sleep(1)
 
 # 2. provisioning a service group for mqtt
-print("\n --> 2. provisioning a service group for mqtt")
+print("\n--> 2. Provisioning service groups for MQTT.")
 
 url = 'http://' + cloud_ip + ':4041/iot/services'
 h = {'Content-Type': 'application/json',
@@ -81,13 +79,12 @@ d = {
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
 
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
+print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
 
 time.sleep(1)
 
 # 3. provisioning sensors and actuatros
-print("\n --> 3. provisioning sensors AND acutuators")
+print("\n--> 3. Provisioning sensors and actuators devices.")
 
 url = 'http://' + cloud_ip + ':4041/iot/devices'
 h = {'Content-Type': 'application/json',
@@ -101,12 +98,11 @@ for ch in np.arange(len(rtds_names)):
 
 for ch in np.arange(len(rtds_text)):
     attributes.append({"object_id": rtds_text[ch], "name": rtds_tsignals[ch], "type": "Text"})
-print(attributes)
+# print(attributes)
 
 commands = []
 for ch in np.arange(len(rtds_commands)):
     commands.append({"name": rtds_commands[ch], "type": "command", "value": "Number"})
-
 
 d = {
 "devices": [
@@ -119,18 +115,6 @@ d = {
        "timezone":    "Europe/Berlin",
        "attributes":  attributes,
        "commands":  commands  # provisioning of actuators
-       # [
-       #      {
-       #         "name": "setpoint1",
-       #         "type": "command",
-       #         "value": "Number"
-       #      },
-       #      {
-       #         "name": "setpoint2",
-       #         "type": "command",
-       #         "value": "Number"
-       #      }
-       # ]
    }
 ]
 }
@@ -139,14 +123,11 @@ d = json.dumps(d).encode('utf8')
 
 if True:
     response = requests.post(url, data=d, headers=h)
-
-    print(response.status_code, response.reason)  # HTTP
-    print(response.text)  # TEXT/HTML
-
+    print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
     time.sleep(1)
 
 # 4. making subscriptions of QL
-print("\n --> 4. making subscriptions of QL")
+print("\n--> 4. making subscriptions of QL.")
 
 url = 'http://' + cloud_ip + ':1026/v2/subscriptions/'
 h = {'Content-Type': 'application/json',
@@ -182,33 +163,17 @@ d = {
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
 
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
+print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
 
 client1 = paho.Client("control1")  # create client object
 client1.on_publish = on_publish  # assign function to callback
 client1.connect(broker_ip, port)  # establish connection
-
-# test_payload = ""
-# for r in np.arange(len(rtds_names)):
-#     rn = rtds_names[r]
-#     test_payload += rn + "|" + "0.0"
-#     if not r == len(rtds_names)-1:
-#         test_payload += "|"
-#
-# print("test_payload: \n" + str(test_payload))
-# print("mosquitto_pub -h "+broker_ip+" -t \"/"+api_key+"/"+device_id+"/attrs\" -m \""+test_payload+"\" ")
-
-# ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
-
 time.sleep(1)
 
-# enabling context broker commands -ACTUATORS
-# "ENABLING CONTEXT BROKER COMMANDS" in tutorial https://fiware-tutorials.readthedocs.io/en/latest/iot-over-mqtt/index.html
-# Once the commands have been registered it will be possible to actuate by sending requests to the Orion Context Broker,
-# rather than sending UltraLight 2.0 requests directly the IoT devices.
+# enabling context broker commands for actuators
+# See: https://fiware-tutorials.readthedocs.io/en/latest/iot-over-mqtt/index.html
 
-print("\n --> 2.2. enabling context broker commands")
+print("\n--> 5. Enabling context broker commands.")
 url = 'http://' + cloud_ip + ':1026/v2/registrations'
 h = {'Content-Type': 'application/json',
      'fiware-service': fiware_service,
@@ -233,7 +198,6 @@ d = {
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
 
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
+print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
 
 time.sleep(1)

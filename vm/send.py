@@ -4,7 +4,6 @@ import struct
 import numpy as np
 import time
 
-# data is an array
 
 def send(data, IP, Port):
 	

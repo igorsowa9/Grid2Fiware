@@ -30,10 +30,13 @@ def on_publish(client,userdata,result):             #create function for callbac
     pass
 
 
-## provisioning device>mqtt borker>orion>quantum leap>crate>grafana communication
+## provisioning communication: device(mqtt)-though MQTT Broker and Orion- to Quantum Leap + Crate DB + Grafana
+print("\n Provisioning communication:"
+      "\n\t\t - RTDS measurements to FIWARE"
+      "\n\t\t - Controller (in FIWARE) control settings to RTDS acutators")
 
 # 1. pushing the model
-print("\n --> 1. data model")
+print("\n --> 1. Provisioning PMU data model.")
 
 url = 'http://' + cloud_ip + ':1026/v2/entities'
 h = {'Content-Type': 'application/json',
@@ -54,36 +57,14 @@ for ch in np.arange(len(channel_names)):
         d2 = {key: value}
         d.update(d2)
 
-# d = {
-#         "id": "Simulation:1",
-#         "type": device_type,
-#         "v1a_magnitude": {
-#           "value": 0.0
-#         },
-#         "v1a_frequency": {
-#           "value": 0.0
-#         },
-#         "v1a_angle": {
-#           "value": 0.0
-#         },
-#         "v1a_rocof": {
-#           "value": 0.0
-#         },
-#         "v1a_timestamp": {
-#           "value": 0.0
-#         }
-# }
-
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
 
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
-
+print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
 time.sleep(1)
 
 # 2. provisioning a service group for mqtt
-print("\n --> 2. provisioning a service group for mqtt")
+print("\n --> 2. Provisioning a service group for mqtt")
 
 url = 'http://' + cloud_ip + ':4041/iot/services'
 h = {'Content-Type': 'application/json',
@@ -103,13 +84,11 @@ d = {
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
 
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
-
+print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
 time.sleep(1)
 
 # 3. provisioning sensors
-print("\n --> 3. provisioning sensors")
+print("\n --> 3. Provisioning sensors")
 
 url = 'http://' + cloud_ip + ':4041/iot/devices'
 h = {'Content-Type': 'application/json',
@@ -145,36 +124,14 @@ d = {
 ]
 }
 
-# d = {
-# "devices": [
-#    {
-#      "device_id":   "" + device_id + "",
-#      "entity_name": "Simulation:1",
-#      "entity_type": "" + device_type + "",
-#      "protocol":    "PDI-IoTA-UltraLight",
-#      "transport":   "MQTT",
-#      "timezone":    "Europe/Berlin",
-#      "attributes": [
-#        {"object_id": "ch1a", "name": "v1a_magnitude", "type": "Number"},
-#        {"object_id": "ch1b", "name": "v1a_frequency", "type": "Number"},
-#        {"object_id": "ch1c", "name": "v1a_angle", "type": "Number"},
-#        {"object_id": "ch1d", "name": "v1a_rocof", "type": "Number"},
-#        {"object_id": "ch1e", "name": "v1a_timestamp", "type": "Number"}
-#     ]
-#    }
-# ]
-# }
-
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
 
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
-
+print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
 time.sleep(1)
 
 # 4. making subscriptions of QL
-print("\n --> 4. making subscriptions of QL")
+print("\n --> 4. Making subscriptions of QL")
 
 url = 'http://' + cloud_ip + ':1026/v2/subscriptions/'
 h = {'Content-Type': 'application/json',
@@ -208,42 +165,10 @@ d = {
        "throttling": 0
 }
 
-# d = {
-#        "description": "Notification Quantumleap",
-#        "subject": {
-#            "entities": [
-#                {"id": "Simulation:1", "type": device_type}
-#            ],
-#            "condition": {
-#                "attrs": [
-#                    "v1a_magnitude",
-#                    "v1a_frequency",
-#                    "v1a_angle",
-#                    "v1a_rocof",
-#                    "v1a_timestamp"
-#                ]
-#            }
-#                },
-#            "notification": {
-#                 "http": {"url": "http://quantumleap:8668/v2/notify"},
-#                 "attrs": [
-#                    "v1a_magnitude",
-#                    "v1a_frequency",
-#                    "v1a_angle",
-#                    "v1a_rocof",
-#                    "v1a_timestamp"
-#                ],
-#             "metadata": ["dateCreated", "dateModifid"]
-#            },
-#        "throttling": 0
-# }
-
 d = json.dumps(d).encode('utf8')
 response = requests.post(url, data=d, headers=h)
 
-print(response.status_code, response.reason)  # HTTP
-print(response.text)  # TEXT/HTML
-
+print(response.status_code, response.reason, " -- ", response.text)  # HTTP # TEXT/HTML
 
 client1 = paho.Client("control1")  # create client object
 client1.on_publish = on_publish  # assign function to callback
@@ -258,7 +183,7 @@ for ch in np.arange(len(channel_names)):
         if not (ch == len(channel_names)-1 and sub == len(sub_names)-1):
             test_payload += "|"
 
-print("test command (not executed): \n" + str(test_payload))
+print("\nTest command (not executed):\n")
 print("mosquitto_pub -h "+broker_ip+" -t \"/"+api_key+"/"+device_id+"/attrs\" -m \""+test_payload+"\" ")
 
 # ret = client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)

@@ -5,22 +5,21 @@ import time
 import numpy as np
 from datetime import datetime
 import multiprocessing
-from controller_config import *
+from shedding_controller_config import *
 import paho.mqtt.client as paho
 
-# parallel proceses: PDC, detection and controller (at trigger from detection).
+# parallel processes of cloud controller operation:
+# PDC,
+# Event detection,
+# Controller (at trigger from detection).
 
-# PDC receives the phasors and synchronizes them.
-# Because of loss of synchrophasor data due to arrivals and dropouts etc.
-# "Buffers" the arriving data to choose only those from required moment
-# It can reconstruct the missing data as follows:
-# at 0 time it is inicilized with nominal values of measurement nodes
-# Missing Amplitude and phase angle are replaced by last received samples.
-# Missing frequency and ROCOF are interpolated based on maximum likelihood value or arithmetic mean of the available
-# samples.
-# In other words recursive behaviour in terms of local parameter (V, angle) and interpolative for the global
-# paramenters (f, rocof).
-# Recursive behaviour if none of samples come for the required time stamp.
+# PDC receives the phasors and synchronizes them. It's necessary due to of loss of synchrophasor data due to arrivals and dropouts etc.
+# It buffers the arriving data to choose only those from required moment. It can reconstruct the missing data as follows:
+#  - at 0 time it is inicilized with nominal values of measurement nodes
+#  - Missing Amplitude and phase angle are replaced by last received samples.
+#  - Missing frequency and ROCOF are interpolated based on maximum likelihood value or arithmetic mean of the available samples.
+# In other words recursive behaviour in terms of local parameter (V, angle) and interpolative for the global paramenters (f, rocof).
+# Recursive behaviour also in case no samples come for the required time stamp.
 
 
 ran = np.concatenate((rtds_names, rtds_text))

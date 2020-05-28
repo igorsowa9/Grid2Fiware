@@ -8,30 +8,22 @@ import pandas as pd
 from receive import receive
 from settings import *
 
-rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7"])
-rtds_text = np.array(["ts1", "add1"])
-
-rtds_signals = np.array(["w3", "f_v3a", "rocof_v3a", "vo1llrms", "vo2llrms", "vo3llrms", "vo4llrms"])
-rtds_tsignals = np.array(["ts_measurement", "notes"])
-NumData_fromRTDS = 7
-
 fiware_service = "grid_uc"
 device_type = "rtds1"
 device_id = "rtds001"
 
-cloud_ip = "10.12.0.10"
-# cloud_ip = "127.0.0.1"
+cloud_ip = "10.12.0.10"  # if tunelled!
 broker_ip = cloud_ip
 port = 1883
 api_key = "asd1234rtds"
 
 
-def on_publish(client, userdata, result):  # create function for callback
-    # print("My data published! \n")
+def on_publish(client, userdata, result):
+    print("RTDS data published to cloud! \n")
     pass
 
+
 def storedata_attempt(client1):
-    global c
     # receive from RTDS:
     npdata = np.round(np.array(receive(IP_receive, Port_receive, NumData_fromRTDS)),4)
     ts_prec = 3
@@ -39,7 +31,7 @@ def storedata_attempt(client1):
     ts_ms = np.round(np.round(datetime.now().timestamp(), ts_prec) * 10**ts_prec)
     other_data = np.array([ts_ms, pd.Timestamp(ts_m, unit='s')])
     print("Values received from RTDS: ", npdata)
-    print("other_data: ", other_data)
+    print("Data to be merged: ", other_data)
 
     # build message
     test_payload = ""
@@ -55,23 +47,20 @@ def storedata_attempt(client1):
         if not r == len(rtds_text) - 1:
             test_payload += "|"
 
-    print("current_payload: \n" + str(test_payload))
-
-    # publish to the cloud:
+    print("Payload before publishing: \n" + str(test_payload))
     client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
     
 
 def storedata_once(client1):
     while True:
-        storedata_attempt(client1)
-#        try:
-#            storedata_attempt()
-#        except:
-#            print("Unexpected error:", sys.exc_info())
-#            # logging.error(" When: " + str(datetime.now()) + " --- " + "Error in storedataOnce(): ", sys.exc_info())
-#            pass
-#        else:
-#            break
+        try:
+            storedata_attempt(client1)
+        except:
+            print("Unexpected error:", sys.exc_info())
+            # logging.error(" When: " + str(datetime.now()) + " --- " + "Error in storedataOnce(): ", sys.exc_info())
+            pass
+        else:
+            break
 
 
 def storedata_repeatedly():

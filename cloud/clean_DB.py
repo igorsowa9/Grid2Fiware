@@ -38,6 +38,7 @@ def test_access():
 if __name__ == '__main__':
     while True:
         test_access()
+        clean()
 
 # clean()
 
