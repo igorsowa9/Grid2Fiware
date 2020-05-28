@@ -11,15 +11,15 @@ RTDS REAL-TIME: Yes
 CURRENT-SUBSYSTEM: 1
 DEFAULT-VIEWMODE: 3
 DEFAULT-ZOOM: 76
-DEFAULT-POINT: 0,246
-DEFAULT-POINT-ABSOLUTE: 694,857
+DEFAULT-POINT: 684,230
+DEFAULT-POINT-ABSOLUTE: 1594,836
 1 SUBSYSTEMS
 SUBSYSTEM-TAB-NAME: SS #1
 SUBSYSTEM-CANVAS-SIZE:3000,2000
 SUBSYSTEM-TITLE:
 SUBSYSTEM-COMMENT:
 SUBSYSTEM-PRINTMODE:     PRINT-LAYOUT:CUSTOM    PAPER-DIMENSIONS:8.5x11
-211 COMPONENTS
+232 COMPONENTS
 rtds_risc_NET
 	48 48 0 0 37
 	rqnmp	:Two
@@ -65,7 +65,7 @@ rtds_risc_ctl_GTAOOUT
 	Port	:1
 	Card	:1
 	Proc	:20
-	Pri	:10
+	Pri	:68
 	enb1	:Yes
 	enb2	:Yes
 	enb3	:Yes
@@ -532,7 +532,7 @@ rtds_sharcu_SRC1PH2N
 	CNVGnam	:Converged
 	TrigSigCC	:ImpTrig
 rtds_sharc_sld_BUSLABEL
-	752 208 0 0 31
+	752 208 0 0 32
 	BName	:BUS2
 	NA	:Vc2A
 	NB	:Vc2B
@@ -564,13 +564,14 @@ rtds_sharc_sld_BUSLABEL
 	chnC	:1
 	scl	:187.79
 	damod	:align
+	Loadflow_RST	:BUS: $Num, Vd, Ad
 rtds_BLACKTEXT1
 	1104 208 0 0 3
 	AL1	:Z23
 	COL	:BLUE
 	LOC	:BELOW
 rtds_sharc_sld_BUSLABEL
-	976 208 0 0 31
+	976 208 0 0 32
 	BName	:BUS2o
 	NA	:Vo2A
 	NB	:Vo2B
@@ -602,6 +603,7 @@ rtds_sharc_sld_BUSLABEL
 	chnC	:1
 	scl	:187.79
 	damod	:align
+	Loadflow_RST	:BUS: $Num, Vd, Ad
 HIERARCHY
 	336 176 0 0 28
 	Name	:Control2
@@ -650,7 +652,7 @@ _rtds_pi_ctlr.def
 	YLO	:-10.0
 	YINIT	:0.0
 	Proc	:1
-	Pri	:187
+	Pri	:188
 rtds_sharc_ctl_SUM3
 	304 80 2 1 7
 	Num	:TWO
@@ -659,7 +661,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:189
+	Pri	:190
 wirelabel
 	304 48 0 0 3
 	Name	:wff
@@ -683,11 +685,11 @@ rtds_sharc_ctl_INTGL
 	PItype	:Fixed
 	Tic	:1
 	Proc	:1
-	Pri	:194
+	Pri	:195
 rtds_sharc_ctl_ANGLEFIX
 	528 112 0 0 2
 	Proc	:35
-	Pri	:175
+	Pri	:176
 wirelabel
 	592 112 0 0 3
 	Name	:phi2q
@@ -698,7 +700,7 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:193
+	Pri	:194
 WIRE
 	368 208 0 0 2
 	-32 -4 32 4
@@ -712,7 +714,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:196
+	Pri	:197
 WIRE
 	464 208 0 0 2
 	-32 -4 32 4
@@ -736,7 +738,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:202
+	Pri	:203
 WIRE
 	656 208 0 0 2
 	-32 -4 0 4
@@ -757,7 +759,7 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:192
+	Pri	:193
 WIRE
 	400 400 0 0 2
 	-32 -4 0 4
@@ -776,7 +778,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:195
+	Pri	:196
 WIRE
 	496 336 0 0 2
 	-32 -4 0 4
@@ -800,7 +802,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:205
+	Pri	:206
 WIRE
 	656 368 0 0 2
 	-32 -4 0 4
@@ -830,7 +832,7 @@ rtds_sharc_ctl_GAIN
 	592 272 0 0 3
 	K	:-0.94248
 	Proc	:1
-	Pri	:186
+	Pri	:187
 annotation
 	592 240 0 0 3
 	AL1	:w*Lf
@@ -840,7 +842,7 @@ rtds_sharc_ctl_GAIN
 	592 432 0 0 3
 	K	:0.94248
 	Proc	:1
-	Pri	:185
+	Pri	:186
 annotation
 	592 400 0 0 3
 	AL1	:-w*Lf
@@ -861,14 +863,14 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:207
+	Pri	:208
 rtds_sharc_ctl_LIMITS
 	816 368 0 1 5
 	IorF	:REAL
 	ULim	:1
 	LLim	:-1
 	Proc	:1
-	Pri	:208
+	Pri	:209
 WIRE
 	720 368 0 0 2
 	-32 -4 0 4
@@ -904,14 +906,14 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:204
+	Pri	:205
 rtds_sharc_ctl_LIMITS
 	816 208 0 1 5
 	IorF	:REAL
 	ULim	:10
 	LLim	:-10
 	Proc	:1
-	Pri	:206
+	Pri	:207
 wirelabel
 	848 208 0 0 3
 	Name	:md2
@@ -950,7 +952,7 @@ rtds_sharc_ctl_DQ02ABC
 	Ld	:Vq lags Vd
 	Pk	:Peak
 	Proc	:1
-	Pri	:209
+	Pri	:210
 wirelabel
 	1040 272 0 0 3
 	Name	:Vinv2A
@@ -1066,7 +1068,7 @@ rtds_sharc_ctl_LIMITS
 	ULim	:-0.000001
 	LLim	:-10e6
 	Proc	:1
-	Pri	:184
+	Pri	:185
 wirelabel
 	240 304 0 0 3
 	Name	:Vc2d_nz
@@ -1088,7 +1090,7 @@ rtds_sharc_ctl_LIMITS
 	ULim	:10e6
 	LLim	:0.00001
 	Proc	:1
-	Pri	:183
+	Pri	:184
 wirelabel
 	80 368 0 0 3
 	Name	:Vc2d
@@ -1107,7 +1109,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:188
+	Pri	:189
 WIRE
 	176 272 0 0 2
 	-32 -4 0 4
@@ -1158,7 +1160,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:201
+	Pri	:202
 rtds_sharc_ctl_INTGL
 	816 624 0 0 9
 	T	:1.0
@@ -1169,7 +1171,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:200
+	Pri	:201
 WIRE
 	752 624 0 0 2
 	-32 -4 32 4
@@ -1193,7 +1195,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:203
+	Pri	:204
 WIRE
 	912 624 0 0 2
 	-32 -4 0 4
@@ -1234,7 +1236,7 @@ rtds_sharc_ctl_GAIN
 	336 240 0 0 3
 	K	:1000
 	Proc	:1
-	Pri	:191
+	Pri	:192
 WIRE
 	208 240 0 0 2
 	0 -4 32 4
@@ -1249,7 +1251,7 @@ rtds_sharc_ctl_GAIN
 	272 240 0 0 3
 	K	:1.0
 	Proc	:1
-	Pri	:190
+	Pri	:191
 WIRE
 	368 240 0 0 2
 	0 -4 32 4
@@ -1269,7 +1271,7 @@ rtds_sharc_ctl_GAIN
 	432 176 0 0 3
 	K	:1000
 	Proc	:1
-	Pri	:182
+	Pri	:183
 WIRE
 	368 176 0 0 2
 	0 -4 32 4
@@ -1304,7 +1306,7 @@ rtds_sharc_ctl_GAIN
 	432 336 0 0 3
 	K	:1000
 	Proc	:1
-	Pri	:181
+	Pri	:182
 WIRE
 	368 336 0 0 2
 	0 -4 32 4
@@ -1324,7 +1326,7 @@ rtds_sharc_ctl_GAIN
 	176 80 0 0 3
 	K	:1000
 	Proc	:1
-	Pri	:180
+	Pri	:181
 WIRE
 	112 80 0 0 2
 	-32 -4 32 4
@@ -1446,7 +1448,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:199
+	Pri	:200
 wirelabel
 	400 528 0 0 3
 	Name	:Id_star2
@@ -1472,13 +1474,13 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:198
+	Pri	:199
 rtds_sharc_ctl_MUL
 	464 528 0 0 4
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:197
+	Pri	:198
 wirelabel
 	976 368 0 0 3
 	Name	:phi2fin
@@ -1693,7 +1695,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:179
+	Pri	:180
 WIRE
 	272 336 0 0 2
 	0 -4 32 4
@@ -1743,7 +1745,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:178
+	Pri	:179
 WIRE
 	400 240 0 0 2
 	0 -4 32 4
@@ -1819,7 +1821,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:177
+	Pri	:178
 WIRE
 	592 240 0 0 2
 	0 -4 32 4
@@ -1953,7 +1955,7 @@ rtds_sharc_ctl_SIGSW
 	DPath	:REAL
 	Pos	:A
 	Proc	:1
-	Pri	:176
+	Pri	:177
 wirelabel
 	464 496 0 0 3
 	Name	:phi2q
@@ -2230,7 +2232,7 @@ BUS
 	L3ArcAtEnd1	:0
 	L3ArcAtEnd2	:1
 rtds_sharc_sld_BUSLABEL
-	1680 208 0 0 31
+	1680 208 0 0 32
 	BName	:BUSgrid
 	NA	:VgridA
 	NB	:VgridB
@@ -2262,6 +2264,7 @@ rtds_sharc_sld_BUSLABEL
 	chnC	:1
 	scl	:187.79
 	damod	:align
+	Loadflow_RST	:BUS: $Num, Vd, Ad
 lf_rtds_sharc_sld_SERIESRLC
 	656 272 2 1 16
 	R	:0
@@ -2288,7 +2291,7 @@ rtds_sharc_ctl_SLIDER
 	Min	:-10e7
 	Units	:
 lf_rtds_sharc_sld_SRC
-	1936 272 0 1 106
+	1936 272 0 1 107
 	Name	:src
 	Type	:R
 	Tc	:0.05
@@ -2395,6 +2398,7 @@ lf_rtds_sharc_sld_SRC
 	Abit	:1
 	Bbit	:1
 	Cbit	:1
+	Loadflow_RST	:SOURCE:  $LFIdent, Es, Ph, P, Q
 DASHED_LINE
 	1808 432 0 0 2
 	-64 -4 64 4
@@ -2540,168 +2544,6 @@ rtds_udc_DYLOAD
 	Q_L0	:0.0
 	LFIdent	:0
 	Cts	:0.1
-GROUP
-	2256 592 0 0 0
-	18
-DASHED_LINE
-	2448 624 1 0 2
-	-4 -128 4 96
-	LW	:1
-	COL	:RED
-annotation
-	2384 688 0 0 3
-	AL1	:controller from GTNET
-	AL2	:3 Phase Breaker
-	FSize	:10
-annotation
-	2256 688 0 0 3
-	AL1	:controller from GTNET
-	AL2	:3 Phase Breaker
-	FSize	:10
-lf_rtds_sharc_sld_BREAKER
-	2384 560 0 0 26
-	Anam	:BRK3A
-	ARcls	:0.1
-	Aholdi	:0.0
-	Asig	:sc_brk3int
-	Abit	:1
-	Amon	:No
-	IAnam	:IBRKA
-	Bnam	:BRK3B
-	BRcls	:0.1
-	Bholdi	:0.0
-	Bsig	:sc_brk3int
-	Bbit	:2
-	Bmon	:No
-	IBnam	:IBRKB
-	Cnam	:BRK3C
-	CRcls	:0.1
-	Choldi	:0.0
-	Csig	:sc_brk3int
-	Cbit	:3
-	Cmon	:No
-	ICnam	:IBRKC
-	A1PosY	:-32
-	C1PosY	:32
-	A2PosY	:-32
-	C2PosY	:32
-	stat	:Closed
-DASHED_LINE
-	2384 496 0 0 2
-	-64 -4 64 4
-	LW	:1
-	COL	:RED
-DASHED_LINE
-	2320 592 1 0 2
-	-4 -96 4 128
-	LW	:1
-	COL	:RED
-DASHED_LINE
-	2384 720 0 0 2
-	-64 -4 64 4
-	LW	:1
-	COL	:RED
-lf_rtds_sharc_sld_BREAKER
-	2256 560 0 0 26
-	Anam	:BRK2A
-	ARcls	:0.1
-	Aholdi	:0.0
-	Asig	:sc_brk2int
-	Abit	:1
-	Amon	:No
-	IAnam	:IBRKA
-	Bnam	:BRK2B
-	BRcls	:0.1
-	Bholdi	:0.0
-	Bsig	:sc_brk2int
-	Bbit	:2
-	Bmon	:No
-	IBnam	:IBRKB
-	Cnam	:BRK2C
-	CRcls	:0.1
-	Choldi	:0.0
-	Csig	:sc_brk2int
-	Cbit	:3
-	Cmon	:No
-	ICnam	:IBRKC
-	A1PosY	:-32
-	C1PosY	:32
-	A2PosY	:-32
-	C2PosY	:32
-	stat	:Closed
-DASHED_LINE
-	2320 624 1 0 2
-	-4 -128 4 96
-	LW	:1
-	COL	:RED
-DASHED_LINE
-	2256 496 0 0 2
-	-64 -4 64 4
-	LW	:1
-	COL	:RED
-DASHED_LINE
-	2192 592 1 0 2
-	-4 -96 4 128
-	LW	:1
-	COL	:RED
-DASHED_LINE
-	2256 720 0 0 2
-	-64 -4 64 4
-	LW	:1
-	COL	:RED
-annotation
-	2128 688 0 0 3
-	AL1	:controller from GTNET
-	AL2	:3 Phase Breaker
-	FSize	:10
-lf_rtds_sharc_sld_BREAKER
-	2128 560 0 0 26
-	Anam	:BRK1A
-	ARcls	:0.1
-	Aholdi	:0.0
-	Asig	:sc_brk1int
-	Abit	:1
-	Amon	:No
-	IAnam	:IBRKA
-	Bnam	:BRK1B
-	BRcls	:0.1
-	Bholdi	:0.0
-	Bsig	:sc_brk1int
-	Bbit	:2
-	Bmon	:No
-	IBnam	:IBRKB
-	Cnam	:BRK1C
-	CRcls	:0.1
-	Choldi	:0.0
-	Csig	:sc_brk1int
-	Cbit	:3
-	Cmon	:No
-	ICnam	:IBRKC
-	A1PosY	:-32
-	C1PosY	:32
-	A2PosY	:-32
-	C2PosY	:32
-	stat	:Closed
-DASHED_LINE
-	2192 624 1 0 2
-	-4 -128 4 96
-	LW	:1
-	COL	:RED
-DASHED_LINE
-	2128 496 0 0 2
-	-64 -4 64 4
-	LW	:1
-	COL	:RED
-DASHED_LINE
-	2064 592 1 0 2
-	-4 -96 4 128
-	LW	:1
-	COL	:RED
-DASHED_LINE
-	2128 720 0 0 2
-	-64 -4 64 4
-	LW	:1
-	COL	:RED
 lf_rtds_sharc_sld_BREAKER
 	1520 432 1 0 26
 	Anam	:BRKinterA
@@ -2808,7 +2650,7 @@ BUS
 	L3ArcAtEnd1	:0
 	L3ArcAtEnd2	:1
 BUS
-	2064 880 0 0 26
+	2192 880 0 0 26
 	LW3	:1.0
 	ACOL	:ORANGE
 	BCOL	:RED
@@ -2817,17 +2659,17 @@ BUS
 	SCOL	:RED
 	CONVERGE	:NO
 	DOCUMENT	:NO
-	x1L1	:-128
+	x1L1	:-256
 	y1L1	:-32
-	x2L1	:128
+	x2L1	:224
 	y2L1	:-32
-	x1L2	:-128
+	x1L2	:-256
 	y1L2	:0
-	x2L2	:128
+	x2L2	:224
 	y2L2	:0
-	x1L3	:-128
+	x1L3	:-256
 	y1L3	:32
-	x2L3	:128
+	x2L3	:224
 	y2L3	:32
 	L1ArcAtEnd1	:0
 	L1ArcAtEnd2	:0
@@ -2988,7 +2830,7 @@ rtds_sharc_ctl_MONO
 	OT	:1
 	OR	:0
 	Proc	:1
-	Pri	:13
+	Pri	:12
 rtds_sharc_ctl_DIAL
 	80 48 0 0 34
 	Name	:LG_FLT
@@ -3035,12 +2877,12 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:INTEGER
 	Proc	:1
-	Pri	:68
+	Pri	:69
 rtds_sharc_ctl_GAIN
 	80 112 0 0 3
 	K	:0.02
 	Proc	:1
-	Pri	:12
+	Pri	:11
 wirelabel
 	336 48 0 0 3
 	Name	:LGFLT
@@ -3063,161 +2905,6 @@ WIRE
 	-32 -4 32 4
 	COL	:RED
 	LW	:1.0
-GROUP
-	2064 1200 0 0 0
-	7
-WIRE
-	2096 1264 1 0 2
-	-4 -32 4 0
-	COL	:RED
-	LW	:1.0
-wirelabel
-	2096 1264 0 0 3
-	Name	:Q2_ref_VA
-	COL	:BLUE
-	Monitor	:Yes
-rtds_sharc_ctl_GAIN
-	2096 1200 3 0 3
-	K	:1e-6
-	Proc	:1
-	Pri	:64
-WIRE
-	2032 1264 1 0 2
-	-4 -32 4 0
-	COL	:RED
-	LW	:1.0
-rtds_sharc_ctl_GAIN
-	2032 1200 3 0 3
-	K	:1e-6
-	Proc	:1
-	Pri	:63
-wirelabel
-	2032 1264 0 0 3
-	Name	:P2_ref_W
-	COL	:BLUE
-	Monitor	:Yes
-rtds_udc_DYLOAD
-	2064 1136 0 0 69
-	Name	:Dload32
-	type	:RL
-	bal	:YES
-	btype	:R-X
-	YD	:Y
-	cc	:CC
-	gnd	:No
-	Vmeas	:Internal
-	Vbus	:0.4
-	Vmin	:0.5
-	constF	:Yes
-	freq	:50
-	FreqDevMax	:2.0
-	T	:0.01
-	Tm	:0.003
-	Pinit	:0.5
-	Pmin	:0.0001
-	Pmax	:1000
-	Qinit	:0.000001
-	Qmin	:0.000001
-	Qmax	:1000
-	Pinit1	:100
-	Pinit2	:100
-	Pinit3	:100
-	Qinit1	:100
-	Qinit2	:100
-	Qinit3	:100
-	SorC	:Runtime
-	Fract	:Constant
-	Po	:100
-	Qo	:100
-	TS	:10.0
-	Tf	:0.01
-	Pordcc	:Pordcc
-	Qordcc	:Qordcc
-	ZPcc	:ZPcc
-	IPcc	:IPcc
-	PPcc	:PPcc
-	ZQcc	:ZQcc
-	IQcc	:IQcc
-	PQcc	:PQcc
-	ZP	:20
-	IP	:40
-	PP	:40
-	ZQ	:20
-	IQ	:40
-	PQ	:40
-	AorM	:Automatic
-	CARD	:1
-	Rprc	:A
-	AM	:NO
-	CORE	:1
-	pPmon	:Yes
-	pQmon	:Yes
-	pIAmon	:No
-	pIBmon	:No
-	pICmon	:No
-	nPmon	:Pload32monit
-	nQmon	:Qload32monit
-	nIAmon	:IA
-	nIBmon	:IB
-	nICmon	:IC
-	A1PosX	:32
-	C1PosX	:-32
-	loc	:group
-	P_L0	:0.0
-	Q_L0	:0.0
-	LFIdent	:0
-	Cts	:0.1
-lf_rtds_sharc_sld_SHUNTRLC
-	2128 976 3 1 16
-	R	:50
-	L	:0
-	CuF	:0
-	type	:Y
-	NR	:No
-	Imon	:Yes
-	IAnam	:IloadA
-	IBnam	:IloadB
-	ICnam	:IloadC
-	IABnam	:IAB
-	IBCnam	:IBC
-	ICAnam	:ICA
-	A1PosY	:32
-	C1PosY	:-32
-	P_L0	:0.0
-	Q_L0	:0.0
-rtds_sharc_sld_BUSLABEL
-	1232 880 0 0 31
-	BName	:BUS31
-	NA	:Vo31A
-	NB	:Vo31B
-	NC	:Vo31C
-	VRate	:6
-	daout	:No
-	COL	:RED
-	LW	:3
-	COLA	:ORANGE
-	COLB	:RED
-	COLC	:RED
-	monVoltageA	:YES
-	monVoltageB	:YES
-	monVoltageC	:YES
-	Vi	:1.0
-	Ai	:0.0
-	Type	:PQ BUS
-	Vd	:1.0
-	Ad	:1.0
-	Dis1	:No
-	A1PosX	:32
-	C1PosX	:-32
-	Num	:0
-	prcA	:None
-	chnA	:1
-	prcB	:None
-	chnB	:1
-	prcC	:None
-	chnC	:1
-	scl	:187.79
-	damod	:align
 lf_rtds_sharc_sld_SERIESRLC
 	656 976 2 1 16
 	R	:0
@@ -3367,7 +3054,7 @@ BUS
 	L3ArcAtEnd1	:0
 	L3ArcAtEnd2	:1
 rtds_sharc_sld_BUSLABEL
-	752 912 0 0 31
+	752 912 0 0 32
 	BName	:BUS3
 	NA	:Vc3A
 	NB	:Vc3B
@@ -3399,6 +3086,7 @@ rtds_sharc_sld_BUSLABEL
 	chnC	:1
 	scl	:187.79
 	damod	:align
+	Loadflow_RST	:BUS: $Num, Vd, Ad
 rtds_BLACKTEXT1
 	656 1040 0 0 3
 	AL1	:If3
@@ -3720,12 +3408,12 @@ rtds_sharc_ctl_GAIN
 	912 464 0 0 3
 	K	:10e3
 	Proc	:1
-	Pri	:79
+	Pri	:80
 rtds_sharc_ctl_GAIN
 	912 496 0 0 3
 	K	:10e3
 	Proc	:1
-	Pri	:78
+	Pri	:79
 WIRE
 	848 496 0 0 2
 	0 -4 32 4
@@ -3938,7 +3626,7 @@ rtds_sharc_ctl_REALPL
 	Tic	:1.0
 	Gic	:1.0
 	Proc	:35
-	Pri	:77
+	Pri	:78
 rtds_sharc_ctl_REALPL
 	304 208 0 0 12
 	T	:0.00079577
@@ -3952,7 +3640,7 @@ rtds_sharc_ctl_REALPL
 	Tic	:1.0
 	Gic	:1.0
 	Proc	:35
-	Pri	:76
+	Pri	:77
 wirelabel
 	368 144 0 0 3
 	Name	:Po3
@@ -4094,7 +3782,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:75
+	Pri	:76
 rtds_BLACKTEXT
 	592 112 0 0 11
 	NL	:3
@@ -4114,7 +3802,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:74
+	Pri	:75
 WIRE
 	464 48 0 0 2
 	0 -4 32 4
@@ -4169,7 +3857,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:73
+	Pri	:74
 WIRE
 	656 176 0 0 2
 	0 -4 32 4
@@ -4352,7 +4040,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:35
-	Pri	:72
+	Pri	:73
 WIRE
 	432 368 0 0 2
 	0 -4 32 4
@@ -4397,7 +4085,7 @@ rtds_sharc_ctl_SIGSW
 	DPath	:REAL
 	Pos	:A
 	Proc	:1
-	Pri	:71
+	Pri	:72
 wirelabel
 	592 336 0 0 3
 	Name	:phi3p
@@ -4450,7 +4138,7 @@ rtds_sharc_ctl_DQ02ABC
 	Ld	:Vq lags Vd
 	Pk	:Peak
 	Proc	:1
-	Pri	:145
+	Pri	:146
 wirelabel
 	720 464 0 0 3
 	Name	:Vinv3A
@@ -4534,7 +4222,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:108
+	Pri	:109
 WIRE
 	624 336 0 0 2
 	-32 -4 0 4
@@ -4553,7 +4241,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:122
+	Pri	:123
 WIRE
 	752 208 0 0 2
 	-32 -4 32 4
@@ -4567,7 +4255,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:121
+	Pri	:122
 WIRE
 	816 368 0 0 2
 	-64 -4 32 4
@@ -4596,7 +4284,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:107
+	Pri	:108
 WIRE
 	592 176 0 0 2
 	-32 -4 0 4
@@ -4628,7 +4316,7 @@ rtds_sharc_ctl_LIMITS
 	ULim	:1
 	LLim	:-1
 	Proc	:1
-	Pri	:138
+	Pri	:139
 WIRE
 	976 368 0 0 2
 	-32 -4 32 4
@@ -4644,7 +4332,7 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:137
+	Pri	:138
 wirelabel
 	720 208 0 0 3
 	Name	:pidI3p2
@@ -4656,7 +4344,7 @@ rtds_sharc_ctl_LIMITS
 	ULim	:10
 	LLim	:-10
 	Proc	:1
-	Pri	:136
+	Pri	:137
 WIRE
 	912 208 0 0 2
 	-32 -4 32 4
@@ -4677,7 +4365,7 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:135
+	Pri	:136
 rtds_sharc_ctl_SUM3
 	208 208 2 1 7
 	Num	:TWO
@@ -4686,7 +4374,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:90
+	Pri	:91
 WIRE
 	208 176 0 0 2
 	-32 -4 0 4
@@ -4705,7 +4393,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:89
+	Pri	:90
 WIRE
 	208 336 0 0 2
 	-32 -4 0 4
@@ -4745,7 +4433,7 @@ rtds_sharc_ctl_GAIN
 	144 176 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:88
+	Pri	:89
 wirelabel
 	80 336 0 0 3
 	Name	:Vc3q
@@ -4770,7 +4458,7 @@ rtds_sharc_ctl_GAIN
 	144 336 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:87
+	Pri	:88
 wirelabel
 	208 176 0 0 3
 	Name	:Vc3d_V
@@ -4790,7 +4478,7 @@ rtds_sharc_ctl_GAIN
 	528 176 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:86
+	Pri	:87
 WIRE
 	496 176 0 0 2
 	-32 -4 0 4
@@ -4805,7 +4493,7 @@ rtds_sharc_ctl_GAIN
 	560 336 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:85
+	Pri	:86
 wirelabel
 	624 336 0 0 3
 	Name	:If3q_A
@@ -4826,7 +4514,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:99
+	Pri	:100
 rtds_sharc_ctl_INTGL
 	272 784 0 0 9
 	T	:1.0
@@ -4837,7 +4525,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:98
+	Pri	:99
 WIRE
 	208 784 0 0 2
 	-32 -4 32 4
@@ -4856,7 +4544,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:106
+	Pri	:107
 WIRE
 	368 784 0 0 2
 	-32 -4 0 4
@@ -4882,7 +4570,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:97
+	Pri	:98
 rtds_sharc_ctl_INTGL
 	272 560 0 0 9
 	T	:1.0
@@ -4893,7 +4581,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:96
+	Pri	:97
 WIRE
 	208 560 0 0 2
 	-32 -4 32 4
@@ -4907,7 +4595,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:105
+	Pri	:106
 WIRE
 	368 560 0 0 2
 	-32 -4 0 4
@@ -5018,7 +4706,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:113
+	Pri	:114
 rtds_sharc_ctl_INTGL
 	720 784 0 0 9
 	T	:1.0
@@ -5029,7 +4717,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:112
+	Pri	:113
 WIRE
 	656 784 0 0 2
 	-32 -4 32 4
@@ -5048,7 +4736,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:120
+	Pri	:121
 WIRE
 	816 784 0 0 2
 	-32 -4 0 4
@@ -5074,7 +4762,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:111
+	Pri	:112
 rtds_sharc_ctl_INTGL
 	720 560 0 0 9
 	T	:1.0
@@ -5085,7 +4773,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:110
+	Pri	:111
 WIRE
 	656 560 0 0 2
 	-32 -4 32 4
@@ -5104,7 +4792,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:119
+	Pri	:120
 WIRE
 	816 560 0 0 2
 	-32 -4 0 4
@@ -5343,7 +5031,7 @@ wirelabel
 rtds_sharc_ctl_ANGLEFIX
 	432 80 0 0 2
 	Proc	:35
-	Pri	:70
+	Pri	:71
 WIRE
 	368 48 0 0 2
 	-32 -4 0 4
@@ -5416,34 +5104,6 @@ BUS
 	L2ArcAtEnd2	:0
 	L3ArcAtEnd1	:0
 	L3ArcAtEnd2	:0
-BUS
-	1232 944 1 0 26
-	LW3	:1.0
-	ACOL	:ORANGE
-	BCOL	:RED
-	CCOL	:RED
-	LW1	:3.0
-	SCOL	:RED
-	CONVERGE	:NO
-	DOCUMENT	:NO
-	x1L1	:-64
-	y1L1	:-32
-	x2L1	:0
-	y2L1	:-32
-	x1L2	:-64
-	y1L2	:0
-	x2L2	:32
-	y2L2	:0
-	x1L3	:-64
-	y1L3	:32
-	x2L3	:64
-	y2L3	:32
-	L1ArcAtEnd1	:0
-	L1ArcAtEnd2	:0
-	L2ArcAtEnd1	:0
-	L2ArcAtEnd2	:1
-	L3ArcAtEnd1	:0
-	L3ArcAtEnd2	:1
 ground
 	272 1008 1 0 0
 WIRE
@@ -5517,7 +5177,7 @@ rtds_sharcu_SRC1PH2N
 	CNVGnam	:Converged
 	TrigSigCC	:ImpTrig
 rtds_sharc_sld_BUSLABEL
-	976 912 0 0 31
+	976 912 0 0 32
 	BName	:BUS3o
 	NA	:Vo3A
 	NB	:Vo3B
@@ -5549,6 +5209,7 @@ rtds_sharc_sld_BUSLABEL
 	chnC	:1
 	scl	:187.79
 	damod	:align
+	Loadflow_RST	:BUS: $Num, Vd, Ad
 BUS
 	1392 976 0 0 26
 	LW3	:1.0
@@ -5772,7 +5433,7 @@ BUS
 	L3ArcAtEnd1	:0
 	L3ArcAtEnd2	:1
 rtds_sharc_sld_BUSLABEL
-	752 496 0 0 31
+	752 496 0 0 32
 	BName	:BUS1
 	NA	:Vc1A
 	NB	:Vc1B
@@ -5804,6 +5465,7 @@ rtds_sharc_sld_BUSLABEL
 	chnC	:1
 	scl	:187.79
 	damod	:align
+	Loadflow_RST	:BUS: $Num, Vd, Ad
 rtds_BLACKTEXT1
 	656 624 0 0 3
 	AL1	:If1
@@ -5938,7 +5600,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:118
+	Pri	:119
 WIRE
 	592 240 0 0 2
 	0 -4 32 4
@@ -6091,7 +5753,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:117
+	Pri	:118
 WIRE
 	272 336 0 0 2
 	0 -4 32 4
@@ -6141,7 +5803,7 @@ rtds_sharc_ctl_ABC2DQ0
 	Pk	:Peak
 	Zs	:No
 	Proc	:1
-	Pri	:116
+	Pri	:117
 WIRE
 	400 240 0 0 2
 	0 -4 32 4
@@ -6377,12 +6039,12 @@ rtds_sharc_ctl_GAIN
 	912 464 0 0 3
 	K	:10e3
 	Proc	:1
-	Pri	:83
+	Pri	:84
 rtds_sharc_ctl_GAIN
 	912 496 0 0 3
 	K	:10e3
 	Proc	:1
-	Pri	:82
+	Pri	:83
 WIRE
 	848 496 0 0 2
 	0 -4 32 4
@@ -6594,7 +6256,7 @@ rtds_sharc_ctl_REALPL
 	Tic	:1.0
 	Gic	:1.0
 	Proc	:35
-	Pri	:81
+	Pri	:82
 rtds_sharc_ctl_REALPL
 	304 144 0 0 12
 	T	:0.00079577
@@ -6608,14 +6270,14 @@ rtds_sharc_ctl_REALPL
 	Tic	:1.0
 	Gic	:1.0
 	Proc	:35
-	Pri	:80
+	Pri	:81
 rtds_sharc_ctl_SIGSW
 	528 432 0 0 5
 	A	:1
 	DPath	:REAL
 	Pos	:A
 	Proc	:1
-	Pri	:115
+	Pri	:116
 wirelabel
 	496 432 0 0 3
 	Name	:phi1p
@@ -6812,7 +6474,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:163
+	Pri	:164
 WIRE
 	592 688 0 0 2
 	-32 -4 0 4
@@ -6835,7 +6497,7 @@ rtds_sharc_ctl_GAIN
 	688 592 0 0 3
 	K	:-0.94248
 	Proc	:1
-	Pri	:134
+	Pri	:135
 WIRE
 	656 592 0 0 2
 	-32 -4 0 4
@@ -6854,7 +6516,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:167
+	Pri	:168
 WIRE
 	720 528 0 0 2
 	-32 -4 32 4
@@ -6868,7 +6530,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:171
+	Pri	:172
 WIRE
 	784 688 0 0 2
 	-64 -4 32 4
@@ -6887,7 +6549,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:104
+	Pri	:105
 rtds_sharc_ctl_CONSTANT
 	688 112 0 0 1
 	Val	:314.15
@@ -6907,7 +6569,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:94
+	Pri	:95
 WIRE
 	112 80 0 0 2
 	-32 -4 0 4
@@ -6923,7 +6585,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:Fixed
 	Tic	:1
 	Proc	:1
-	Pri	:109
+	Pri	:110
 annotation
 	816 16 0 0 3
 	AL1	:
@@ -6942,7 +6604,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:103
+	Pri	:104
 rtds_sharc_ctl_CONSTANT
 	240 112 0 0 1
 	Val	:4889
@@ -6970,7 +6632,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:93
+	Pri	:94
 WIRE
 	528 48 0 0 2
 	-32 -4 0 4
@@ -6995,7 +6657,7 @@ rtds_sharc_ctl_GAIN
 	752 624 0 0 3
 	K	:0.94248
 	Proc	:1
-	Pri	:133
+	Pri	:134
 annotation
 	752 592 0 0 3
 	AL1	:w*Lf
@@ -7019,7 +6681,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:158
+	Pri	:159
 WIRE
 	560 496 0 0 2
 	-32 -4 0 4
@@ -7061,7 +6723,7 @@ rtds_sharc_ctl_LIMITS
 	ULim	:1
 	LLim	:-1
 	Proc	:1
-	Pri	:173
+	Pri	:174
 WIRE
 	944 688 0 0 2
 	-32 -4 32 4
@@ -7077,7 +6739,7 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:172
+	Pri	:173
 wirelabel
 	880 720 0 0 3
 	Name	:V_dc_divQ1
@@ -7105,7 +6767,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:102
+	Pri	:103
 WIRE
 	688 80 0 0 2
 	-32 -4 0 4
@@ -7116,7 +6778,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:101
+	Pri	:102
 annotation
 	272 16 0 0 3
 	AL1	:
@@ -7164,7 +6826,7 @@ rtds_sharc_ctl_DQ02ABC
 	Ld	:Vq lags Vd
 	Pk	:Peak
 	Proc	:1
-	Pri	:174
+	Pri	:175
 wirelabel
 	1168 528 0 0 3
 	Name	:Vinv1A
@@ -7216,7 +6878,7 @@ rtds_sharc_ctl_LIMITS
 	ULim	:10
 	LLim	:-10
 	Proc	:1
-	Pri	:170
+	Pri	:171
 WIRE
 	880 528 0 0 2
 	-32 -4 32 4
@@ -7247,7 +6909,7 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:169
+	Pri	:170
 wirelabel
 	816 560 0 0 3
 	Name	:V_dc_divD1
@@ -7292,7 +6954,7 @@ rtds_sharc_ctl_GAIN
 	80 48 0 0 3
 	K	:1e6
 	Proc	:1
-	Pri	:92
+	Pri	:93
 annotation
 	208 176 0 0 3
 	AL1	:
@@ -7311,7 +6973,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:-
 	IN3	:+
 	Proc	:1
-	Pri	:144
+	Pri	:145
 WIRE
 	368 336 1 0 2
 	-4 -64 4 32
@@ -7330,7 +6992,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:148
+	Pri	:149
 jumper
 	368 304 0 0 2
 	COL	:RED
@@ -7358,7 +7020,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:147
+	Pri	:148
 WIRE
 	464 272 0 0 2
 	-64 -4 64 4
@@ -7397,7 +7059,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:150
+	Pri	:151
 WIRE
 	528 400 0 0 2
 	0 -4 32 4
@@ -7457,7 +7119,7 @@ rtds_sharc_ctl_REALPL
 	Tic	:1.0
 	Gic	:1.0
 	Proc	:35
-	Pri	:132
+	Pri	:133
 rtds_sharc_ctl_REALPL
 	208 240 0 0 12
 	T	:0.00079577
@@ -7471,12 +7133,12 @@ rtds_sharc_ctl_REALPL
 	Tic	:1.0
 	Gic	:1.0
 	Proc	:35
-	Pri	:131
+	Pri	:132
 rtds_sharc_ctl_GAIN
 	112 240 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:130
+	Pri	:131
 WIRE
 	176 240 0 0 2
 	-32 -4 0 4
@@ -7491,7 +7153,7 @@ rtds_sharc_ctl_GAIN
 	112 368 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:129
+	Pri	:130
 wirelabel
 	144 368 0 0 3
 	Name	:Io1q_A
@@ -7515,7 +7177,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:149
+	Pri	:150
 WIRE
 	176 496 0 0 2
 	-32 -4 0 4
@@ -7534,7 +7196,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:153
+	Pri	:154
 WIRE
 	176 656 0 0 2
 	-32 -4 0 4
@@ -7567,7 +7229,7 @@ rtds_sharc_ctl_GAIN
 	304 592 0 0 3
 	K	:-0.0031416
 	Proc	:1
-	Pri	:128
+	Pri	:129
 WIRE
 	272 592 0 0 2
 	-32 -4 0 4
@@ -7585,7 +7247,7 @@ rtds_sharc_ctl_GAIN
 	368 624 0 0 3
 	K	:0.0031416
 	Proc	:1
-	Pri	:127
+	Pri	:128
 WIRE
 	336 624 0 0 2
 	-32 -4 0 4
@@ -7599,7 +7261,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:162
+	Pri	:163
 WIRE
 	368 688 0 0 2
 	-64 -4 64 4
@@ -7618,7 +7280,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:+
 	Proc	:1
-	Pri	:157
+	Pri	:158
 WIRE
 	336 592 0 0 2
 	0 -4 32 4
@@ -7688,7 +7350,7 @@ rtds_sharc_ctl_GAIN
 	112 496 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:126
+	Pri	:127
 wirelabel
 	48 656 0 0 3
 	Name	:Vc1q
@@ -7713,7 +7375,7 @@ rtds_sharc_ctl_GAIN
 	112 656 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:125
+	Pri	:126
 wirelabel
 	176 496 0 0 3
 	Name	:Vc1d_V
@@ -7753,7 +7415,7 @@ rtds_sharc_ctl_GAIN
 	496 496 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:124
+	Pri	:125
 WIRE
 	464 496 0 0 2
 	-32 -4 0 4
@@ -7768,7 +7430,7 @@ rtds_sharc_ctl_GAIN
 	528 656 0 0 3
 	K	:1e3
 	Proc	:1
-	Pri	:123
+	Pri	:124
 wirelabel
 	592 656 0 0 3
 	Name	:If1q_A
@@ -7809,7 +7471,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:156
+	Pri	:157
 rtds_sharc_ctl_INTGL
 	240 1104 0 0 9
 	T	:1.0
@@ -7820,7 +7482,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:155
+	Pri	:156
 WIRE
 	176 1104 0 0 2
 	-32 -4 32 4
@@ -7839,7 +7501,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:161
+	Pri	:162
 WIRE
 	336 1104 0 0 2
 	-32 -4 0 4
@@ -7865,7 +7527,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:152
+	Pri	:153
 rtds_sharc_ctl_INTGL
 	240 880 0 0 9
 	T	:1.0
@@ -7876,7 +7538,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:151
+	Pri	:152
 WIRE
 	176 880 0 0 2
 	-32 -4 32 4
@@ -7890,7 +7552,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:154
+	Pri	:155
 WIRE
 	336 880 0 0 2
 	-32 -4 0 4
@@ -8026,7 +7688,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:166
+	Pri	:167
 rtds_sharc_ctl_INTGL
 	688 1104 0 0 9
 	T	:1.0
@@ -8037,7 +7699,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:165
+	Pri	:166
 WIRE
 	624 1104 0 0 2
 	-32 -4 32 4
@@ -8056,7 +7718,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:168
+	Pri	:169
 WIRE
 	784 1104 0 0 2
 	-32 -4 0 4
@@ -8092,7 +7754,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:160
+	Pri	:161
 rtds_sharc_ctl_INTGL
 	688 880 0 0 9
 	T	:1.0
@@ -8103,7 +7765,7 @@ rtds_sharc_ctl_INTGL
 	PItype	:CC
 	Tic	:1
 	Proc	:1
-	Pri	:159
+	Pri	:160
 WIRE
 	624 880 0 0 2
 	-32 -4 32 4
@@ -8122,7 +7784,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:+
 	IN3	:-
 	Proc	:1
-	Pri	:164
+	Pri	:165
 WIRE
 	784 880 0 0 2
 	-32 -4 0 4
@@ -8247,7 +7909,7 @@ rtds_sharc_ctl_GAIN
 	464 48 0 0 3
 	K	:1e6
 	Proc	:1
-	Pri	:91
+	Pri	:92
 WIRE
 	432 48 0 0 2
 	-32 -4 0 4
@@ -8267,7 +7929,7 @@ rtds_sharc_ctl_GAIN
 	624 80 0 0 3
 	K	:6.2832
 	Proc	:1
-	Pri	:100
+	Pri	:101
 rtds_BLUETEXT1
 	624 48 0 0 1
 	AL1	:2*pi
@@ -8338,7 +8000,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:143
+	Pri	:144
 rtds_sharc_ctl_SLIDER
 	272 208 0 0 5
 	Name	:R_virtual
@@ -8361,7 +8023,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:142
+	Pri	:143
 WIRE
 	304 432 0 0 2
 	-32 -4 0 4
@@ -8377,7 +8039,7 @@ rtds_sharc_ctl_MUL
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:141
+	Pri	:142
 wirelabel
 	208 304 0 0 3
 	Name	:Io1d_A1
@@ -8392,7 +8054,7 @@ rtds_sharc_ctl_GAIN
 	304 304 0 0 3
 	K	:314.15
 	Proc	:1
-	Pri	:146
+	Pri	:147
 rtds_sharc_ctl_SLIDER
 	112 304 0 0 5
 	Name	:L_virtual
@@ -8419,13 +8081,13 @@ rtds_sharc_ctl_GAIN
 	336 368 0 0 3
 	K	:314.15
 	Proc	:1
-	Pri	:140
+	Pri	:141
 rtds_sharc_ctl_MUL
 	272 368 2 1 4
 	Num	:TWO
 	IorF	:REAL
 	Proc	:1
-	Pri	:139
+	Pri	:140
 wirelabel
 	272 336 0 0 3
 	Name	:L_virtual
@@ -8439,7 +8101,7 @@ wirelabel
 rtds_sharc_ctl_ANGLEFIX
 	1008 144 0 0 2
 	Proc	:35
-	Pri	:114
+	Pri	:115
 WIRE
 	944 112 0 0 2
 	-32 -4 0 4
@@ -8628,7 +8290,7 @@ rtds_sharc_ctl_SLIDER
 	Min	:0.00001
 	Units	:
 rtds_sharc_sld_BUSLABEL
-	976 496 0 0 31
+	976 496 0 0 32
 	BName	:BUS1o
 	NA	:Vo1A
 	NB	:Vo1B
@@ -8660,6 +8322,7 @@ rtds_sharc_sld_BUSLABEL
 	chnC	:1
 	scl	:187.79
 	damod	:align
+	Loadflow_RST	:BUS: $Num, Vd, Ad
 lf_rtds_sharc_sld_SHUNTRLC
 	848 656 3 1 16
 	R	:0.1
@@ -8720,7 +8383,7 @@ BUS
 	L3ArcAtEnd1	:0
 	L3ArcAtEnd2	:1
 rtds_sharc_sld_BUSLABEL
-	2032 784 0 0 31
+	2032 784 0 0 32
 	BName	:BUSload
 	NA	:VloadA
 	NB	:VloadB
@@ -8752,6 +8415,7 @@ rtds_sharc_sld_BUSLABEL
 	chnC	:1
 	scl	:187.79
 	damod	:align
+	Loadflow_RST	:BUS: $Num, Vd, Ad
 rtds_sharc_ctl_UPDOWN
 	1456 1776 0 0 8
 	Tran	:Rising
@@ -8877,7 +8541,7 @@ _rtds_GTNET_SKT.def
 	Port	:2
 	Card	:1
 	Proc	:30
-	Pri	:11
+	Pri	:10
 	gtnettype	:GTNETx2
 	sfx	:
 	FromFile	:NO
@@ -10233,7 +9897,7 @@ rtds_sharc_ctl_SDELAY
 	NS	:1
 	INIT	:0.0
 	Proc	:1
-	Pri	:69
+	Pri	:70
 wirelabel
 	336 176 0 0 3
 	Name	:fdelay_VloadA
@@ -10252,7 +9916,7 @@ rtds_sharc_ctl_SUM3
 	IN2	:-
 	IN3	:-
 	Proc	:1
-	Pri	:84
+	Pri	:85
 WIRE
 	432 144 0 0 2
 	0 -4 32 4
@@ -10268,7 +9932,7 @@ rtds_sharc_ctl_XDIVY
 	DBZ	:Halt
 	Val	:1e8
 	Proc	:1
-	Pri	:95
+	Pri	:96
 rtds_sharc_ctl_CONSTANT
 	464 176 0 0 1
 	Val	:0.02
@@ -10422,7 +10086,7 @@ rtds_sharc_ctl_GAIN
 	368 464 0 0 3
 	K	:1
 	Proc	:1
-	Pri	:20
+	Pri	:21
 WIRE
 	432 464 0 0 2
 	-32 -4 0 4
@@ -10440,7 +10104,7 @@ rtds_sharc_ctl_GAIN
 	368 496 0 0 3
 	K	:1
 	Proc	:1
-	Pri	:19
+	Pri	:20
 WIRE
 	432 496 0 0 2
 	-32 -4 0 4
@@ -10458,7 +10122,7 @@ rtds_sharc_ctl_GAIN
 	368 528 0 0 3
 	K	:1
 	Proc	:1
-	Pri	:18
+	Pri	:19
 WIRE
 	432 528 0 0 2
 	-32 -4 0 4
@@ -10607,7 +10271,7 @@ rtds_sharc_ctl_RMS
 	LL	:Line-Line
 	unit	:volts
 	Proc	:1
-	Pri	:21
+	Pri	:18
 rtds_sharc_ctl_RMS
 	656 496 0 0 7
 	Mode	:Three Phase
@@ -10616,7 +10280,7 @@ rtds_sharc_ctl_RMS
 	LL	:Line-Line
 	unit	:volts
 	Proc	:1
-	Pri	:21
+	Pri	:17
 WIRE
 	592 464 0 0 2
 	0 -4 32 4
@@ -10817,7 +10481,7 @@ rtds_sharc_ctl_REALPL
 	Tic	:1.0
 	Gic	:1.0
 	Proc	:35
-	Pri	:17
+	Pri	:16
 rtds_sharc_ctl_REALPL
 	304 208 0 0 12
 	T	:0.00079577
@@ -10831,7 +10495,7 @@ rtds_sharc_ctl_REALPL
 	Tic	:1.0
 	Gic	:1.0
 	Proc	:35
-	Pri	:16
+	Pri	:15
 wirelabel
 	368 144 0 0 3
 	Name	:Pload
@@ -10848,7 +10512,7 @@ rtds_sharc_ctl_PQMET
 	MVA	:100.0
 	adv	:V by 1dt
 	Proc	:1
-	Pri	:15
+	Pri	:14
 wirelabel
 	176 144 0 0 3
 	Name	:Ploadmeas
@@ -10937,7 +10601,7 @@ rtds_sharc_ctl_PLLT2
 	WMON	:rad/sec
 	EMON	:No
 	Proc	:1
-	Pri	:14
+	Pri	:13
 WIRE
 	528 144 0 0 2
 	0 -4 32 4
@@ -11129,7 +10793,7 @@ wirelabel
 	Monitor	:Yes
 wirelabel
 	688 1904 0 0 3
-	Name	:V3A
+	Name	:VloadA
 	COL	:BLUE
 	Monitor	:Yes
 wirelabel
@@ -11137,3 +10801,432 @@ wirelabel
 	Name	:Vo1A
 	COL	:BLUE
 	Monitor	:Yes
+DASHED_LINE
+	2128 720 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2064 592 1 0 2
+	-4 -96 4 128
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2128 496 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2192 624 1 0 2
+	-4 -128 4 96
+	LW	:1
+	COL	:RED
+annotation
+	2128 688 0 0 3
+	AL1	:controller from GTNET
+	AL2	:3 Phase Breaker
+	FSize	:10
+DASHED_LINE
+	2256 720 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2192 592 1 0 2
+	-4 -96 4 128
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2256 496 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2320 624 1 0 2
+	-4 -128 4 96
+	LW	:1
+	COL	:RED
+lf_rtds_sharc_sld_BREAKER
+	2256 560 0 0 26
+	Anam	:BRK2A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk2int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK2B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk2int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK2C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk2int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+DASHED_LINE
+	2384 720 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2320 592 1 0 2
+	-4 -96 4 128
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2384 496 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+lf_rtds_sharc_sld_BREAKER
+	2384 560 0 0 26
+	Anam	:BRK3A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk3int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK3B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk3int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK3C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk3int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+annotation
+	2256 688 0 0 3
+	AL1	:controller from GTNET
+	AL2	:3 Phase Breaker
+	FSize	:10
+annotation
+	2384 688 0 0 3
+	AL1	:controller from GTNET
+	AL2	:3 Phase Breaker
+	FSize	:10
+DASHED_LINE
+	2448 624 1 0 2
+	-4 -128 4 96
+	LW	:1
+	COL	:RED
+lf_rtds_sharc_sld_BREAKER
+	2128 560 0 0 26
+	Anam	:BRK1A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk1int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK1B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk1int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK1C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk1int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+GROUP
+	1968 1200 0 0 0
+	7
+WIRE
+	2000 1264 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+wirelabel
+	2000 1264 0 0 3
+	Name	:Q2_ref_VA
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	2000 1200 3 0 3
+	K	:1e-6
+	Proc	:1
+	Pri	:64
+WIRE
+	1936 1264 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	1936 1200 3 0 3
+	K	:1e-6
+	Proc	:1
+	Pri	:63
+wirelabel
+	1936 1264 0 0 3
+	Name	:P2_ref_W
+	COL	:BLUE
+	Monitor	:Yes
+rtds_udc_DYLOAD
+	1968 1136 0 0 69
+	Name	:Dload32
+	type	:RL
+	bal	:YES
+	btype	:R-X
+	YD	:Y
+	cc	:CC
+	gnd	:No
+	Vmeas	:Internal
+	Vbus	:0.4
+	Vmin	:0.5
+	constF	:Yes
+	freq	:50
+	FreqDevMax	:2.0
+	T	:0.01
+	Tm	:0.003
+	Pinit	:0.5
+	Pmin	:0.0001
+	Pmax	:1000
+	Qinit	:0.000001
+	Qmin	:0.000001
+	Qmax	:1000
+	Pinit1	:100
+	Pinit2	:100
+	Pinit3	:100
+	Qinit1	:100
+	Qinit2	:100
+	Qinit3	:100
+	SorC	:Runtime
+	Fract	:Constant
+	Po	:100
+	Qo	:100
+	TS	:10.0
+	Tf	:0.01
+	Pordcc	:Pordcc
+	Qordcc	:Qordcc
+	ZPcc	:ZPcc
+	IPcc	:IPcc
+	PPcc	:PPcc
+	ZQcc	:ZQcc
+	IQcc	:IQcc
+	PQcc	:PQcc
+	ZP	:20
+	IP	:40
+	PP	:40
+	ZQ	:20
+	IQ	:40
+	PQ	:40
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	pPmon	:Yes
+	pQmon	:Yes
+	pIAmon	:No
+	pIBmon	:No
+	pICmon	:No
+	nPmon	:Pload32monit
+	nQmon	:Qload32monit
+	nIAmon	:IA
+	nIBmon	:IB
+	nICmon	:IC
+	A1PosX	:32
+	C1PosX	:-32
+	loc	:group
+	P_L0	:0.0
+	Q_L0	:0.0
+	LFIdent	:0
+	Cts	:0.1
+lf_rtds_sharc_sld_BREAKER
+	2128 1008 1 0 26
+	Anam	:BRK1A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk1int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK1B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk1int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK1C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk1int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+lf_rtds_sharc_sld_SHUNTRLC
+	2128 1040 3 1 16
+	R	:50
+	L	:0
+	CuF	:0
+	type	:Y
+	NR	:No
+	Imon	:Yes
+	IAnam	:IloadA
+	IBnam	:IloadB
+	ICnam	:IloadC
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+lf_rtds_sharc_sld_SHUNTRLC
+	2480 880 2 1 16
+	R	:50
+	L	:0
+	CuF	:0
+	type	:Y
+	NR	:No
+	Imon	:Yes
+	IAnam	:IloadA
+	IBnam	:IloadB
+	ICnam	:IloadC
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+BUS
+	2288 944 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-64
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+lf_rtds_sharc_sld_SHUNTRLC
+	2288 1040 3 1 16
+	R	:50
+	L	:0
+	CuF	:0
+	type	:Y
+	NR	:No
+	Imon	:Yes
+	IAnam	:IloadA
+	IBnam	:IloadB
+	ICnam	:IloadC
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+lf_rtds_sharc_sld_BREAKER
+	2288 1008 1 0 26
+	Anam	:BRK2A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk2int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK2B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk2int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK2C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk2int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+lf_rtds_sharc_sld_BREAKER
+	2448 880 0 0 26
+	Anam	:BRK3A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk3int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK3B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk3int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK3C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk3int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
