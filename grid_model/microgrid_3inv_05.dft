@@ -1,0 +1,11139 @@
+DRAFT 5.008
+TITLE: Test Circuit
+CREATED: Feb 18, 2020 (iso)
+LAST-MODIFIED: May 28, 2020 (iso)
+TIME-STEP: 5.0E-5
+FINISH-TIME: 0.2
+RTDS-RACK: 3
+COMPILE-MODE: AUTO
+DISTRIBUTION_MODE: 0
+RTDS REAL-TIME: Yes 
+CURRENT-SUBSYSTEM: 1
+DEFAULT-VIEWMODE: 3
+DEFAULT-ZOOM: 76
+DEFAULT-POINT: 0,246
+DEFAULT-POINT-ABSOLUTE: 694,857
+1 SUBSYSTEMS
+SUBSYSTEM-TAB-NAME: SS #1
+SUBSYSTEM-CANVAS-SIZE:3000,2000
+SUBSYSTEM-TITLE:
+SUBSYSTEM-COMMENT:
+SUBSYSTEM-PRINTMODE:     PRINT-LAYOUT:CUSTOM    PAPER-DIMENSIONS:8.5x11
+211 COMPONENTS
+rtds_risc_NET
+	48 48 0 0 37
+	rqnmp	:Two
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	GT0EN	:Disabled
+	GT0AM	:No
+	AM	:NO
+	CORE	:1
+	Port1DestC	:None
+	Port1DestP	:Port 8
+	Port2DestC	:Card 2
+	Port2DestP	:Port 8
+	Port3DestC	:Card 3
+	Port3DestP	:Port 8
+	Port4DestC	:Card 4
+	Port4DestP	:Port 8
+	Port5DestC	:Card 5
+	Port5DestP	:Port 8
+	Port6DestC	:Card 6
+	Port6DestP	:Port 8
+	Port7DestC	:None
+	Port7DestP	:Port 8
+	Port8DestC	:None
+	Port8DestP	:Port 8
+	numNodes2FEB	:2x90
+	procAssign1	:ADVANCED
+	numNodes2NOFEB	:2x72
+	procAssign2	:ADVANCED
+	numNodes1FEB	:90
+	tsDelay1FEB	:No
+	procAssign3	:ADVANCED
+	numNodes1NOFEB	:72
+	tsDelay1NOFEB	:No
+	procAssign4	:ADVANCED
+	procAssignment	:DEFAULT
+	tsDelayNovaCor	:No
+	forceMultiCore	:No
+rtds_risc_ctl_GTAOOUT
+	816 1616 0 0 65
+	Name	:GTAOx
+	Port	:1
+	Card	:1
+	Proc	:20
+	Pri	:10
+	enb1	:Yes
+	enb2	:Yes
+	enb3	:Yes
+	enb4	:Yes
+	enb5	:Yes
+	enb6	:Yes
+	enb7	:Yes
+	enb8	:Yes
+	enb9	:Yes
+	enb10	:Yes
+	enb11	:Yes
+	enb12	:Yes
+	scl1	:187.79
+	scl2	:187.79
+	scl3	:187.79
+	scl4	:187.79
+	scl5	:187.79
+	scl6	:187.79
+	scl7	:187.79
+	scl8	:187.79
+	scl9	:187.79
+	scl10	:187.79
+	scl11	:187.79
+	scl12	:187.79
+	adv1	:1.0
+	adv2	:1.0
+	adv3	:1.0
+	adv4	:1.0
+	adv5	:1.0
+	adv6	:1.0
+	adv7	:1.0
+	adv8	:1.0
+	adv9	:1.0
+	adv10	:1.0
+	adv11	:1.0
+	adv12	:1.0
+	osf1	:1.0
+	osf2	:1.0
+	osf3	:1.0
+	osf4	:1.0
+	osf5	:1.0
+	osf6	:1.0
+	osf7	:1.0
+	osf8	:1.0
+	osf9	:1.0
+	osf10	:1.0
+	osf11	:1.0
+	osf12	:1.0
+	dly1	:No
+	dly2	:No
+	dly3	:No
+	dly4	:No
+	dly5	:No
+	dly6	:No
+	dly7	:No
+	dly8	:No
+	dly9	:No
+	dly10	:No
+	dly11	:No
+	dly12	:Yes
+rtds_risc_ctl_PROCASN
+	944 1552 0 0 3
+	CPRO	:20
+	BRD	:3
+	ABC	:A
+rtds_sharc_ctl_SRCABSPH
+	592 1712 0 0 5
+	WType	:Sine
+	Units	:volts
+	Duty	:50
+	Proc	:1
+	Pri	:4
+rtds_sharc_ctl_SUM3
+	368 1712 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:2
+WIRE
+	464 1712 0 0 2
+	-64 -4 96 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	528 1680 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	528 1744 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	624 1712 1 0 2
+	-4 0 4 32
+	COL	:RED
+	LW	:1.0
+BUS
+	1552 560 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-416
+	y1L1	:-32
+	x2L1	:384
+	y2L1	:-32
+	x1L2	:-416
+	y1L2	:0
+	x2L2	:384
+	y2L2	:0
+	x1L3	:-416
+	y1L3	:32
+	x2L3	:384
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+lf_rtds_sharc_sld_SERIESRLC
+	1104 272 2 1 16
+	R	:1
+	L	:0.001
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:I23A
+	IBnam	:I23B
+	ICnam	:I23C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+lf_rtds_sharc_sld_SERIESRLC
+	880 272 2 1 16
+	R	:0
+	L	:0.0015
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:Io2A
+	IBnam	:Io2B
+	ICnam	:Io2C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+BUS
+	1008 272 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-96
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-96
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	976 240 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+BUS
+	784 272 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-96
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-96
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	752 304 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:0
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	752 240 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+BUS
+	592 272 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	496 272 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-64
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-64
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+_rtds_3phAVMv1.def
+	368 272 0 0 30
+	Name	:INV2
+	R1	:1e-8
+	L1	:1e-9
+	Rdc	:0.01
+	Cdc	:5000
+	Ridc	:1e6
+	Varef	:Vinv2A
+	Vbref	:Vinv2B
+	Vcref	:Vinv2C
+	IDCcntl	:Power Balance
+	IDCref	:IDC
+	Tfilt	:0.01
+	monIac	:No
+	nameIa	:Iac0
+	nameIb	:Iac1
+	nameIc	:Iac2
+	monIdc	:No
+	nameIdc	:Idc
+	monPQ	:Yes
+	namePac	:Pinv2monit
+	nameQac	:Qinv2monit
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	A1PosXY	:-32
+	C1PosXY	:32
+	cntSwt	:Runtime
+	cntSwtcc	:Block
+ground
+	272 304 1 0 0
+WIRE
+	272 240 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	272 304 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharcu_SRC1PH2N
+	272 272 3 0 58
+	Name	:DC_src2
+	Type	:R
+	Tc	:0.05
+	Imp	:RRL Values
+	DynmImp	:Static
+	WvType	:DC
+	Sctrl	:RunTime
+	R1s	:0.0001
+	R1p	:1.0
+	L1p	:0.01
+	ImpCtlSrc	:RunTime
+	R2signalCC	:R1s
+	R1signalCC	:R1p
+	L1signalCC	:L1p
+	Tcc	:0.1
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	SMod	:Internal
+	Es	:230.0
+	F0	:60.0
+	Ph	:0.0
+	AFmod	:Frequency
+	Esm	:0.1
+	F0m	:1.0
+	Phm	:0.0
+	IMod	:Fmod
+	AMmod	:Amod
+	NHarm	:1
+	HN1	:2
+	Mag1	:0.05
+	Ph1	:0.0
+	HN2	:2
+	Mag2	:0.05
+	Ph2	:0.0
+	HN3	:2
+	Mag3	:0.05
+	Ph3	:0.0
+	HN4	:2
+	Mag4	:0.05
+	Ph4	:0.0
+	Esd	:1
+	F	:60.0
+	Z1	:1.0
+	Phi1	:80.0
+	RN	:2.0
+	Imon	:No
+	IMPmon	:No
+	Tf	:0.10
+	Rf	:0.50
+	Inam	:ISRC
+	R1Snam	:R1Smon
+	R1Pnam	:R1Pmon
+	L1Pnam	:L1Pmon
+	CNVGnam	:Converged
+	TrigSigCC	:ImpTrig
+rtds_sharc_sld_BUSLABEL
+	752 208 0 0 31
+	BName	:BUS2
+	NA	:Vc2A
+	NB	:Vc2B
+	NC	:Vc2C
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:PQ BUS
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:0
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+rtds_BLACKTEXT1
+	1104 208 0 0 3
+	AL1	:Z23
+	COL	:BLUE
+	LOC	:BELOW
+rtds_sharc_sld_BUSLABEL
+	976 208 0 0 31
+	BName	:BUS2o
+	NA	:Vo2A
+	NB	:Vo2B
+	NC	:Vo2C
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:PQ BUS
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:0
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+HIERARCHY
+	336 176 0 0 28
+	Name	:Control2
+	FCOL	:BLACK
+	BCOL	:VIOLET
+	LW	:1.0
+	DESC1	:Contol2
+	DESC2	:grid feeding
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:143
+	x1	:-32
+	y1	:-64
+	x2	:64
+	y2	:32
+	canvasX	:62
+	canvasY	:46
+	canvasWidth	:1199
+	canvasHeight	:840
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+WIRE
+	240 80 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+_rtds_pi_ctlr.def
+	272 80 0 0 7
+	GP	:0.012566
+	TI	:1.5791
+	YHI	:10.0
+	YLO	:-10.0
+	YINIT	:0.0
+	Proc	:1
+	Pri	:187
+rtds_sharc_ctl_SUM3
+	304 80 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:189
+wirelabel
+	304 48 0 0 3
+	Name	:wff
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 144 0 0 3
+	Name	:wff
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_CONSTANT
+	272 144 0 0 1
+	Val	:314.15
+rtds_sharc_ctl_INTGL
+	400 80 0 0 9
+	T	:1
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1
+	Proc	:1
+	Pri	:194
+rtds_sharc_ctl_ANGLEFIX
+	528 112 0 0 2
+	Proc	:35
+	Pri	:175
+wirelabel
+	592 112 0 0 3
+	Name	:phi2q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_XDIVY
+	400 208 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:193
+WIRE
+	368 208 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	496 208 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:196
+WIRE
+	464 208 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 176 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	560 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	656 208 2 1 7
+	Num	:THREE
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:202
+WIRE
+	656 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 272 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_XDIVY
+	400 368 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:192
+WIRE
+	400 400 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	368 368 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	496 368 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:195
+WIRE
+	496 336 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	464 368 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	560 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	656 368 2 1 7
+	Num	:THREE
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:205
+WIRE
+	656 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	464 368 0 0 3
+	Name	:Iq_star
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 208 0 0 3
+	Name	:Id_star
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	656 432 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 432 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	592 272 0 0 3
+	K	:-0.94248
+	Proc	:1
+	Pri	:186
+annotation
+	592 240 0 0 3
+	AL1	:w*Lf
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_GAIN
+	592 432 0 0 3
+	K	:0.94248
+	Proc	:1
+	Pri	:185
+annotation
+	592 400 0 0 3
+	AL1	:-w*Lf
+	AL2	:
+	FSize	:10
+WIRE
+	560 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	560 432 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_XDIVY
+	720 368 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:207
+rtds_sharc_ctl_LIMITS
+	816 368 0 1 5
+	IorF	:REAL
+	ULim	:1
+	LLim	:-1
+	Proc	:1
+	Pri	:208
+WIRE
+	720 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	784 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	720 400 0 0 3
+	Name	:V_dc_divQ2
+	COL	:BLUE
+	Monitor	:Yes
+annotation
+	752 336 0 0 3
+	AL1	:1/V_dc
+	AL2	:
+	FSize	:10
+wirelabel
+	848 368 0 0 3
+	Name	:mq2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	848 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_XDIVY
+	720 208 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:204
+rtds_sharc_ctl_LIMITS
+	816 208 0 1 5
+	IorF	:REAL
+	ULim	:10
+	LLim	:-10
+	Proc	:1
+	Pri	:206
+wirelabel
+	848 208 0 0 3
+	Name	:md2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	848 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	784 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	720 240 0 0 3
+	Name	:V_dc_divD2
+	COL	:BLUE
+	Monitor	:Yes
+annotation
+	560 464 0 0 3
+	AL1	:I control loop
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_CONSTANT
+	912 336 0 0 1
+	Val	:0
+rtds_sharc_ctl_DQ02ABC
+	976 304 0 0 4
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Proc	:1
+	Pri	:209
+wirelabel
+	1040 272 0 0 3
+	Name	:Vinv2A
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	1040 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1040 304 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1040 336 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1040 304 0 0 3
+	Name	:Vinv2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1040 336 0 0 3
+	Name	:Vinv2C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	912 272 0 0 3
+	Name	:md2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	912 304 0 0 3
+	Name	:mq2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	944 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 304 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	560 208 0 0 3
+	Name	:Id_star2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 208 0 0 3
+	Name	:Id_star3
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SLIDER
+	688 464 0 0 5
+	Name	:V_dc_divQ2
+	Init	:1000
+	Max	:10e4
+	Min	:0.1
+	Units	:volts
+wirelabel
+	752 464 0 0 3
+	Name	:V_dc_divQ2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	720 464 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SLIDER
+	688 304 0 0 5
+	Name	:V_dc_divD2
+	Init	:1000
+	Max	:10e4
+	Min	:0.1
+	Units	:volts
+wirelabel
+	752 304 0 0 3
+	Name	:V_dc_divD2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	720 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	240 208 0 0 3
+	Name	:P2_ref_W
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	304 208 0 0 3
+	K	:0.66666
+	Proc	:1
+	Pri	:29
+rtds_sharc_ctl_LIMITS
+	144 368 0 1 5
+	IorF	:REAL
+	ULim	:-0.000001
+	LLim	:-10e6
+	Proc	:1
+	Pri	:184
+wirelabel
+	240 304 0 0 3
+	Name	:Vc2d_nz
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	80 272 0 0 3
+	Name	:Vc2d
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	112 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_LIMITS
+	144 272 0 1 5
+	IorF	:REAL
+	ULim	:10e6
+	LLim	:0.00001
+	Proc	:1
+	Pri	:183
+wirelabel
+	80 368 0 0 3
+	Name	:Vc2d
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	112 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	176 304 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:188
+WIRE
+	176 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	176 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	176 336 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 304 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	240 368 0 0 3
+	Name	:Q2_ref_VA
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	304 368 0 0 3
+	K	:-0.66666
+	Proc	:1
+	Pri	:28
+wirelabel
+	560 368 0 0 3
+	Name	:Id_star2q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 368 0 0 3
+	Name	:Id_star3q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_MUL
+	816 528 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:201
+rtds_sharc_ctl_INTGL
+	816 624 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:200
+WIRE
+	752 624 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	784 528 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	752 528 0 0 3
+	Name	:Id_star2q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SUM3
+	912 624 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:203
+WIRE
+	912 624 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	880 528 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	912 560 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+wirelabel
+	720 624 0 0 3
+	Name	:Id_star2q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 624 0 0 3
+	Name	:Id_star3q
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	976 624 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	752 560 0 0 1
+	Val	:18.85
+rtds_sharc_ctl_CONSTANT
+	752 688 0 0 1
+	Val	:11844
+rtds_sharc_ctl_GAIN
+	336 240 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:191
+WIRE
+	208 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	208 240 0 0 3
+	Name	:Vc2d_nz
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	272 240 0 0 3
+	K	:1.0
+	Proc	:1
+	Pri	:190
+WIRE
+	368 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	400 240 0 0 3
+	Name	:Vc2d_nz_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 176 0 0 3
+	Name	:If2d
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	432 176 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:182
+WIRE
+	368 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	496 176 0 0 3
+	Name	:If2d_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 176 0 0 3
+	Name	:Vc2d_nz_V
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	656 176 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	368 400 0 0 3
+	Name	:Vc2d_nz_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 336 0 0 3
+	Name	:If2q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	432 336 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:181
+WIRE
+	368 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	496 336 0 0 3
+	Name	:If2q_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	80 80 0 0 3
+	Name	:Vc2q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	176 80 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:180
+WIRE
+	112 80 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	208 80 0 0 3
+	Name	:Vc2q_V
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	656 336 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	624 336 0 0 3
+	Name	:Vc2q_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	816 688 0 0 3
+	Name	:ki_i2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	816 560 0 0 3
+	Name	:kp_i2
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	432 592 0 0 0
+	22
+wirelabel
+	464 560 0 0 3
+	Name	:kp_i2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 688 0 0 3
+	Name	:ki_i2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 656 0 0 3
+	Name	:ki_i2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 592 0 0 3
+	Name	:kp_i2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	304 592 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 656 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SLIDER
+	240 656 0 0 5
+	Name	:ki_i2
+	Init	:11844
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+rtds_sharc_ctl_SLIDER
+	240 592 0 0 5
+	Name	:kp_i2
+	Init	:18.85
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+rtds_sharc_ctl_CONSTANT
+	400 688 0 0 1
+	Val	:11844
+rtds_sharc_ctl_CONSTANT
+	400 560 0 0 1
+	Val	:18.85
+WIRE
+	624 624 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	624 624 0 0 3
+	Name	:Id_star3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 624 0 0 3
+	Name	:Id_star2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	560 560 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	528 528 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	560 624 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	560 624 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:199
+wirelabel
+	400 528 0 0 3
+	Name	:Id_star2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	432 528 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 624 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_INTGL
+	464 624 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:198
+rtds_sharc_ctl_MUL
+	464 528 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:197
+wirelabel
+	976 368 0 0 3
+	Name	:phi2fin
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 240 0 0 3
+	Name	:Id_star4
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	784 208 0 0 3
+	Name	:Id_star5
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	528 432 0 0 3
+	Name	:If2d_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	528 272 0 0 3
+	Name	:If2q_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 432 0 0 3
+	Name	:Id_star4q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 80 0 0 3
+	Name	:Vc2q_test
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	336 80 0 0 3
+	Name	:Vc2q_test1
+	COL	:BLUE
+	Monitor	:Yes
+HIERARCHY
+	240 144 0 0 28
+	Name	:Measurements2
+	FCOL	:BLACK
+	BCOL	:ORANGE
+	LW	:1.0
+	DESC1	:Measurements
+	DESC2	:inverter 2
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:65
+	x1	:-64
+	y1	:-32
+	x2	:32
+	y2	:64
+	canvasX	:44
+	canvasY	:44
+	canvasWidth	:756
+	canvasHeight	:658
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+rtds_sharc_ctl_REALPL
+	304 144 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:62
+rtds_sharc_ctl_REALPL
+	304 208 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:61
+wirelabel
+	368 144 0 0 3
+	Name	:Po2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 208 0 0 3
+	Name	:Qo2
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_PQMET
+	112 144 0 0 5
+	pu	:No
+	MVA	:100.0
+	adv	:V by 1dt
+	Proc	:1
+	Pri	:60
+wirelabel
+	176 144 0 0 3
+	Name	:Po2meas
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 176 0 0 3
+	Name	:Qo2meas
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	144 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	144 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	48 208 0 0 0
+	3
+wirelabel
+	48 240 0 0 3
+	Name	:Io2C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 208 0 0 3
+	Name	:Io2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 176 0 0 3
+	Name	:Io2A
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	240 144 0 0 3
+	Name	:Po2meas
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 208 0 0 3
+	Name	:Qo2meas
+	COL	:BLUE
+	Monitor	:Yes
+annotation
+	304 80 0 0 3
+	AL1	:
+	AL2	:T=1/2pi*f_pctrl
+	FSize	:10
+rtds_sharc_ctl_ABC2DQ0
+	336 368 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:179
+WIRE
+	272 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	272 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	272 368 0 0 0
+	3
+wirelabel
+	272 400 0 0 3
+	Name	:Io2C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 368 0 0 3
+	Name	:Io2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 336 0 0 3
+	Name	:Io2A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 336 0 0 3
+	Name	:Io2d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 368 0 0 3
+	Name	:Io2q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ABC2DQ0
+	464 272 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:178
+WIRE
+	400 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	400 272 0 0 0
+	3
+wirelabel
+	400 304 0 0 3
+	Name	:If2C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	400 272 0 0 3
+	Name	:If2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	400 240 0 0 3
+	Name	:If2A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	48 112 0 0 0
+	3
+wirelabel
+	48 144 0 0 3
+	Name	:Vc2C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 112 0 0 3
+	Name	:Vc2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 80 0 0 3
+	Name	:Vc2A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	432 144 0 0 0
+	3
+wirelabel
+	432 176 0 0 3
+	Name	:V4C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 144 0 0 3
+	Name	:V4B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 112 0 0 3
+	Name	:V4A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ABC2DQ0
+	656 272 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:177
+WIRE
+	592 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	624 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	592 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	688 240 0 0 3
+	Name	:Vc2d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 272 0 0 3
+	Name	:Vc2q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_BLACKTEXT
+	528 304 0 0 11
+	NL	:3
+	COL	:BLACK
+	AL1	:peak
+	AL2	:vs
+	AL3	:RMS!
+	AL4	:Line4
+	AL5	:Line5
+	AL6	:Line6
+	AL7	:Line7
+	AL8	:Line8
+	AL9	:Line9
+wirelabel
+	496 240 0 0 3
+	Name	:If2d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 272 0 0 3
+	Name	:If2q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 240 0 0 3
+	Name	:Vc2A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 272 0 0 3
+	Name	:Vc2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 304 0 0 3
+	Name	:Vc2C
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_PLLT2
+	560 144 0 0 9
+	Frat	:50
+	Ainit	:0.0
+	PIPG	:5.0
+	PIIT	:0.01
+	Ft	:0.0015
+	WMON	:rad/sec
+	EMON	:No
+	Proc	:1
+	Pri	:59
+WIRE
+	592 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	592 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	624 144 0 0 3
+	Name	:w2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	496 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	624 112 0 0 3
+	Name	:phi2
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	496 144 0 0 0
+	3
+wirelabel
+	496 176 0 0 3
+	Name	:Vc2C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 144 0 0 3
+	Name	:Vc2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 112 0 0 3
+	Name	:Vc2A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SIGSW
+	496 496 0 0 5
+	A	:1
+	DPath	:REAL
+	Pos	:A
+	Proc	:1
+	Pri	:176
+wirelabel
+	464 496 0 0 3
+	Name	:phi2q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 464 0 0 3
+	Name	:phi2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	528 496 0 0 3
+	Name	:phi2fin
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	496 560 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SWITCH
+	464 560 0 0 7
+	Name	:phi2sw
+	Init	:Off
+	Type	:INTEGER
+	VOn	:1
+	VOff	:0
+	Ton	:ON
+	Toff	:OFF
+wirelabel
+	656 336 0 0 3
+	Name	:phi2fin
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 336 0 0 3
+	Name	:phi2fin
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	336 432 0 0 3
+	Name	:phi2fin
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	336 368 0 0 3
+	Name	:P2_ref_W
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	336 400 0 0 3
+	Name	:Q2_ref_VA
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	336 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 400 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 368 0 0 2
+	-32 -4 64 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 400 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SLIDER
+	176 368 0 0 5
+	Name	:P2ref_W
+	Init	:1452
+	Max	:10e6
+	Min	:0.00001
+	Units	:
+rtds_BLACKTEXT1
+	656 336 0 0 3
+	AL1	:If2
+	COL	:BLUE
+	LOC	:OVER
+rtds_BLACKTEXT1
+	880 336 0 0 3
+	AL1	:Io2
+	COL	:BLUE
+	LOC	:OVER
+WIRE
+	688 1712 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	240 1712 0 0 1
+	Val	:50
+lf_rtds_sharc_sld_SHUNTRLC
+	848 368 3 1 16
+	R	:0.1
+	L	:0
+	CuF	:10e-6
+	type	:Y
+	NR	:No
+	Imon	:No
+	IAnam	:IA
+	IBnam	:IB
+	ICnam	:IC
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+BUS
+	1328 272 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-192
+	y1L1	:-32
+	x2L1	:224
+	y2L1	:-32
+	x1L2	:-192
+	y1L2	:0
+	x2L2	:192
+	y2L2	:0
+	x1L3	:-192
+	y1L3	:32
+	x2L3	:160
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:1
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	1520 304 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:96
+	y2L1	:-32
+	x1L2	:-96
+	y1L2	:0
+	x2L2	:96
+	y2L2	:0
+	x1L3	:-96
+	y1L3	:32
+	x2L3	:96
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	1712 272 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-160
+	y1L1	:-32
+	x2L1	:192
+	y2L1	:-32
+	x1L2	:-192
+	y1L2	:0
+	x2L2	:192
+	y2L2	:0
+	x1L3	:-224
+	y1L3	:32
+	x2L3	:192
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:1
+	L3ArcAtEnd2	:0
+BUS
+	1680 304 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:0
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+lf_rtds_sharc_sld_SHUNTRLC
+	1680 368 3 1 16
+	R	:50
+	L	:0
+	CuF	:0
+	type	:Y
+	NR	:No
+	Imon	:Yes
+	IAnam	:IL32A
+	IBnam	:IL32B
+	ICnam	:IL32C
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+BUS
+	1680 240 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+rtds_sharc_sld_BUSLABEL
+	1680 208 0 0 31
+	BName	:BUSgrid
+	NA	:VgridA
+	NB	:VgridB
+	NC	:VgridC
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:SLACK
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:3
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+lf_rtds_sharc_sld_SERIESRLC
+	656 272 2 1 16
+	R	:0
+	L	:0.001
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:If2A
+	IBnam	:If2B
+	ICnam	:If2C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+rtds_sharc_ctl_SLIDER
+	240 400 0 0 5
+	Name	:Q2ref_VA
+	Init	:1452
+	Max	:10e7
+	Min	:-10e7
+	Units	:
+lf_rtds_sharc_sld_SRC
+	1936 272 0 1 106
+	Name	:src
+	Type	:R
+	Tc	:0.05
+	ZSeq	:No
+	Imp	:RRL Values
+	DynmImp	:Static
+	srcBrk	:No
+	WvType	:AC
+	Sctrl	:RunTime
+	Spec	:Behind Impedance
+	R1s	:1.0
+	R1p	:0.1
+	L1p	:0.001
+	R0p	:1.0
+	L0p	:0.1
+	ImpCtlSrc	:RunTime
+	R2signalCC	:R1s
+	R1signalCC	:R1p
+	L1signalCC	:L1p
+	R0signalCC	:R0
+	L0signalCC	:L0
+	Tcc	:1
+	AorM	:Automatic
+	Aprc	:Either
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	ZType	:R//L
+	SMod	:Internal
+	Es	:6
+	F0	:50
+	Ph	:0.0
+	AFmod	:Frequency
+	Esm	:0.1
+	F0m	:1.0
+	Phm	:0.0
+	IMod	:Fmod
+	AMmod	:Amod
+	NHarm	:1
+	HN1	:2
+	Mag1	:0.05
+	Ph1	:0.0
+	HN2	:2
+	Mag2	:0.05
+	Ph2	:0.0
+	HN3	:2
+	Mag3	:0.05
+	Ph3	:0.0
+	HN4	:2
+	Mag4	:0.05
+	Ph4	:0.0
+	vBase	:230.0
+	mvaBase	:100.0
+	Et	:1.0
+	Pht	:0.0
+	NOTE1	:
+	NOTE2	:
+	P	:-785.408799
+	Q	:177.924802
+	Pt	:100.0
+	Qt	:50.0
+	Esd	:100.0
+	F	:60.0
+	Z1	:1.0
+	Phi1	:80.0
+	RN	:2.0
+	Z0	:1.0
+	Phi0	:80.0
+	ieee2	:ieee
+	Pmon	:Yes
+	Qmon	:Yes
+	MLoc	:Source
+	Tcp	:0.0
+	Imon	:No
+	Vmon	:No
+	IMPmon	:No
+	Pnam	:Psource1
+	Qnam	:Qsource1
+	IAnam	:IA
+	IBnam	:IB
+	ICnam	:IC
+	VAnam	:VA
+	VBnam	:VB
+	VCnam	:VC
+	L0nam	:L0mon
+	R0nam	:R0mon
+	R1Snam	:R1Smon
+	R1Pnam	:R1Pmon
+	L1Pnam	:L1Pmon
+	CNVGnam	:Converged
+	Tf	:0.10
+	Rf	:0.50
+	A1PosY	:-32
+	C1PosY	:32
+	LFIdent	:2
+	P_L1	:0.0
+	Q_L1	:0.0
+	TrigSigCC	:ImpTrig
+	brkOpnRes	:1.0e6
+	brkClsRes	:1.0e-4
+	stat	:Closed
+	swdnm	:SBKWORD
+	Abit	:1
+	Bbit	:1
+	Cbit	:1
+DASHED_LINE
+	1808 432 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	1744 336 1 0 2
+	-4 -128 4 96
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	1808 208 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	1872 336 1 0 2
+	-4 -128 4 96
+	LW	:1
+	COL	:RED
+annotation
+	1808 432 0 0 3
+	AL1	:
+	AL2	:3 Phase Breaker
+	FSize	:10
+HIERARCHY
+	1808 368 2 0 28
+	Name	:
+	FCOL	:YELLOW
+	BCOL	:BLACK
+	LW	:1.0
+	DESC1	:BREAKER
+	DESC2	:MANUAL
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:3
+	x1	:-32
+	y1	:-32
+	x2	:32
+	y2	:32
+	canvasX	:46
+	canvasY	:40
+	canvasWidth	:415
+	canvasHeight	:454
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+WIRE
+	208 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	240 112 0 0 3
+	Name	:BRKgrid
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SWITCH
+	176 112 0 0 7
+	Name	:BRKgridsw
+	Init	:Off
+	Type	:INTEGER
+	VOn	:1
+	VOff	:0
+	Ton	:OPEN
+	Toff	:CLOSE
+rtds_udc_DYLOAD
+	1872 144 1 0 69
+	Name	:Dload3
+	type	:RL
+	bal	:YES
+	btype	:R-X
+	YD	:Y
+	cc	:Slider
+	gnd	:No
+	Vmeas	:Internal
+	Vbus	:0.4
+	Vmin	:0.5
+	constF	:Yes
+	freq	:50
+	FreqDevMax	:2.0
+	T	:0.01
+	Tm	:0.003
+	Pinit	:0.5
+	Pmin	:0.0001
+	Pmax	:1000
+	Qinit	:0.000001
+	Qmin	:0.000001
+	Qmax	:1000
+	Pinit1	:100
+	Pinit2	:100
+	Pinit3	:100
+	Qinit1	:100
+	Qinit2	:100
+	Qinit3	:100
+	SorC	:Runtime
+	Fract	:Constant
+	Po	:100
+	Qo	:100
+	TS	:10.0
+	Tf	:0.01
+	Pordcc	:Pordcc
+	Qordcc	:Qordcc
+	ZPcc	:ZPcc
+	IPcc	:IPcc
+	PPcc	:PPcc
+	ZQcc	:ZQcc
+	IQcc	:IQcc
+	PQcc	:PQcc
+	ZP	:20
+	IP	:40
+	PP	:40
+	ZQ	:20
+	IQ	:40
+	PQ	:40
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	pPmon	:Yes
+	pQmon	:Yes
+	pIAmon	:No
+	pIBmon	:No
+	pICmon	:No
+	nPmon	:Ploadmonit
+	nQmon	:Qloadmonit
+	nIAmon	:IA
+	nIBmon	:IB
+	nICmon	:IC
+	A1PosX	:-32
+	C1PosX	:32
+	loc	:group
+	P_L0	:0.0
+	Q_L0	:0.0
+	LFIdent	:0
+	Cts	:0.1
+GROUP
+	2256 592 0 0 0
+	18
+DASHED_LINE
+	2448 624 1 0 2
+	-4 -128 4 96
+	LW	:1
+	COL	:RED
+annotation
+	2384 688 0 0 3
+	AL1	:controller from GTNET
+	AL2	:3 Phase Breaker
+	FSize	:10
+annotation
+	2256 688 0 0 3
+	AL1	:controller from GTNET
+	AL2	:3 Phase Breaker
+	FSize	:10
+lf_rtds_sharc_sld_BREAKER
+	2384 560 0 0 26
+	Anam	:BRK3A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk3int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK3B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk3int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK3C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk3int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+DASHED_LINE
+	2384 496 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2320 592 1 0 2
+	-4 -96 4 128
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2384 720 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+lf_rtds_sharc_sld_BREAKER
+	2256 560 0 0 26
+	Anam	:BRK2A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk2int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK2B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk2int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK2C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk2int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+DASHED_LINE
+	2320 624 1 0 2
+	-4 -128 4 96
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2256 496 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2192 592 1 0 2
+	-4 -96 4 128
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2256 720 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+annotation
+	2128 688 0 0 3
+	AL1	:controller from GTNET
+	AL2	:3 Phase Breaker
+	FSize	:10
+lf_rtds_sharc_sld_BREAKER
+	2128 560 0 0 26
+	Anam	:BRK1A
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:sc_brk1int
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRK1B
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:sc_brk1int
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRK1C
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:sc_brk1int
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+DASHED_LINE
+	2192 624 1 0 2
+	-4 -128 4 96
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2128 496 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2064 592 1 0 2
+	-4 -96 4 128
+	LW	:1
+	COL	:RED
+DASHED_LINE
+	2128 720 0 0 2
+	-64 -4 64 4
+	LW	:1
+	COL	:RED
+lf_rtds_sharc_sld_BREAKER
+	1520 432 1 0 26
+	Anam	:BRKinterA
+	ARcls	:0.1
+	Aholdi	:0.0
+	Asig	:BRKinter
+	Abit	:1
+	Amon	:No
+	IAnam	:IBRKA
+	Bnam	:BRKinterB
+	BRcls	:0.1
+	Bholdi	:0.0
+	Bsig	:BRKinter
+	Bbit	:2
+	Bmon	:No
+	IBnam	:IBRKB
+	Cnam	:BRKinterC
+	CRcls	:0.1
+	Choldi	:0.0
+	Csig	:BRKinter
+	Cbit	:3
+	Cmon	:No
+	ICnam	:IBRKC
+	A1PosY	:-32
+	C1PosY	:32
+	A2PosY	:-32
+	C2PosY	:32
+	stat	:Closed
+HIERARCHY
+	1424 432 2 0 28
+	Name	:
+	FCOL	:YELLOW
+	BCOL	:BLACK
+	LW	:1.0
+	DESC1	:BREAKER
+	DESC2	:MANUAL
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:3
+	x1	:-32
+	y1	:-32
+	x2	:32
+	y2	:32
+	canvasX	:22
+	canvasY	:40
+	canvasWidth	:415
+	canvasHeight	:454
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+WIRE
+	208 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	240 112 0 0 3
+	Name	:BRKinter
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SWITCH
+	176 112 0 0 7
+	Name	:BRKintersw
+	Init	:Off
+	Type	:INTEGER
+	VOn	:1
+	VOff	:0
+	Ton	:OPEN
+	Toff	:CLOSE
+BUS
+	1872 720 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-192
+	y1L1	:-32
+	x2L1	:128
+	y2L1	:-32
+	x1L2	:-160
+	y1L2	:0
+	x2L2	:160
+	y2L2	:0
+	x1L3	:-128
+	y1L3	:32
+	x2L3	:192
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+BUS
+	2064 880 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-128
+	y1L1	:-32
+	x2L1	:128
+	y2L1	:-32
+	x1L2	:-128
+	y1L2	:0
+	x2L2	:128
+	y2L2	:0
+	x1L3	:-128
+	y1L3	:32
+	x2L3	:128
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	1744 880 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-224
+	y1L1	:-32
+	x2L1	:192
+	y2L1	:-32
+	x1L2	:-192
+	y1L2	:0
+	x2L2	:192
+	y2L2	:0
+	x1L3	:-160
+	y1L3	:32
+	x2L3	:192
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	2128 944 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-64
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+rtds_sharc_sld_FAULT
+	1936 1008 1 0 51
+	Type	:Line-Ground
+	Ag	:Yes
+	Bg	:Yes
+	Cg	:Yes
+	Agnam	:AG
+	AgRon	:0.1
+	Agholdi	:0.0
+	Asig	:LGFLT
+	Abit	:1
+	Amon	:No
+	IAgnam	:Iag
+	Bgnam	:BG
+	BgRon	:0.1
+	Bgholdi	:0.0
+	Bsig	:LGFLT
+	Bbit	:2
+	Bmon	:No
+	IBgnam	:Ibg
+	Cgnam	:CG
+	CgRon	:0.1
+	Cgholdi	:0.0
+	Csig	:LGFLT
+	Cbit	:3
+	Cmon	:No
+	ICgnam	:Icg
+	AB	:Yes
+	BC	:Yes
+	CA	:Yes
+	ABnam	:AB
+	ABRon	:0.1
+	ABholdi	:0.0
+	ABsig	:FLT
+	ABbit	:1
+	ABmon	:No
+	IABnam	:Iag
+	BCnam	:BC
+	BCRon	:0.1
+	BCholdi	:0.0
+	BCsig	:FLT
+	BCbit	:1
+	BCmon	:No
+	IBCnam	:Iag
+	CAnam	:CA
+	CARon	:0.1
+	CAholdi	:0.0
+	CAsig	:FLT
+	CAbit	:1
+	CAmon	:No
+	ICAnam	:Iag
+	A1PosY	:-32
+	C1PosY	:32
+HIERARCHY
+	2032 1008 0 0 28
+	Name	:falut1
+	FCOL	:WHITE
+	BCOL	:BROWN
+	LW	:1.0
+	DESC1	:L-G FAULT
+	DESC2	:LOGIC
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:10
+	x1	:-32
+	y1	:-32
+	x2	:32
+	y2	:32
+	canvasX	:30
+	canvasY	:49
+	canvasWidth	:405
+	canvasHeight	:208
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+rtds_sharc_ctl_PB
+	80 80 0 0 4
+	Name	:LG_FLT
+	Type	:INTEGER
+	VOn	:1
+	VOff	:0
+rtds_sharc_ctl_MONO
+	144 80 0 0 7
+	PN	:Rising
+	TM	:Variable
+	LOT	:0.01
+	OT	:1
+	OR	:0
+	Proc	:1
+	Pri	:13
+rtds_sharc_ctl_DIAL
+	80 48 0 0 34
+	Name	:LG_FLT
+	Type	:INTEGER
+	Pos	:7
+	Init	:2
+	IP1	:0
+	IP2	:1
+	IP3	:2
+	IP4	:4
+	IP5	:3
+	IP6	:6
+	IP7	:7
+	IP8	:8
+	IP9	:9
+	IP10	:10
+	FP1	:0
+	FP2	:1
+	FP3	:2
+	FP4	:4
+	FP5	:3
+	FP6	:6
+	FP7	:7
+	FP8	:8.0
+	FP9	:9.0
+	FP10	:10.0
+	HEX1	:01
+	HEX2	:02
+	HEX3	:03
+	HEX4	:04
+	HEX5	:05
+	HEX6	:06
+	HEX7	:07
+	HEX8	:08
+	HEX9	:09
+	HEX10	:0A
+WIRE
+	176 48 0 0 2
+	-64 -4 64 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_MUL
+	240 48 0 0 4
+	Num	:TWO
+	IorF	:INTEGER
+	Proc	:1
+	Pri	:68
+rtds_sharc_ctl_GAIN
+	80 112 0 0 3
+	K	:0.02
+	Proc	:1
+	Pri	:12
+wirelabel
+	336 48 0 0 3
+	Name	:LGFLT
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SLIDER
+	16 112 0 0 5
+	Name	:LG_FTIME
+	Init	:1
+	Max	:10.0
+	Min	:0.0
+	Units	:cycles
+WIRE
+	304 48 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	208 80 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	2064 1200 0 0 0
+	7
+WIRE
+	2096 1264 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+wirelabel
+	2096 1264 0 0 3
+	Name	:Q2_ref_VA
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	2096 1200 3 0 3
+	K	:1e-6
+	Proc	:1
+	Pri	:64
+WIRE
+	2032 1264 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	2032 1200 3 0 3
+	K	:1e-6
+	Proc	:1
+	Pri	:63
+wirelabel
+	2032 1264 0 0 3
+	Name	:P2_ref_W
+	COL	:BLUE
+	Monitor	:Yes
+rtds_udc_DYLOAD
+	2064 1136 0 0 69
+	Name	:Dload32
+	type	:RL
+	bal	:YES
+	btype	:R-X
+	YD	:Y
+	cc	:CC
+	gnd	:No
+	Vmeas	:Internal
+	Vbus	:0.4
+	Vmin	:0.5
+	constF	:Yes
+	freq	:50
+	FreqDevMax	:2.0
+	T	:0.01
+	Tm	:0.003
+	Pinit	:0.5
+	Pmin	:0.0001
+	Pmax	:1000
+	Qinit	:0.000001
+	Qmin	:0.000001
+	Qmax	:1000
+	Pinit1	:100
+	Pinit2	:100
+	Pinit3	:100
+	Qinit1	:100
+	Qinit2	:100
+	Qinit3	:100
+	SorC	:Runtime
+	Fract	:Constant
+	Po	:100
+	Qo	:100
+	TS	:10.0
+	Tf	:0.01
+	Pordcc	:Pordcc
+	Qordcc	:Qordcc
+	ZPcc	:ZPcc
+	IPcc	:IPcc
+	PPcc	:PPcc
+	ZQcc	:ZQcc
+	IQcc	:IQcc
+	PQcc	:PQcc
+	ZP	:20
+	IP	:40
+	PP	:40
+	ZQ	:20
+	IQ	:40
+	PQ	:40
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	pPmon	:Yes
+	pQmon	:Yes
+	pIAmon	:No
+	pIBmon	:No
+	pICmon	:No
+	nPmon	:Pload32monit
+	nQmon	:Qload32monit
+	nIAmon	:IA
+	nIBmon	:IB
+	nICmon	:IC
+	A1PosX	:32
+	C1PosX	:-32
+	loc	:group
+	P_L0	:0.0
+	Q_L0	:0.0
+	LFIdent	:0
+	Cts	:0.1
+lf_rtds_sharc_sld_SHUNTRLC
+	2128 976 3 1 16
+	R	:50
+	L	:0
+	CuF	:0
+	type	:Y
+	NR	:No
+	Imon	:Yes
+	IAnam	:IloadA
+	IBnam	:IloadB
+	ICnam	:IloadC
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+rtds_sharc_sld_BUSLABEL
+	1232 880 0 0 31
+	BName	:BUS31
+	NA	:Vo31A
+	NB	:Vo31B
+	NC	:Vo31C
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:PQ BUS
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:0
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+lf_rtds_sharc_sld_SERIESRLC
+	656 976 2 1 16
+	R	:0
+	L	:0.001
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:If3A
+	IBnam	:If3B
+	ICnam	:If3C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+BUS
+	784 976 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-96
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-96
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	752 1008 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:0
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+lf_rtds_sharc_sld_SERIESRLC
+	880 976 2 1 16
+	R	:0
+	L	:0.0015
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:Io3A
+	IBnam	:Io3B
+	ICnam	:Io3C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+BUS
+	560 976 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-64
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-64
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	752 944 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+rtds_sharc_sld_BUSLABEL
+	752 912 0 0 31
+	BName	:BUS3
+	NA	:Vc3A
+	NB	:Vc3B
+	NC	:Vc3C
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:PQ BUS
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:0
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+rtds_BLACKTEXT1
+	656 1040 0 0 3
+	AL1	:If3
+	COL	:BLUE
+	LOC	:OVER
+rtds_BLACKTEXT1
+	688 912 0 0 3
+	AL1	:Vc3
+	COL	:BLUE
+	LOC	:OVER
+lf_rtds_sharc_sld_SERIESRLC
+	1104 976 2 1 16
+	R	:1
+	L	:0.001
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:I33A
+	IBnam	:I33B
+	ICnam	:I33C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+rtds_BLACKTEXT1
+	880 1040 0 0 3
+	AL1	:Io3
+	COL	:BLUE
+	LOC	:OVER
+rtds_BLACKTEXT1
+	1104 912 0 0 3
+	AL1	:Z33
+	COL	:BLUE
+	LOC	:BELOW
+_rtds_3phAVMv1.def
+	368 976 0 0 30
+	Name	:INV3
+	R1	:1e-8
+	L1	:1e-9
+	Rdc	:0.01
+	Cdc	:5000
+	Ridc	:1e6
+	Varef	:Vinv3A
+	Vbref	:Vinv3B
+	Vcref	:Vinv3C
+	IDCcntl	:Power Balance
+	IDCref	:IDC
+	Tfilt	:0.01
+	monIac	:No
+	nameIa	:Iac0
+	nameIb	:Iac1
+	nameIc	:Iac2
+	monIdc	:No
+	nameIdc	:Idc
+	monPQ	:Yes
+	namePac	:Pinv3monit
+	nameQac	:Qinv3monit
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	A1PosXY	:-32
+	C1PosXY	:32
+	cntSwt	:Runtime
+	cntSwtcc	:Block
+BUS
+	464 976 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+HIERARCHY
+	240 1072 0 0 28
+	Name	:Measurements3
+	FCOL	:BLACK
+	BCOL	:ORANGE
+	LW	:1.0
+	DESC1	:Measurements
+	DESC2	:inverter 3
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:145
+	x1	:-64
+	y1	:-32
+	x2	:32
+	y2	:64
+	canvasX	:37
+	canvasY	:49
+	canvasWidth	:1110
+	canvasHeight	:658
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+rtds_sharc_ctl_PQMET
+	112 144 0 0 5
+	pu	:No
+	MVA	:100.0
+	adv	:V by 1dt
+	Proc	:1
+	Pri	:44
+wirelabel
+	176 144 0 0 3
+	Name	:Po3meas
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 176 0 0 3
+	Name	:Qo3meas
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	144 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	144 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	848 112 0 0 0
+	3
+wirelabel
+	848 144 0 0 3
+	Name	:Vc3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 112 0 0 3
+	Name	:Vc3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 80 0 0 3
+	Name	:Vc3A
+	COL	:BLUE
+	Monitor	:Yes
+annotation
+	944 16 0 0 3
+	AL1	:
+	AL2	:conversion to other units for plots
+	FSize	:10
+rtds_sharc_ctl_GAIN
+	912 80 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:43
+GROUP
+	976 112 0 0 0
+	3
+wirelabel
+	976 144 0 0 3
+	Name	:Vc3C_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 112 0 0 3
+	Name	:Vc3B_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 80 0 0 3
+	Name	:Vc3A_V
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	912 112 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:42
+rtds_sharc_ctl_GAIN
+	912 144 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:41
+rtds_sharc_ctl_GAIN
+	912 208 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:40
+rtds_sharc_ctl_GAIN
+	912 240 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:39
+rtds_sharc_ctl_GAIN
+	912 272 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:38
+GROUP
+	976 240 0 0 0
+	3
+wirelabel
+	976 272 0 0 3
+	Name	:If3C_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 240 0 0 3
+	Name	:If3B_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 208 0 0 3
+	Name	:If3A_A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	912 336 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:37
+rtds_sharc_ctl_GAIN
+	912 368 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:36
+rtds_sharc_ctl_GAIN
+	912 400 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:35
+GROUP
+	976 368 0 0 0
+	3
+wirelabel
+	976 400 0 0 3
+	Name	:Io3C_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 368 0 0 3
+	Name	:Io3B_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 336 0 0 3
+	Name	:Io3A_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 464 0 0 3
+	Name	:Po3_kW
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 496 0 0 3
+	Name	:Qo3_kW
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	912 464 0 0 3
+	K	:10e3
+	Proc	:1
+	Pri	:79
+rtds_sharc_ctl_GAIN
+	912 496 0 0 3
+	K	:10e3
+	Proc	:1
+	Pri	:78
+WIRE
+	848 496 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 464 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 272 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 272 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 464 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 496 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	848 560 0 0 3
+	Name	:Pinv3monit
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 592 0 0 3
+	Name	:Qinv3monit
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 560 0 0 3
+	Name	:Pinv3monit_kW
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 592 0 0 3
+	Name	:Qinv3monit_kW
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	912 560 0 0 3
+	K	:10e3
+	Proc	:1
+	Pri	:34
+rtds_sharc_ctl_GAIN
+	912 592 0 0 3
+	K	:10e3
+	Proc	:1
+	Pri	:33
+WIRE
+	848 560 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 592 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 560 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 592 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	48 112 0 0 0
+	3
+wirelabel
+	48 144 0 0 3
+	Name	:Vc3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 112 0 0 3
+	Name	:Vc3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 80 0 0 3
+	Name	:Vc3A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	48 208 0 0 0
+	1
+GROUP
+	48 208 0 0 0
+	3
+wirelabel
+	48 240 0 0 3
+	Name	:Io3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 208 0 0 3
+	Name	:Io3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 176 0 0 3
+	Name	:Io3A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_REALPL
+	304 144 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:77
+rtds_sharc_ctl_REALPL
+	304 208 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:76
+wirelabel
+	368 144 0 0 3
+	Name	:Po3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 208 0 0 3
+	Name	:Qo3
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	240 144 0 0 3
+	Name	:Po3meas
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 208 0 0 3
+	Name	:Qo3meas
+	COL	:BLUE
+	Monitor	:Yes
+annotation
+	304 80 0 0 3
+	AL1	:
+	AL2	:T=1/2pi*f_pctrl
+	FSize	:10
+GROUP
+	848 240 0 0 0
+	3
+wirelabel
+	848 272 0 0 3
+	Name	:If3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 240 0 0 3
+	Name	:If3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 208 0 0 3
+	Name	:If3A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	848 368 0 0 0
+	1
+GROUP
+	848 368 0 0 0
+	3
+wirelabel
+	848 400 0 0 3
+	Name	:Io3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 368 0 0 3
+	Name	:Io3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 336 0 0 3
+	Name	:Io3A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 464 0 0 3
+	Name	:Po3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 496 0 0 3
+	Name	:Qo3
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	464 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	464 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	560 176 0 0 3
+	Name	:Io3d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	560 208 0 0 3
+	Name	:Io3q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	528 272 0 0 3
+	Name	:phi3fin
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	464 208 0 0 0
+	1
+GROUP
+	464 208 0 0 0
+	3
+wirelabel
+	464 240 0 0 3
+	Name	:Io3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 208 0 0 3
+	Name	:Io3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 176 0 0 3
+	Name	:Io3A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ABC2DQ0
+	528 208 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:75
+rtds_BLACKTEXT
+	592 112 0 0 11
+	NL	:3
+	COL	:BLACK
+	AL1	:peak
+	AL2	:vs
+	AL3	:RMS!
+	AL4	:Line4
+	AL5	:Line5
+	AL6	:Line6
+	AL7	:Line7
+	AL8	:Line8
+	AL9	:Line9
+rtds_sharc_ctl_ABC2DQ0
+	528 80 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:74
+WIRE
+	464 48 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 80 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	464 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	464 80 0 0 0
+	3
+wirelabel
+	464 112 0 0 3
+	Name	:If3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 80 0 0 3
+	Name	:If3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 48 0 0 3
+	Name	:If3A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	560 48 0 0 3
+	Name	:If3d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	560 80 0 0 3
+	Name	:If3q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	528 144 0 0 3
+	Name	:phi3fin
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ABC2DQ0
+	720 208 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:73
+WIRE
+	656 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	752 176 0 0 3
+	Name	:Vc3d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	752 208 0 0 3
+	Name	:Vc3q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	720 272 0 0 3
+	Name	:phi3fin
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	656 208 0 0 0
+	3
+wirelabel
+	656 240 0 0 3
+	Name	:Vc3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 208 0 0 3
+	Name	:Vc3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 176 0 0 3
+	Name	:Vc3A
+	COL	:BLUE
+	Monitor	:Yes
+annotation
+	144 304 0 0 3
+	AL1	:Reference Voltage Generator
+	AL2	:
+	FSize	:16
+GROUP
+	720 80 0 0 0
+	9
+GROUP
+	656 80 0 0 0
+	3
+wirelabel
+	656 112 0 0 3
+	Name	:Vc3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 80 0 0 3
+	Name	:Vc3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 48 0 0 3
+	Name	:Vc3A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	784 48 0 0 3
+	Name	:phi3
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	656 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 48 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	784 80 0 0 3
+	Name	:w3
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	752 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	752 48 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_PLLT2
+	720 80 0 0 9
+	Frat	:50
+	Ainit	:0.0
+	PIPG	:5.0
+	PIIT	:0.01
+	Ft	:0.0015
+	WMON	:rad/sec
+	EMON	:No
+	Proc	:1
+	Pri	:32
+WIRE
+	336 368 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 400 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 432 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SINE3
+	240 400 0 0 4
+	Mode	:rad
+	Gain	:Yes
+	Proc	:35
+	Pri	:31
+WIRE
+	208 400 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	80 432 0 0 1
+	Val	:0.0
+rtds_sharc_ctl_SRCABSPH
+	144 400 0 0 5
+	WType	:SawTooth
+	Units	:volts
+	Duty	:50
+	Proc	:35
+	Pri	:30
+wirelabel
+	304 368 0 0 3
+	Name	:Vref3A_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 400 0 0 3
+	Name	:Vref3B_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 432 0 0 3
+	Name	:Vref3C_V
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	432 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_ABC2DQ0
+	400 400 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:35
+	Pri	:72
+WIRE
+	432 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	400 464 0 0 3
+	Name	:phi3fin
+	COL	:BLUE
+	Monitor	:Yes
+rtds_BLUETEXT1
+	112 528 0 0 1
+	AL1	:230V*sqrt(2) - phase, peak
+rtds_sharc_ctl_CONSTANT
+	112 528 0 0 1
+	Val	:325.27
+rtds_sharc_ctl_CONSTANT
+	80 368 0 0 1
+	Val	:6.283
+rtds_sharc_ctl_CONSTANT
+	80 400 0 0 1
+	Val	:50.0
+rtds_sharc_ctl_CONSTANT
+	208 464 0 0 1
+	Val	:4889
+rtds_BLUETEXT1
+	208 464 0 0 1
+	AL1	:6kV*sqrt(2/3) - phase, peak
+wirelabel
+	464 400 0 0 3
+	Name	:Vref3q_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 368 0 0 3
+	Name	:Vref3d_V
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SIGSW
+	624 336 0 0 5
+	A	:1
+	DPath	:REAL
+	Pos	:A
+	Proc	:1
+	Pri	:71
+wirelabel
+	592 336 0 0 3
+	Name	:phi3p
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 304 0 0 3
+	Name	:phi3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 336 0 0 3
+	Name	:phi3fin
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	624 400 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SWITCH
+	592 400 0 0 7
+	Name	:phi3sw
+	Init	:Off
+	Type	:INTEGER
+	VOn	:1
+	VOff	:0
+	Ton	:ON
+	Toff	:OFF
+wirelabel
+	624 368 0 0 3
+	Name	:phi3sw
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_CONSTANT
+	592 528 0 0 1
+	Val	:0
+wirelabel
+	592 496 0 0 3
+	Name	:mq3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 464 0 0 3
+	Name	:md3
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_DQ02ABC
+	656 496 0 0 4
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Proc	:1
+	Pri	:145
+wirelabel
+	720 464 0 0 3
+	Name	:Vinv3A
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	720 464 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 496 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	720 496 0 0 3
+	Name	:Vinv3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	720 528 0 0 3
+	Name	:Vinv3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 560 0 0 3
+	Name	:phi3fin
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	624 464 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	624 496 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+HIERARCHY
+	336 1104 0 0 28
+	Name	:Control3
+	FCOL	:BLACK
+	BCOL	:GOLD
+	LW	:1.0
+	DESC1	:Contol3 - Forming
+	DESC2	:as V source
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:151
+	x1	:-32
+	y1	:-64
+	x2	:64
+	y2	:32
+	canvasX	:67
+	canvasY	:48
+	canvasWidth	:1222
+	canvasHeight	:984
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+rtds_sharc_ctl_SUM3
+	624 368 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:108
+WIRE
+	624 336 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+annotation
+	688 144 0 0 3
+	AL1	:I control loop
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_SUM3
+	784 208 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:122
+WIRE
+	752 208 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	848 368 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:121
+WIRE
+	816 368 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1008 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1008 208 0 0 3
+	Name	:md3
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	912 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	592 208 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:107
+WIRE
+	592 176 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1072 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1072 368 0 0 3
+	Name	:mq3
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_LIMITS
+	1040 368 0 1 5
+	IorF	:REAL
+	ULim	:1
+	LLim	:-1
+	Proc	:1
+	Pri	:138
+WIRE
+	976 368 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+annotation
+	944 336 0 0 3
+	AL1	:1/V_dc
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_XDIVY
+	912 368 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:137
+wirelabel
+	720 208 0 0 3
+	Name	:pidI3p2
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_LIMITS
+	976 208 0 1 5
+	IorF	:REAL
+	ULim	:10
+	LLim	:-10
+	Proc	:1
+	Pri	:136
+WIRE
+	912 208 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+annotation
+	880 176 0 0 3
+	AL1	:1/V_dc
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_XDIVY
+	848 208 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:135
+rtds_sharc_ctl_SUM3
+	208 208 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:90
+WIRE
+	208 176 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	208 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	208 368 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:89
+WIRE
+	208 336 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	208 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	272 208 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	272 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	464 208 0 0 2
+	-128 -4 128 4
+	COL	:RED
+	LW	:1.0
+annotation
+	336 144 0 0 3
+	AL1	:V control loop
+	AL2	:
+	FSize	:10
+wirelabel
+	272 208 0 0 3
+	Name	:pidV3p1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	144 176 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:88
+wirelabel
+	80 336 0 0 3
+	Name	:Vc3q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	80 176 0 0 3
+	Name	:Vc3d
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	112 176 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	112 336 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	144 336 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:87
+wirelabel
+	208 176 0 0 3
+	Name	:Vc3d_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	208 336 0 0 3
+	Name	:Vc3q_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 176 0 0 3
+	Name	:If3d
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	528 176 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:86
+WIRE
+	496 176 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	592 176 0 0 3
+	Name	:If3d_A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	560 336 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:85
+wirelabel
+	624 336 0 0 3
+	Name	:If3q_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 336 0 0 3
+	Name	:If3q
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	496 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_MUL
+	272 688 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:99
+rtds_sharc_ctl_INTGL
+	272 784 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:98
+WIRE
+	208 784 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 688 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	368 784 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:106
+WIRE
+	368 784 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 688 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	368 720 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 784 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_MUL
+	272 464 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:97
+rtds_sharc_ctl_INTGL
+	272 560 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:96
+WIRE
+	208 560 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	368 560 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:105
+WIRE
+	368 560 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 464 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	368 496 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 560 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	208 496 0 0 1
+	Val	:0.012566
+rtds_sharc_ctl_CONSTANT
+	208 624 0 0 1
+	Val	:1.5791
+rtds_sharc_ctl_SLIDER
+	48 528 0 0 5
+	Name	:kp_v3
+	Init	:0.012566
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+rtds_sharc_ctl_SLIDER
+	48 592 0 0 5
+	Name	:ki_v3
+	Init	:1.5791
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+WIRE
+	112 592 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	112 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	112 528 0 0 3
+	Name	:kp_v3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	112 592 0 0 3
+	Name	:ki_v3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 496 0 0 3
+	Name	:kp_v3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	336 208 0 0 3
+	Name	:pidV3p2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 464 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	176 560 0 0 3
+	Name	:pidV3p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 560 0 0 3
+	Name	:pidV3p2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 368 0 0 3
+	Name	:pidV3q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	208 688 0 0 3
+	Name	:pidV3q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 784 0 0 3
+	Name	:pidV3q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 784 0 0 3
+	Name	:pidV3q2
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_MUL
+	720 688 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:113
+rtds_sharc_ctl_INTGL
+	720 784 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:112
+WIRE
+	656 784 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 688 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	816 784 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:120
+WIRE
+	816 784 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	784 688 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	816 720 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	880 784 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_MUL
+	720 464 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:111
+rtds_sharc_ctl_INTGL
+	720 560 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:110
+WIRE
+	656 560 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 464 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	816 560 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:119
+WIRE
+	816 560 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	784 464 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	816 496 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	880 560 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	656 496 0 0 1
+	Val	:18.85
+rtds_sharc_ctl_CONSTANT
+	656 624 0 0 1
+	Val	:11844
+rtds_sharc_ctl_SLIDER
+	496 528 0 0 5
+	Name	:kp_i3
+	Init	:18.85
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+rtds_sharc_ctl_SLIDER
+	496 592 0 0 5
+	Name	:ki_i3
+	Init	:11844
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+WIRE
+	560 592 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	560 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	560 528 0 0 3
+	Name	:kp_i3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	560 592 0 0 3
+	Name	:ki_i3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	720 624 0 0 3
+	Name	:ki_i3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	720 496 0 0 3
+	Name	:kp_i3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 208 0 0 3
+	Name	:pidI3p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 464 0 0 3
+	Name	:pidI3p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	880 560 0 0 3
+	Name	:pidI3p2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 368 0 0 3
+	Name	:pidI3q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	752 368 0 0 3
+	Name	:pidI3q2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 784 0 0 3
+	Name	:pidI3q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 688 0 0 3
+	Name	:pidI3q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	880 784 0 0 3
+	Name	:pidI3q2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 208 0 0 3
+	Name	:Vref3d_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 368 0 0 3
+	Name	:Vref3q_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	336 368 0 0 3
+	Name	:pidV3q2
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	464 368 0 0 2
+	-128 -4 160 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	816 336 0 0 3
+	Name	:Vc3q
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	848 240 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 336 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	784 176 0 0 3
+	Name	:Vc3d
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SLIDER
+	752 272 0 0 5
+	Name	:V_dc_divD3
+	Init	:1000
+	Max	:10e4
+	Min	:0.1
+	Units	:volts
+WIRE
+	784 272 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	816 240 1 0 2
+	-4 0 4 32
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SLIDER
+	880 432 0 0 5
+	Name	:V_dc_divQ3
+	Init	:1000
+	Max	:10e4
+	Min	:0.1
+	Units	:volts
+WIRE
+	912 432 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+wirelabel
+	208 464 0 0 3
+	Name	:pidV3p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 624 0 0 3
+	Name	:ki_v3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 720 0 0 3
+	Name	:kp_v3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 848 0 0 3
+	Name	:ki_v3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 560 0 0 3
+	Name	:pidI3p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	720 848 0 0 3
+	Name	:ki_i3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	720 720 0 0 3
+	Name	:kp_i3
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 48 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_INTGL
+	272 48 0 0 9
+	T	:1
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1
+	Proc	:1
+	Pri	:26
+wirelabel
+	496 80 0 0 3
+	Name	:phi3p
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ANGLEFIX
+	432 80 0 0 2
+	Proc	:35
+	Pri	:70
+WIRE
+	368 48 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	176 48 0 0 1
+	Val	:314.15
+rtds_BLUETEXT1
+	176 48 0 0 1
+	AL1	:2*pi*f_g
+wirelabel
+	336 48 0 0 3
+	Name	:phi3p_pre
+	COL	:BLUE
+	Monitor	:Yes
+BUS
+	976 944 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+BUS
+	1008 976 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-96
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-96
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	1232 944 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-64
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-64
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+ground
+	272 1008 1 0 0
+WIRE
+	272 944 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	272 1008 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharcu_SRC1PH2N
+	272 976 3 0 58
+	Name	:DC_src3
+	Type	:R
+	Tc	:0.05
+	Imp	:RRL Values
+	DynmImp	:Static
+	WvType	:DC
+	Sctrl	:RunTime
+	R1s	:0.0001
+	R1p	:1.0
+	L1p	:0.01
+	ImpCtlSrc	:RunTime
+	R2signalCC	:R1s
+	R1signalCC	:R1p
+	L1signalCC	:L1p
+	Tcc	:0.1
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	SMod	:Internal
+	Es	:230.0
+	F0	:60.0
+	Ph	:0.0
+	AFmod	:Frequency
+	Esm	:0.1
+	F0m	:1.0
+	Phm	:0.0
+	IMod	:Fmod
+	AMmod	:Amod
+	NHarm	:1
+	HN1	:2
+	Mag1	:0.05
+	Ph1	:0.0
+	HN2	:2
+	Mag2	:0.05
+	Ph2	:0.0
+	HN3	:2
+	Mag3	:0.05
+	Ph3	:0.0
+	HN4	:2
+	Mag4	:0.05
+	Ph4	:0.0
+	Esd	:1
+	F	:60.0
+	Z1	:1.0
+	Phi1	:80.0
+	RN	:2.0
+	Imon	:No
+	IMPmon	:No
+	Tf	:0.10
+	Rf	:0.50
+	Inam	:ISRC
+	R1Snam	:R1Smon
+	R1Pnam	:R1Pmon
+	L1Pnam	:L1Pmon
+	CNVGnam	:Converged
+	TrigSigCC	:ImpTrig
+rtds_sharc_sld_BUSLABEL
+	976 912 0 0 31
+	BName	:BUS3o
+	NA	:Vo3A
+	NB	:Vo3B
+	NC	:Vo3C
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:PQ BUS
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:0
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+BUS
+	1392 976 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-256
+	y1L1	:-32
+	x2L1	:256
+	y2L1	:-32
+	x1L2	:-256
+	y1L2	:0
+	x2L2	:256
+	y2L2	:0
+	x1L3	:-256
+	y1L3	:32
+	x2L3	:256
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+lf_rtds_sharc_sld_SHUNTRLC
+	1392 1136 3 1 16
+	R	:50
+	L	:0
+	CuF	:0
+	type	:Y
+	NR	:No
+	Imon	:No
+	IAnam	:IL3A
+	IBnam	:IL3B
+	ICnam	:IL3C
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+BUS
+	1392 1072 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-128
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-96
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-64
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+lf_rtds_sharc_sld_SERIESRLC
+	656 560 2 1 16
+	R	:0
+	L	:0.001
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:If1A
+	IBnam	:If1B
+	ICnam	:If1C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+BUS
+	784 560 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-96
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-96
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	752 592 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:0
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:1
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+lf_rtds_sharc_sld_SERIESRLC
+	880 560 2 1 16
+	R	:0
+	L	:0.0015
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:Io1A
+	IBnam	:Io1B
+	ICnam	:Io1C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+BUS
+	560 560 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-64
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-64
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+BUS
+	752 528 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+rtds_sharc_sld_BUSLABEL
+	752 496 0 0 31
+	BName	:BUS1
+	NA	:Vc1A
+	NB	:Vc1B
+	NC	:Vc1C
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:PQ BUS
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:0
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+rtds_BLACKTEXT1
+	656 624 0 0 3
+	AL1	:If1
+	COL	:BLUE
+	LOC	:OVER
+rtds_BLACKTEXT1
+	688 496 0 0 3
+	AL1	:Vc1
+	COL	:BLUE
+	LOC	:OVER
+lf_rtds_sharc_sld_SERIESRLC
+	1104 560 2 1 16
+	R	:1
+	L	:0.001
+	CuF	:0
+	Imon	:Yes
+	TXT	:No
+	IAnam	:I13A
+	IBnam	:I13B
+	ICnam	:I13C
+	A1PosY	:32
+	C1PosY	:-32
+	A2PosY	:32
+	C2PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+	P_L1	:0.0
+	Q_L1	:0.0
+rtds_BLACKTEXT1
+	880 624 0 0 3
+	AL1	:Io1
+	COL	:BLUE
+	LOC	:OVER
+rtds_BLACKTEXT1
+	1104 496 0 0 3
+	AL1	:Z13
+	COL	:BLUE
+	LOC	:BELOW
+_rtds_3phAVMv1.def
+	368 560 0 0 30
+	Name	:INV1
+	R1	:1e-8
+	L1	:1e-9
+	Rdc	:0.01
+	Cdc	:5000
+	Ridc	:1e6
+	Varef	:Vinv1A
+	Vbref	:Vinv1B
+	Vcref	:Vinv1C
+	IDCcntl	:Power Balance
+	IDCref	:IDC
+	Tfilt	:0.01
+	monIac	:No
+	nameIa	:Iac0
+	nameIb	:Iac1
+	nameIc	:Iac2
+	monIdc	:No
+	nameIdc	:Idc
+	monPQ	:Yes
+	namePac	:Pinv1monit
+	nameQac	:Qinv1monit
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	A1PosXY	:-32
+	C1PosXY	:32
+	cntSwt	:Runtime
+	cntSwtcc	:Block
+BUS
+	464 560 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:32
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:32
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+HIERARCHY
+	240 656 0 0 28
+	Name	:Measurements1
+	FCOL	:BLACK
+	BCOL	:ORANGE
+	LW	:1.0
+	DESC1	:Measurements
+	DESC2	:inverter 1
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:104
+	x1	:-64
+	y1	:-32
+	x2	:32
+	y2	:64
+	canvasX	:18
+	canvasY	:43
+	canvasWidth	:672
+	canvasHeight	:658
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+rtds_sharc_ctl_ABC2DQ0
+	656 272 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:118
+WIRE
+	592 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	624 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	592 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	688 240 0 0 3
+	Name	:Vc1d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 272 0 0 3
+	Name	:Vc1q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_BLACKTEXT
+	528 304 0 0 11
+	NL	:3
+	COL	:BLACK
+	AL1	:peak
+	AL2	:vs
+	AL3	:RMS!
+	AL4	:Line4
+	AL5	:Line5
+	AL6	:Line6
+	AL7	:Line7
+	AL8	:Line8
+	AL9	:Line9
+rtds_sharc_ctl_PQMET
+	112 144 0 0 5
+	pu	:No
+	MVA	:100.0
+	adv	:V by 1dt
+	Proc	:1
+	Pri	:58
+wirelabel
+	176 144 0 0 3
+	Name	:Po1meas
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 176 0 0 3
+	Name	:Qo1meas
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	144 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	144 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	48 80 0 0 3
+	Name	:Vc1A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 112 0 0 3
+	Name	:Vc1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 144 0 0 3
+	Name	:Vc1C
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	48 208 0 0 0
+	3
+wirelabel
+	48 240 0 0 3
+	Name	:Io1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 208 0 0 3
+	Name	:Io1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 176 0 0 3
+	Name	:Io1A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	592 272 0 0 0
+	3
+wirelabel
+	592 304 0 0 3
+	Name	:Vc1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 272 0 0 3
+	Name	:Vc1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 240 0 0 3
+	Name	:Vc1A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ABC2DQ0
+	336 368 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:117
+WIRE
+	272 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	272 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	272 368 0 0 0
+	3
+wirelabel
+	272 400 0 0 3
+	Name	:Io1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 368 0 0 3
+	Name	:Io1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 336 0 0 3
+	Name	:Io1A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 336 0 0 3
+	Name	:Io1d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 368 0 0 3
+	Name	:Io1q
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ABC2DQ0
+	464 272 0 0 5
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Zs	:No
+	Proc	:1
+	Pri	:116
+WIRE
+	400 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	400 272 0 0 0
+	3
+wirelabel
+	400 304 0 0 3
+	Name	:If1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	400 272 0 0 3
+	Name	:If1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	400 240 0 0 3
+	Name	:If1A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 240 0 0 3
+	Name	:If1d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 272 0 0 3
+	Name	:If1q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 336 0 0 3
+	Name	:phi1fin
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 336 0 0 3
+	Name	:phi1fin
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	848 112 0 0 0
+	3
+wirelabel
+	848 144 0 0 3
+	Name	:Vc1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 112 0 0 3
+	Name	:Vc1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 80 0 0 3
+	Name	:Vc1A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	848 240 0 0 0
+	3
+wirelabel
+	848 272 0 0 3
+	Name	:If1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 240 0 0 3
+	Name	:If1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 208 0 0 3
+	Name	:If1A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	848 368 0 0 0
+	3
+wirelabel
+	848 400 0 0 3
+	Name	:Io1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 368 0 0 3
+	Name	:Io1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 336 0 0 3
+	Name	:Io1A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 464 0 0 3
+	Name	:Po1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 496 0 0 3
+	Name	:Qo1
+	COL	:BLUE
+	Monitor	:Yes
+annotation
+	944 16 0 0 3
+	AL1	:
+	AL2	:conversion to other units for plots
+	FSize	:10
+rtds_sharc_ctl_GAIN
+	912 80 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:57
+GROUP
+	976 112 0 0 0
+	3
+wirelabel
+	976 144 0 0 3
+	Name	:Vc1C_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 112 0 0 3
+	Name	:Vc1B_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 80 0 0 3
+	Name	:Vc1A_V
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	912 112 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:56
+rtds_sharc_ctl_GAIN
+	912 144 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:55
+rtds_sharc_ctl_GAIN
+	912 208 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:54
+rtds_sharc_ctl_GAIN
+	912 240 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:53
+rtds_sharc_ctl_GAIN
+	912 272 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:52
+GROUP
+	976 240 0 0 0
+	3
+wirelabel
+	976 272 0 0 3
+	Name	:If1C_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 240 0 0 3
+	Name	:If1B_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 208 0 0 3
+	Name	:If1A_A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	912 336 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:51
+rtds_sharc_ctl_GAIN
+	912 368 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:50
+rtds_sharc_ctl_GAIN
+	912 400 0 0 3
+	K	:1000
+	Proc	:1
+	Pri	:49
+GROUP
+	976 368 0 0 0
+	3
+wirelabel
+	976 400 0 0 3
+	Name	:Io1C_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 368 0 0 3
+	Name	:Io1B_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 336 0 0 3
+	Name	:Io1A_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 464 0 0 3
+	Name	:Po1_kW
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 496 0 0 3
+	Name	:Qo1_kW
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	912 464 0 0 3
+	K	:10e3
+	Proc	:1
+	Pri	:83
+rtds_sharc_ctl_GAIN
+	912 496 0 0 3
+	K	:10e3
+	Proc	:1
+	Pri	:82
+WIRE
+	848 496 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 464 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 272 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 272 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 464 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 496 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	848 560 0 0 3
+	Name	:Pinv1monit
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 592 0 0 3
+	Name	:Qinv1monit
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 560 0 0 3
+	Name	:Pinv1monit_kW
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	976 592 0 0 3
+	Name	:Qinv1monit_kW
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	912 560 0 0 3
+	K	:10e3
+	Proc	:1
+	Pri	:48
+rtds_sharc_ctl_GAIN
+	912 592 0 0 3
+	K	:10e3
+	Proc	:1
+	Pri	:47
+WIRE
+	848 560 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 592 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 560 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	944 592 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	304 144 0 0 0
+	9
+annotation
+	304 80 0 0 3
+	AL1	:
+	AL2	:T=1/2pi*f_pctrl
+	FSize	:10
+wirelabel
+	240 208 0 0 3
+	Name	:Qo1meas
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 144 0 0 3
+	Name	:Po1meas
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	368 208 0 0 3
+	Name	:Qo1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 144 0 0 3
+	Name	:Po1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_REALPL
+	304 208 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:81
+rtds_sharc_ctl_REALPL
+	304 144 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:80
+rtds_sharc_ctl_SIGSW
+	528 432 0 0 5
+	A	:1
+	DPath	:REAL
+	Pos	:A
+	Proc	:1
+	Pri	:115
+wirelabel
+	496 432 0 0 3
+	Name	:phi1p
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 400 0 0 3
+	Name	:phi1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	560 432 0 0 3
+	Name	:phi1fin
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	528 496 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SWITCH
+	496 496 0 0 7
+	Name	:phi1sw
+	Init	:Off
+	Type	:INTEGER
+	VOn	:1
+	VOff	:0
+	Ton	:ON
+	Toff	:OFF
+GROUP
+	560 144 0 0 0
+	9
+wirelabel
+	624 112 0 0 3
+	Name	:phi1
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	496 144 0 0 0
+	3
+wirelabel
+	496 176 0 0 3
+	Name	:Vc1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 144 0 0 3
+	Name	:Vc1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 112 0 0 3
+	Name	:Vc1A
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	496 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	624 144 0 0 3
+	Name	:w1
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	592 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	592 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_PLLT2
+	560 144 0 0 9
+	Frat	:50
+	Ainit	:0.0
+	PIPG	:5.0
+	PIIT	:0.01
+	Ft	:0.0015
+	WMON	:rad/sec
+	EMON	:No
+	Proc	:1
+	Pri	:46
+GROUP
+	176 528 0 0 0
+	6
+GROUP
+	144 528 0 0 0
+	3
+wirelabel
+	144 560 0 0 3
+	Name	:Io1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	144 528 0 0 3
+	Name	:Io1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	144 496 0 0 3
+	Name	:Io1A
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	144 560 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	144 528 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	144 496 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 496 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_PLLT2
+	208 528 0 0 9
+	Frat	:50
+	Ainit	:0.0
+	PIPG	:5.0
+	PIIT	:0.01
+	Ft	:0.0015
+	WMON	:rad/sec
+	EMON	:No
+	Proc	:1
+	Pri	:45
+wirelabel
+	272 496 0 0 3
+	Name	:phi_Io1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	336 432 0 0 3
+	Name	:phi1fin
+	COL	:BLUE
+	Monitor	:Yes
+HIERARCHY
+	336 688 0 0 28
+	Name	:Control1
+	FCOL	:BLACK
+	BCOL	:GREEN
+	LW	:1.0
+	DESC1	:Contol1 - Support
+	DESC2	:as V source
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:296
+	x1	:-32
+	y1	:-64
+	x2	:64
+	y2	:32
+	canvasX	:65
+	canvasY	:44
+	canvasWidth	:1280
+	canvasHeight	:904
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+rtds_sharc_ctl_SUM3
+	592 688 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:163
+WIRE
+	592 688 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	592 656 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	688 560 0 0 0
+	2
+annotation
+	688 560 0 0 3
+	AL1	:-w*Lf
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_GAIN
+	688 592 0 0 3
+	K	:-0.94248
+	Proc	:1
+	Pri	:134
+WIRE
+	656 592 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+annotation
+	656 464 0 0 3
+	AL1	:I control loop
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_SUM3
+	752 528 2 1 7
+	Num	:THREE
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:167
+WIRE
+	720 528 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	816 688 2 1 7
+	Num	:THREE
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:171
+WIRE
+	784 688 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	976 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	720 112 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:104
+rtds_sharc_ctl_CONSTANT
+	688 112 0 0 1
+	Val	:314.15
+rtds_BLUETEXT1
+	688 112 0 0 1
+	AL1	:2*pi*f_g
+WIRE
+	784 112 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	112 80 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:94
+WIRE
+	112 80 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_INTGL
+	848 112 0 0 9
+	T	:1
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1
+	Proc	:1
+	Pri	:109
+annotation
+	816 16 0 0 3
+	AL1	:
+	AL2	:droop (?)
+	FSize	:10
+WIRE
+	176 80 0 0 2
+	-32 -4 64 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	272 112 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:103
+rtds_sharc_ctl_CONSTANT
+	240 112 0 0 1
+	Val	:4889
+rtds_BLUETEXT1
+	240 112 0 0 1
+	AL1	:6kV*sqrt(3*2) - phase, peak
+WIRE
+	304 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	1040 592 0 0 1
+	Val	:0
+wirelabel
+	976 528 0 0 3
+	Name	:md1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SUM3
+	528 80 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:93
+WIRE
+	528 48 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	528 80 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	752 592 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 624 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	752 624 0 0 3
+	K	:0.94248
+	Proc	:1
+	Pri	:133
+annotation
+	752 592 0 0 3
+	AL1	:w*Lf
+	AL2	:
+	FSize	:10
+WIRE
+	880 688 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	752 592 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	560 528 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:158
+WIRE
+	560 496 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	560 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	624 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	336 112 0 0 3
+	Name	:v1d0_V
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	656 688 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1040 688 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1040 688 0 0 3
+	Name	:mq1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_LIMITS
+	1008 688 0 1 5
+	IorF	:REAL
+	ULim	:1
+	LLim	:-1
+	Proc	:1
+	Pri	:173
+WIRE
+	944 688 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+annotation
+	912 656 0 0 3
+	AL1	:1/V_dc
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_XDIVY
+	880 688 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:172
+wirelabel
+	880 720 0 0 3
+	Name	:V_dc_divQ1
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	912 784 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	912 784 0 0 3
+	Name	:V_dc_divQ1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SLIDER
+	848 784 0 0 5
+	Name	:V_dc_divQ1
+	Init	:1000
+	Max	:10e4
+	Min	:0.1
+	Units	:volts
+rtds_sharc_ctl_MUL
+	240 80 2 1 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:102
+WIRE
+	688 80 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_MUL
+	688 80 2 1 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:101
+annotation
+	272 16 0 0 3
+	AL1	:
+	AL2	:droop (?)
+	FSize	:10
+rtds_sharc_ctl_SLIDER
+	176 48 0 0 5
+	Name	:nA
+	Init	:0.01
+	Max	:100
+	Min	:0.00001
+	Units	:
+wirelabel
+	688 528 0 0 3
+	Name	:pidI1p2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	720 80 0 0 3
+	Name	:P_test1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 80 0 0 3
+	Name	:P1_ref_W
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	80 80 0 0 3
+	Name	:Q1_ref_VA
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1040 560 0 0 3
+	Name	:mq1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1040 528 0 0 3
+	Name	:md1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_DQ02ABC
+	1104 560 0 0 4
+	Ld	:Vq lags Vd
+	Pk	:Peak
+	Proc	:1
+	Pri	:174
+wirelabel
+	1168 528 0 0 3
+	Name	:Vinv1A
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	1168 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1168 560 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1168 592 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1168 560 0 0 3
+	Name	:Vinv1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1168 592 0 0 3
+	Name	:Vinv1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1104 624 0 0 3
+	Name	:phi1fin
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	1072 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1072 560 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_LIMITS
+	944 528 0 1 5
+	IorF	:REAL
+	ULim	:10
+	LLim	:-10
+	Proc	:1
+	Pri	:170
+WIRE
+	880 528 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	816 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	784 656 1 0 2
+	-4 -32 4 0
+	COL	:RED
+	LW	:1.0
+WIRE
+	816 656 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+annotation
+	848 496 0 0 3
+	AL1	:1/V_dc
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_XDIVY
+	816 528 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:169
+wirelabel
+	816 560 0 0 3
+	Name	:V_dc_divD1
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	880 624 0 0 0
+	3
+WIRE
+	880 624 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	912 624 0 0 3
+	Name	:V_dc_divD1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SLIDER
+	848 624 0 0 5
+	Name	:V_dc_divD1
+	Init	:1000
+	Max	:10e4
+	Min	:0.1
+	Units	:volts
+wirelabel
+	16 48 0 0 3
+	Name	:Qo1
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	48 48 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	112 48 2 0 3
+	Name	:Qo1_VA
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	80 48 0 0 3
+	K	:1e6
+	Proc	:1
+	Pri	:92
+annotation
+	208 176 0 0 3
+	AL1	:
+	AL2	:T=1/2pi*f_pctrl
+	FSize	:10
+WIRE
+	304 240 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	368 272 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:-
+	IN3	:+
+	Proc	:1
+	Pri	:144
+WIRE
+	368 336 1 0 2
+	-4 -64 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	272 400 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	400 368 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:148
+jumper
+	368 304 0 0 2
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 304 1 0 2
+	-4 0 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 400 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	368 432 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	528 304 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:147
+WIRE
+	464 272 0 0 2
+	-64 -4 64 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	592 304 0 0 3
+	Name	:v1d_ref_V
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	560 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 368 0 0 2
+	-64 -4 64 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	432 272 0 0 3
+	Name	:u1d_virt_V
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SUM3
+	560 400 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:150
+WIRE
+	528 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_BLUETEXT1
+	496 400 0 0 1
+	AL1	:v1q0_V=0
+wirelabel
+	624 400 0 0 3
+	Name	:v1q_ref_V
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	592 400 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	464 368 0 0 3
+	Name	:u1q_virt_V
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_CONSTANT
+	496 400 0 0 1
+	Val	:0
+wirelabel
+	48 240 0 0 3
+	Name	:Io1d
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 368 0 0 3
+	Name	:Io1q
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	80 240 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	80 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_REALPL
+	208 368 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:132
+rtds_sharc_ctl_REALPL
+	208 240 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:131
+rtds_sharc_ctl_GAIN
+	112 240 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:130
+WIRE
+	176 240 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	176 368 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	112 368 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:129
+wirelabel
+	144 368 0 0 3
+	Name	:Io1q_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	144 240 0 0 3
+	Name	:Io1d_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 304 0 0 3
+	Name	:v1d0_V
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SUM3
+	176 528 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:149
+WIRE
+	176 496 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	176 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	176 688 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:-
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:153
+WIRE
+	176 656 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	176 688 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 688 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	304 560 0 0 0
+	2
+annotation
+	304 560 0 0 3
+	AL1	:-w*Cf
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_GAIN
+	304 592 0 0 3
+	K	:-0.0031416
+	Proc	:1
+	Pri	:128
+WIRE
+	272 592 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	368 592 0 0 0
+	2
+annotation
+	368 592 0 0 3
+	AL1	:w*Cf
+	AL2	:
+	FSize	:10
+rtds_sharc_ctl_GAIN
+	368 624 0 0 3
+	K	:0.0031416
+	Proc	:1
+	Pri	:127
+WIRE
+	336 624 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	432 688 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:162
+WIRE
+	368 688 0 0 2
+	-64 -4 64 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 624 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	400 560 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:+
+	Proc	:1
+	Pri	:157
+WIRE
+	336 592 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	368 560 1 0 2
+	-4 0 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	368 528 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 560 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	464 688 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+annotation
+	304 464 0 0 3
+	AL1	:V control loop
+	AL2	:
+	FSize	:10
+WIRE
+	432 624 1 0 2
+	-4 0 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	368 560 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	464 560 0 0 3
+	Name	:I1d_ref_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 688 0 0 3
+	Name	:I1q_ref_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 528 0 0 3
+	Name	:pidV1p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	144 528 0 0 3
+	Name	:v1d_ref_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	144 688 0 0 3
+	Name	:v1q_ref_V
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	112 496 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:126
+wirelabel
+	48 656 0 0 3
+	Name	:Vc1q
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 496 0 0 3
+	Name	:Vc1d
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	80 496 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	80 656 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	112 656 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:125
+wirelabel
+	176 496 0 0 3
+	Name	:Vc1d_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 656 0 0 3
+	Name	:Vc1q_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 592 0 0 3
+	Name	:Vc1q_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 624 0 0 3
+	Name	:Vc1d_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	560 688 0 0 3
+	Name	:I1q_ref_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	528 528 0 0 3
+	Name	:I1d_ref_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 496 0 0 3
+	Name	:If1d
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	496 496 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:124
+WIRE
+	464 496 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	560 496 0 0 3
+	Name	:If1d_A
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	528 656 0 0 3
+	K	:1e3
+	Proc	:1
+	Pri	:123
+wirelabel
+	592 656 0 0 3
+	Name	:If1q_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 624 0 0 3
+	Name	:If1d_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 592 0 0 3
+	Name	:If1q_A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	464 656 0 0 3
+	Name	:If1q
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	464 656 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	752 496 2 0 3
+	Name	:Vc1d_V
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	816 720 0 0 3
+	Name	:Vc1q_V
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_MUL
+	240 1008 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:156
+rtds_sharc_ctl_INTGL
+	240 1104 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:155
+WIRE
+	176 1104 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	208 1008 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	336 1104 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:161
+WIRE
+	336 1104 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 1008 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 1040 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 1104 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_MUL
+	240 784 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:152
+rtds_sharc_ctl_INTGL
+	240 880 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:151
+WIRE
+	176 880 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	336 880 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:154
+WIRE
+	336 880 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 784 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 816 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 880 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	176 816 0 0 1
+	Val	:0.012566
+rtds_sharc_ctl_CONSTANT
+	176 944 0 0 1
+	Val	:1.5791
+rtds_sharc_ctl_SLIDER
+	16 848 0 0 5
+	Name	:kp_v1
+	Init	:0.012566
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+rtds_sharc_ctl_SLIDER
+	16 912 0 0 5
+	Name	:ki_v1
+	Init	:1.5791
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+WIRE
+	80 912 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	80 848 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	80 848 0 0 3
+	Name	:kp_v1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	80 912 0 0 3
+	Name	:ki_v1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 816 0 0 3
+	Name	:kp_v1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 944 0 0 3
+	Name	:ki_v1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 528 0 0 3
+	Name	:pidV1p2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 1040 0 0 3
+	Name	:kp_v1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 1168 0 0 3
+	Name	:ki_v1
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	208 784 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	176 784 0 0 3
+	Name	:pidV1p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	144 880 0 0 3
+	Name	:pidV1p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	400 880 0 0 3
+	Name	:pidV1p2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 688 0 0 3
+	Name	:pidV1q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 688 0 0 3
+	Name	:pidV1q2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 1008 0 0 3
+	Name	:pidV1q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	144 1104 0 0 3
+	Name	:pidV1q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	400 1104 0 0 3
+	Name	:pidV1q2
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_MUL
+	688 1008 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:166
+rtds_sharc_ctl_INTGL
+	688 1104 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:165
+WIRE
+	624 1104 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 1008 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	784 1104 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:168
+WIRE
+	784 1104 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	752 1008 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	784 1040 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 1104 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	688 1168 0 0 3
+	Name	:ki_i1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 1040 0 0 3
+	Name	:kp_i1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_MUL
+	688 784 0 0 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:160
+rtds_sharc_ctl_INTGL
+	688 880 0 0 9
+	T	:1.0
+	RST	:No
+	LIM	:None
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:CC
+	Tic	:1
+	Proc	:1
+	Pri	:159
+WIRE
+	624 880 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	656 784 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SUM3
+	784 880 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:+
+	IN3	:-
+	Proc	:1
+	Pri	:164
+WIRE
+	784 880 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	752 784 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	784 816 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	848 880 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_CONSTANT
+	624 816 0 0 1
+	Val	:18.85
+rtds_sharc_ctl_CONSTANT
+	624 944 0 0 1
+	Val	:11844
+rtds_sharc_ctl_SLIDER
+	464 848 0 0 5
+	Name	:kp_i1
+	Init	:18.85
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+rtds_sharc_ctl_SLIDER
+	464 912 0 0 5
+	Name	:ki_i1
+	Init	:11844
+	Max	:10e6
+	Min	:-10e6
+	Units	:volts
+WIRE
+	528 912 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	528 848 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	528 848 0 0 3
+	Name	:kp_i1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	528 912 0 0 3
+	Name	:ki_i1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 944 0 0 3
+	Name	:ki_i1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 816 0 0 3
+	Name	:kp_i1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 528 0 0 3
+	Name	:pidI1p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 784 0 0 3
+	Name	:pidI1p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 880 0 0 3
+	Name	:pidI1p1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 880 0 0 3
+	Name	:pidI1p2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	656 688 0 0 3
+	Name	:pidI1q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	720 688 0 0 3
+	Name	:pidI1q2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 1104 0 0 3
+	Name	:pidI1q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 1008 0 0 3
+	Name	:pidI1q1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	848 1104 0 0 3
+	Name	:pidI1q2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	400 48 0 0 3
+	Name	:Po1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	464 48 0 0 3
+	K	:1e6
+	Proc	:1
+	Pri	:91
+WIRE
+	432 48 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	528 48 2 0 3
+	Name	:Po1_W
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	560 80 0 0 3
+	Name	:P1_test0
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	624 80 0 0 3
+	K	:6.2832
+	Proc	:1
+	Pri	:100
+rtds_BLUETEXT1
+	624 48 0 0 1
+	AL1	:2*pi
+WIRE
+	592 80 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	784 112 0 0 3
+	Name	:P_test2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 240 0 0 3
+	Name	:Io1d_A1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 80 0 0 3
+	Name	:Q1_test0
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 560 2 0 3
+	Name	:test1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	752 560 2 0 3
+	Name	:test2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	880 528 0 0 3
+	Name	:test3
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SLIDER
+	560 48 0 0 5
+	Name	:mA
+	Init	:0.001
+	Max	:100
+	Min	:0.000001
+	Units	:
+rtds_sharc_ctl_GAIN
+	656 48 0 0 3
+	K	:-1
+	Proc	:1
+	Pri	:27
+WIRE
+	624 48 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 48 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+annotation
+	304 144 0 0 3
+	AL1	:
+	AL2	:virtual impedance
+	FSize	:10
+rtds_sharc_ctl_MUL
+	336 240 2 1 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:143
+rtds_sharc_ctl_SLIDER
+	272 208 0 0 5
+	Name	:R_virtual
+	Init	:2
+	Max	:1000000
+	Min	:0.00001
+	Units	:
+wirelabel
+	304 208 0 0 3
+	Name	:R_virtual
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	336 208 2 0 3
+	Name	:R_virtual
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_MUL
+	304 432 2 1 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:142
+WIRE
+	304 432 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	304 400 2 0 3
+	Name	:R_virtual
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_MUL
+	240 304 2 1 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:141
+wirelabel
+	208 304 0 0 3
+	Name	:Io1d_A1
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 304 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_GAIN
+	304 304 0 0 3
+	K	:314.15
+	Proc	:1
+	Pri	:146
+rtds_sharc_ctl_SLIDER
+	112 304 0 0 5
+	Name	:L_virtual
+	Init	:30e-3
+	Max	:1000
+	Min	:-1000
+	Units	:
+wirelabel
+	208 272 0 0 3
+	Name	:L_virtual
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 272 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	144 304 0 0 3
+	Name	:L_virtual
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_GAIN
+	336 368 0 0 3
+	K	:314.15
+	Proc	:1
+	Pri	:140
+rtds_sharc_ctl_MUL
+	272 368 2 1 4
+	Num	:TWO
+	IorF	:REAL
+	Proc	:1
+	Pri	:139
+wirelabel
+	272 336 0 0 3
+	Name	:L_virtual
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1072 144 0 0 3
+	Name	:phi1p
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ANGLEFIX
+	1008 144 0 0 2
+	Proc	:35
+	Pri	:114
+WIRE
+	944 112 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	912 112 0 0 3
+	Name	:phi1p_pre
+	COL	:BLUE
+	Monitor	:Yes
+rtds_BLUETEXT1
+	112 144 0 0 1
+	AL1	:230V*sqrt(2) - phase, peak
+rtds_sharc_ctl_CONSTANT
+	112 144 0 0 1
+	Val	:325.27
+BUS
+	976 528 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-32
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-32
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+rtds_sharc_ctl_CONSTANT
+	144 784 0 0 1
+	Val	:1452
+rtds_BLUETEXT1
+	144 752 0 0 1
+	AL1	:Pref=0.5*3*Vac^2/Rload1
+BUS
+	1008 560 0 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-96
+	y1L1	:-32
+	x2L1	:64
+	y2L1	:-32
+	x1L2	:-96
+	y1L2	:0
+	x2L2	:64
+	y2L2	:0
+	x1L3	:-96
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:0
+ground
+	272 592 1 0 0
+WIRE
+	272 528 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	272 592 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharcu_SRC1PH2N
+	272 560 3 0 58
+	Name	:DC_src1
+	Type	:R
+	Tc	:0.05
+	Imp	:RRL Values
+	DynmImp	:Static
+	WvType	:DC
+	Sctrl	:RunTime
+	R1s	:0.0001
+	R1p	:1.0
+	L1p	:0.01
+	ImpCtlSrc	:RunTime
+	R2signalCC	:R1s
+	R1signalCC	:R1p
+	L1signalCC	:L1p
+	Tcc	:0.1
+	AorM	:Automatic
+	CARD	:1
+	Rprc	:A
+	AM	:NO
+	CORE	:1
+	SMod	:Internal
+	Es	:230.0
+	F0	:60.0
+	Ph	:0.0
+	AFmod	:Frequency
+	Esm	:0.1
+	F0m	:1.0
+	Phm	:0.0
+	IMod	:Fmod
+	AMmod	:Amod
+	NHarm	:1
+	HN1	:2
+	Mag1	:0.05
+	Ph1	:0.0
+	HN2	:2
+	Mag2	:0.05
+	Ph2	:0.0
+	HN3	:2
+	Mag3	:0.05
+	Ph3	:0.0
+	HN4	:2
+	Mag4	:0.05
+	Ph4	:0.0
+	Esd	:1
+	F	:60.0
+	Z1	:1.0
+	Phi1	:80.0
+	RN	:2.0
+	Imon	:No
+	IMPmon	:No
+	Tf	:0.10
+	Rf	:0.50
+	Inam	:ISRC
+	R1Snam	:R1Smon
+	R1Pnam	:R1Pmon
+	L1Pnam	:L1Pmon
+	CNVGnam	:Converged
+	TrigSigCC	:ImpTrig
+wirelabel
+	432 784 0 0 3
+	Name	:P1_ref_W
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 816 0 0 3
+	Name	:Q1_ref_VA
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	432 784 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 816 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 784 0 0 2
+	-32 -4 64 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	400 816 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SLIDER
+	272 784 0 0 5
+	Name	:P1ref_W
+	Init	:1452
+	Max	:10e6
+	Min	:0.00001
+	Units	:
+rtds_sharc_sld_BUSLABEL
+	976 496 0 0 31
+	BName	:BUS1o
+	NA	:Vo1A
+	NB	:Vo1B
+	NC	:Vo1C
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:PQ BUS
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:0
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+lf_rtds_sharc_sld_SHUNTRLC
+	848 656 3 1 16
+	R	:0.1
+	L	:0
+	CuF	:10e-6
+	type	:Y
+	NR	:No
+	Imon	:No
+	IAnam	:IA
+	IBnam	:IB
+	ICnam	:IC
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+rtds_sharc_ctl_CONSTANT
+	304 848 0 0 1
+	Val	:0
+rtds_BLUETEXT1
+	304 816 0 0 1
+	AL1	:Qref
+rtds_sharc_ctl_SLIDER
+	336 816 0 0 5
+	Name	:Q1ref_VA
+	Init	:0
+	Max	:10e6
+	Min	:-10e6
+	Units	:
+BUS
+	2032 848 1 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-64
+	y1L1	:-32
+	x2L1	:0
+	y2L1	:-32
+	x1L2	:-64
+	y1L2	:0
+	x2L2	:32
+	y2L2	:0
+	x1L3	:-64
+	y1L3	:32
+	x2L3	:64
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:0
+	L2ArcAtEnd2	:1
+	L3ArcAtEnd1	:0
+	L3ArcAtEnd2	:1
+rtds_sharc_sld_BUSLABEL
+	2032 784 0 0 31
+	BName	:BUSload
+	NA	:VloadA
+	NB	:VloadB
+	NC	:VloadC
+	VRate	:6
+	daout	:No
+	COL	:RED
+	LW	:3
+	COLA	:ORANGE
+	COLB	:RED
+	COLC	:RED
+	monVoltageA	:YES
+	monVoltageB	:YES
+	monVoltageC	:YES
+	Vi	:1.0
+	Ai	:0.0
+	Type	:SLACK
+	Vd	:1.0
+	Ad	:1.0
+	Dis1	:No
+	A1PosX	:32
+	C1PosX	:-32
+	Num	:3
+	prcA	:None
+	chnA	:1
+	prcB	:None
+	chnB	:1
+	prcC	:None
+	chnC	:1
+	scl	:187.79
+	damod	:align
+rtds_sharc_ctl_UPDOWN
+	1456 1776 0 0 8
+	Tran	:Rising
+	RST	:No
+	LIM	:No
+	UL	:10
+	LL	:-10
+	INIT	:0
+	Proc	:1
+	Pri	:65
+WIRE
+	1392 1776 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1392 1776 0 0 3
+	Name	:SendData
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_ICONST
+	1360 1808 0 0 1
+	Val	:0
+WIRE
+	1392 1808 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1808 1776 0 0 3
+	Name	:socketOvr1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1808 1840 0 0 3
+	Name	:invMsg1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1808 1808 0 0 3
+	Name	:ready1
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SYNCNT
+	1936 1776 0 0 10
+	IN0	:Count Down
+	IN1	:Count Up
+	rst	:No
+	rval	:0
+	Lim	:None
+	Max	:4
+	Min	:0
+	Init	:0
+	Proc	:1
+	Pri	:67
+WIRE
+	1872 1776 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1872 1776 1 0 2
+	-4 0 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	1872 1808 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	2032 1776 0 0 3
+	Name	:sktOvrCnt
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	2000 1776 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	1872 1840 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SYNCNT
+	1936 1840 0 0 10
+	IN0	:Count Down
+	IN1	:Count Up
+	rst	:No
+	rval	:0
+	Lim	:None
+	Max	:4
+	Min	:0
+	Init	:0
+	Proc	:1
+	Pri	:66
+WIRE
+	1872 1840 1 0 2
+	-4 0 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	1872 1872 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	2000 1840 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	2032 1840 0 0 3
+	Name	:invMsgCnt
+	COL	:BLUE
+	Monitor	:Yes
+_rtds_GTNET_SKT.def
+	1680 1584 0 0 1221
+	Name	:GTNETSKT1
+	Mode	:UDP
+	DataDirection	:Send/Receive
+	Port	:2
+	Card	:1
+	Proc	:30
+	Pri	:11
+	gtnettype	:GTNETx2
+	sfx	:
+	FromFile	:NO
+	note	:
+	ToFile	:NO
+	note1	:
+	numVarsToGTNETSKT	:13
+	out0	:wload
+	TypeToGTNETSKT0	:Float
+	out1	:f_VloadA
+	TypeToGTNETSKT1	:Float
+	out2	:rocof_VloadA
+	TypeToGTNETSKT2	:Float
+	out3	:VloadLLRMS
+	TypeToGTNETSKT3	:Float
+	out4	:Vo1LLRMS
+	TypeToGTNETSKT4	:Float
+	out5	:Vo2LLRMS
+	TypeToGTNETSKT5	:Float
+	out6	:Vo3LLRMS
+	TypeToGTNETSKT6	:Float
+	out7	:Po1meas
+	TypeToGTNETSKT7	:Float
+	out8	:Qo1meas
+	TypeToGTNETSKT8	:Float
+	out9	:Po2meas
+	TypeToGTNETSKT9	:Float
+	out10	:Qo2meas
+	TypeToGTNETSKT10	:Float
+	out11	:Po3meas
+	TypeToGTNETSKT11	:Float
+	out12	:Qo3meas
+	TypeToGTNETSKT12	:Float
+	out13	:Po1meas
+	TypeToGTNETSKT13	:Float
+	out14	:Qo1meas
+	TypeToGTNETSKT14	:Float
+	out15	:Qload9
+	TypeToGTNETSKT15	:Float
+	out16	:Pload10
+	TypeToGTNETSKT16	:Float
+	out17	:Qload10
+	TypeToGTNETSKT17	:Float
+	out18	:Pload5
+	TypeToGTNETSKT18	:Float
+	out19	:Qload5
+	TypeToGTNETSKT19	:Float
+	out20	:Pload6
+	TypeToGTNETSKT20	:Float
+	out21	:Qload6
+	TypeToGTNETSKT21	:Float
+	out22	:Pload7
+	TypeToGTNETSKT22	:Float
+	out23	:Qload7
+	TypeToGTNETSKT23	:Float
+	out24	:Pload8
+	TypeToGTNETSKT24	:Float
+	out25	:Qload8
+	TypeToGTNETSKT25	:Float
+	out26	:Pload10
+	TypeToGTNETSKT26	:Float
+	out27	:Qload10
+	TypeToGTNETSKT27	:Float
+	out28	:POINT28
+	TypeToGTNETSKT28	:Int
+	out29	:POINT29
+	TypeToGTNETSKT29	:Int
+	out30	:POINT30
+	TypeToGTNETSKT30	:Int
+	out31	:POINT31
+	TypeToGTNETSKT31	:Int
+	out32	:POINT32
+	TypeToGTNETSKT32	:Int
+	out33	:POINT33
+	TypeToGTNETSKT33	:Int
+	out34	:POINT34
+	TypeToGTNETSKT34	:Int
+	out35	:POINT35
+	TypeToGTNETSKT35	:Int
+	out36	:POINT36
+	TypeToGTNETSKT36	:Int
+	out37	:POINT37
+	TypeToGTNETSKT37	:Int
+	out38	:POINT38
+	TypeToGTNETSKT38	:Int
+	out39	:POINT39
+	TypeToGTNETSKT39	:Int
+	out40	:POINT40
+	TypeToGTNETSKT40	:Int
+	out41	:POINT41
+	TypeToGTNETSKT41	:Int
+	out42	:POINT42
+	TypeToGTNETSKT42	:Int
+	out43	:POINT43
+	TypeToGTNETSKT43	:Int
+	out44	:POINT44
+	TypeToGTNETSKT44	:Int
+	out45	:POINT45
+	TypeToGTNETSKT45	:Int
+	out46	:POINT46
+	TypeToGTNETSKT46	:Int
+	out47	:POINT47
+	TypeToGTNETSKT47	:Int
+	out48	:POINT48
+	TypeToGTNETSKT48	:Int
+	out49	:POINT49
+	TypeToGTNETSKT49	:Int
+	out50	:POINT50
+	TypeToGTNETSKT50	:Int
+	out51	:POINT51
+	TypeToGTNETSKT51	:Int
+	out52	:POINT52
+	TypeToGTNETSKT52	:Int
+	out53	:POINT53
+	TypeToGTNETSKT53	:Int
+	out54	:POINT54
+	TypeToGTNETSKT54	:Int
+	out55	:POINT55
+	TypeToGTNETSKT55	:Int
+	out56	:POINT56
+	TypeToGTNETSKT56	:Int
+	out57	:POINT57
+	TypeToGTNETSKT57	:Int
+	out58	:POINT58
+	TypeToGTNETSKT58	:Int
+	out59	:POINT59
+	TypeToGTNETSKT59	:Int
+	out60	:POINT60
+	TypeToGTNETSKT60	:Int
+	out61	:POINT61
+	TypeToGTNETSKT61	:Int
+	out62	:POINT62
+	TypeToGTNETSKT62	:Int
+	out63	:POINT63
+	TypeToGTNETSKT63	:Int
+	out64	:POINT64
+	TypeToGTNETSKT64	:Int
+	out65	:POINT65
+	TypeToGTNETSKT65	:Int
+	out66	:POINT66
+	TypeToGTNETSKT66	:Int
+	out67	:POINT67
+	TypeToGTNETSKT67	:Int
+	out68	:POINT68
+	TypeToGTNETSKT68	:Int
+	out69	:POINT69
+	TypeToGTNETSKT69	:Int
+	out70	:POINT70
+	TypeToGTNETSKT70	:Int
+	out71	:POINT71
+	TypeToGTNETSKT71	:Int
+	out72	:POINT72
+	TypeToGTNETSKT72	:Int
+	out73	:POINT73
+	TypeToGTNETSKT73	:Int
+	out74	:POINT74
+	TypeToGTNETSKT74	:Int
+	out75	:POINT75
+	TypeToGTNETSKT75	:Int
+	out76	:POINT76
+	TypeToGTNETSKT76	:Int
+	out77	:POINT77
+	TypeToGTNETSKT77	:Int
+	out78	:POINT78
+	TypeToGTNETSKT78	:Int
+	out79	:POINT79
+	TypeToGTNETSKT79	:Int
+	out80	:POINT80
+	TypeToGTNETSKT80	:Int
+	out81	:POINT81
+	TypeToGTNETSKT81	:Int
+	out82	:POINT82
+	TypeToGTNETSKT82	:Int
+	out83	:POINT83
+	TypeToGTNETSKT83	:Int
+	out84	:POINT84
+	TypeToGTNETSKT84	:Int
+	out85	:POINT85
+	TypeToGTNETSKT85	:Int
+	out86	:POINT86
+	TypeToGTNETSKT86	:Int
+	out87	:POINT87
+	TypeToGTNETSKT87	:Int
+	out88	:POINT88
+	TypeToGTNETSKT88	:Int
+	out89	:POINT89
+	TypeToGTNETSKT89	:Int
+	out90	:POINT90
+	TypeToGTNETSKT90	:Int
+	out91	:POINT91
+	TypeToGTNETSKT91	:Int
+	out92	:POINT92
+	TypeToGTNETSKT92	:Int
+	out93	:POINT93
+	TypeToGTNETSKT93	:Int
+	out94	:POINT94
+	TypeToGTNETSKT94	:Int
+	out95	:POINT95
+	TypeToGTNETSKT95	:Int
+	out96	:POINT96
+	TypeToGTNETSKT96	:Int
+	out97	:POINT97
+	TypeToGTNETSKT97	:Int
+	out98	:POINT98
+	TypeToGTNETSKT98	:Int
+	out99	:POINT99
+	TypeToGTNETSKT99	:Int
+	out100	:POINT100
+	TypeToGTNETSKT100	:Int
+	out101	:POINT101
+	TypeToGTNETSKT101	:Int
+	out102	:POINT102
+	TypeToGTNETSKT102	:Int
+	out103	:POINT103
+	TypeToGTNETSKT103	:Int
+	out104	:POINT104
+	TypeToGTNETSKT104	:Int
+	out105	:POINT105
+	TypeToGTNETSKT105	:Int
+	out106	:POINT106
+	TypeToGTNETSKT106	:Int
+	out107	:POINT107
+	TypeToGTNETSKT107	:Int
+	out108	:POINT108
+	TypeToGTNETSKT108	:Int
+	out109	:POINT109
+	TypeToGTNETSKT109	:Int
+	out110	:POINT110
+	TypeToGTNETSKT110	:Int
+	out111	:POINT111
+	TypeToGTNETSKT111	:Int
+	out112	:POINT112
+	TypeToGTNETSKT112	:Int
+	out113	:POINT113
+	TypeToGTNETSKT113	:Int
+	out114	:POINT114
+	TypeToGTNETSKT114	:Int
+	out115	:POINT115
+	TypeToGTNETSKT115	:Int
+	out116	:POINT116
+	TypeToGTNETSKT116	:Int
+	out117	:POINT117
+	TypeToGTNETSKT117	:Int
+	out118	:POINT118
+	TypeToGTNETSKT118	:Int
+	out119	:POINT119
+	TypeToGTNETSKT119	:Int
+	out120	:POINT120
+	TypeToGTNETSKT120	:Int
+	out121	:POINT121
+	TypeToGTNETSKT121	:Int
+	out122	:POINT122
+	TypeToGTNETSKT122	:Int
+	out123	:POINT123
+	TypeToGTNETSKT123	:Int
+	out124	:POINT124
+	TypeToGTNETSKT124	:Int
+	out125	:POINT125
+	TypeToGTNETSKT125	:Int
+	out126	:POINT126
+	TypeToGTNETSKT126	:Int
+	out127	:POINT127
+	TypeToGTNETSKT127	:Int
+	out128	:POINT128
+	TypeToGTNETSKT128	:Int
+	out129	:POINT129
+	TypeToGTNETSKT129	:Int
+	out130	:POINT130
+	TypeToGTNETSKT130	:Int
+	out131	:POINT131
+	TypeToGTNETSKT131	:Int
+	out132	:POINT132
+	TypeToGTNETSKT132	:Int
+	out133	:POINT133
+	TypeToGTNETSKT133	:Int
+	out134	:POINT134
+	TypeToGTNETSKT134	:Int
+	out135	:POINT135
+	TypeToGTNETSKT135	:Int
+	out136	:POINT136
+	TypeToGTNETSKT136	:Int
+	out137	:POINT137
+	TypeToGTNETSKT137	:Int
+	out138	:POINT138
+	TypeToGTNETSKT138	:Int
+	out139	:POINT139
+	TypeToGTNETSKT139	:Int
+	out140	:POINT140
+	TypeToGTNETSKT140	:Int
+	out141	:POINT141
+	TypeToGTNETSKT141	:Int
+	out142	:POINT142
+	TypeToGTNETSKT142	:Int
+	out143	:POINT143
+	TypeToGTNETSKT143	:Int
+	out144	:POINT144
+	TypeToGTNETSKT144	:Int
+	out145	:POINT145
+	TypeToGTNETSKT145	:Int
+	out146	:POINT146
+	TypeToGTNETSKT146	:Int
+	out147	:POINT147
+	TypeToGTNETSKT147	:Int
+	out148	:POINT148
+	TypeToGTNETSKT148	:Int
+	out149	:POINT149
+	TypeToGTNETSKT149	:Int
+	out150	:POINT150
+	TypeToGTNETSKT150	:Int
+	out151	:POINT151
+	TypeToGTNETSKT151	:Int
+	out152	:POINT152
+	TypeToGTNETSKT152	:Int
+	out153	:POINT153
+	TypeToGTNETSKT153	:Int
+	out154	:POINT154
+	TypeToGTNETSKT154	:Int
+	out155	:POINT155
+	TypeToGTNETSKT155	:Int
+	out156	:POINT156
+	TypeToGTNETSKT156	:Int
+	out157	:POINT157
+	TypeToGTNETSKT157	:Int
+	out158	:POINT158
+	TypeToGTNETSKT158	:Int
+	out159	:POINT159
+	TypeToGTNETSKT159	:Int
+	out160	:POINT160
+	TypeToGTNETSKT160	:Int
+	out161	:POINT161
+	TypeToGTNETSKT161	:Int
+	out162	:POINT162
+	TypeToGTNETSKT162	:Int
+	out163	:POINT163
+	TypeToGTNETSKT163	:Int
+	out164	:POINT164
+	TypeToGTNETSKT164	:Int
+	out165	:POINT165
+	TypeToGTNETSKT165	:Int
+	out166	:POINT166
+	TypeToGTNETSKT166	:Int
+	out167	:POINT167
+	TypeToGTNETSKT167	:Int
+	out168	:POINT168
+	TypeToGTNETSKT168	:Int
+	out169	:POINT169
+	TypeToGTNETSKT169	:Int
+	out170	:POINT170
+	TypeToGTNETSKT170	:Int
+	out171	:POINT171
+	TypeToGTNETSKT171	:Int
+	out172	:POINT172
+	TypeToGTNETSKT172	:Int
+	out173	:POINT173
+	TypeToGTNETSKT173	:Int
+	out174	:POINT174
+	TypeToGTNETSKT174	:Int
+	out175	:POINT175
+	TypeToGTNETSKT175	:Int
+	out176	:POINT176
+	TypeToGTNETSKT176	:Int
+	out177	:POINT177
+	TypeToGTNETSKT177	:Int
+	out178	:POINT178
+	TypeToGTNETSKT178	:Int
+	out179	:POINT179
+	TypeToGTNETSKT179	:Int
+	out180	:POINT180
+	TypeToGTNETSKT180	:Int
+	out181	:POINT181
+	TypeToGTNETSKT181	:Int
+	out182	:POINT182
+	TypeToGTNETSKT182	:Int
+	out183	:POINT183
+	TypeToGTNETSKT183	:Int
+	out184	:POINT184
+	TypeToGTNETSKT184	:Int
+	out185	:POINT185
+	TypeToGTNETSKT185	:Int
+	out186	:POINT186
+	TypeToGTNETSKT186	:Int
+	out187	:POINT187
+	TypeToGTNETSKT187	:Int
+	out188	:POINT188
+	TypeToGTNETSKT188	:Int
+	out189	:POINT189
+	TypeToGTNETSKT189	:Int
+	out190	:POINT190
+	TypeToGTNETSKT190	:Int
+	out191	:POINT191
+	TypeToGTNETSKT191	:Int
+	out192	:POINT192
+	TypeToGTNETSKT192	:Int
+	out193	:POINT193
+	TypeToGTNETSKT193	:Int
+	out194	:POINT194
+	TypeToGTNETSKT194	:Int
+	out195	:POINT195
+	TypeToGTNETSKT195	:Int
+	out196	:POINT196
+	TypeToGTNETSKT196	:Int
+	out197	:POINT197
+	TypeToGTNETSKT197	:Int
+	out198	:POINT198
+	TypeToGTNETSKT198	:Int
+	out199	:POINT199
+	TypeToGTNETSKT199	:Int
+	out200	:POINT200
+	TypeToGTNETSKT200	:Int
+	out201	:POINT201
+	TypeToGTNETSKT201	:Int
+	out202	:POINT202
+	TypeToGTNETSKT202	:Int
+	out203	:POINT203
+	TypeToGTNETSKT203	:Int
+	out204	:POINT204
+	TypeToGTNETSKT204	:Int
+	out205	:POINT205
+	TypeToGTNETSKT205	:Int
+	out206	:POINT206
+	TypeToGTNETSKT206	:Int
+	out207	:POINT207
+	TypeToGTNETSKT207	:Int
+	out208	:POINT208
+	TypeToGTNETSKT208	:Int
+	out209	:POINT209
+	TypeToGTNETSKT209	:Int
+	out210	:POINT210
+	TypeToGTNETSKT210	:Int
+	out211	:POINT211
+	TypeToGTNETSKT211	:Int
+	out212	:POINT212
+	TypeToGTNETSKT212	:Int
+	out213	:POINT213
+	TypeToGTNETSKT213	:Int
+	out214	:POINT214
+	TypeToGTNETSKT214	:Int
+	out215	:POINT215
+	TypeToGTNETSKT215	:Int
+	out216	:POINT216
+	TypeToGTNETSKT216	:Int
+	out217	:POINT217
+	TypeToGTNETSKT217	:Int
+	out218	:POINT218
+	TypeToGTNETSKT218	:Int
+	out219	:POINT219
+	TypeToGTNETSKT219	:Int
+	out220	:POINT220
+	TypeToGTNETSKT220	:Int
+	out221	:POINT221
+	TypeToGTNETSKT221	:Int
+	out222	:POINT222
+	TypeToGTNETSKT222	:Int
+	out223	:POINT223
+	TypeToGTNETSKT223	:Int
+	out224	:POINT224
+	TypeToGTNETSKT224	:Int
+	out225	:POINT225
+	TypeToGTNETSKT225	:Int
+	out226	:POINT226
+	TypeToGTNETSKT226	:Int
+	out227	:POINT227
+	TypeToGTNETSKT227	:Int
+	out228	:POINT228
+	TypeToGTNETSKT228	:Int
+	out229	:POINT229
+	TypeToGTNETSKT229	:Int
+	out230	:POINT230
+	TypeToGTNETSKT230	:Int
+	out231	:POINT231
+	TypeToGTNETSKT231	:Int
+	out232	:POINT232
+	TypeToGTNETSKT232	:Int
+	out233	:POINT233
+	TypeToGTNETSKT233	:Int
+	out234	:POINT234
+	TypeToGTNETSKT234	:Int
+	out235	:POINT235
+	TypeToGTNETSKT235	:Int
+	out236	:POINT236
+	TypeToGTNETSKT236	:Int
+	out237	:POINT237
+	TypeToGTNETSKT237	:Int
+	out238	:POINT238
+	TypeToGTNETSKT238	:Int
+	out239	:POINT239
+	TypeToGTNETSKT239	:Int
+	out240	:POINT240
+	TypeToGTNETSKT240	:Int
+	out241	:POINT241
+	TypeToGTNETSKT241	:Int
+	out242	:POINT242
+	TypeToGTNETSKT242	:Int
+	out243	:POINT243
+	TypeToGTNETSKT243	:Int
+	out244	:POINT244
+	TypeToGTNETSKT244	:Int
+	out245	:POINT245
+	TypeToGTNETSKT245	:Int
+	out246	:POINT246
+	TypeToGTNETSKT246	:Int
+	out247	:POINT247
+	TypeToGTNETSKT247	:Int
+	out248	:POINT248
+	TypeToGTNETSKT248	:Int
+	out249	:POINT249
+	TypeToGTNETSKT249	:Int
+	out250	:POINT250
+	TypeToGTNETSKT250	:Int
+	out251	:POINT251
+	TypeToGTNETSKT251	:Int
+	out252	:POINT252
+	TypeToGTNETSKT252	:Int
+	out253	:POINT253
+	TypeToGTNETSKT253	:Int
+	out254	:POINT254
+	TypeToGTNETSKT254	:Int
+	out255	:POINT255
+	TypeToGTNETSKT255	:Int
+	out256	:POINT256
+	TypeToGTNETSKT256	:Int
+	out257	:POINT257
+	TypeToGTNETSKT257	:Int
+	out258	:POINT258
+	TypeToGTNETSKT258	:Int
+	out259	:POINT259
+	TypeToGTNETSKT259	:Int
+	out260	:POINT260
+	TypeToGTNETSKT260	:Int
+	out261	:POINT261
+	TypeToGTNETSKT261	:Int
+	out262	:POINT262
+	TypeToGTNETSKT262	:Int
+	out263	:POINT263
+	TypeToGTNETSKT263	:Int
+	out264	:POINT264
+	TypeToGTNETSKT264	:Int
+	out265	:POINT265
+	TypeToGTNETSKT265	:Int
+	out266	:POINT266
+	TypeToGTNETSKT266	:Int
+	out267	:POINT267
+	TypeToGTNETSKT267	:Int
+	out268	:POINT268
+	TypeToGTNETSKT268	:Int
+	out269	:POINT269
+	TypeToGTNETSKT269	:Int
+	out270	:POINT270
+	TypeToGTNETSKT270	:Int
+	out271	:POINT271
+	TypeToGTNETSKT271	:Int
+	out272	:POINT272
+	TypeToGTNETSKT272	:Int
+	out273	:POINT273
+	TypeToGTNETSKT273	:Int
+	out274	:POINT274
+	TypeToGTNETSKT274	:Int
+	out275	:POINT275
+	TypeToGTNETSKT275	:Int
+	out276	:POINT276
+	TypeToGTNETSKT276	:Int
+	out277	:POINT277
+	TypeToGTNETSKT277	:Int
+	out278	:POINT278
+	TypeToGTNETSKT278	:Int
+	out279	:POINT279
+	TypeToGTNETSKT279	:Int
+	out280	:POINT280
+	TypeToGTNETSKT280	:Int
+	out281	:POINT281
+	TypeToGTNETSKT281	:Int
+	out282	:POINT282
+	TypeToGTNETSKT282	:Int
+	out283	:POINT283
+	TypeToGTNETSKT283	:Int
+	out284	:POINT284
+	TypeToGTNETSKT284	:Int
+	out285	:POINT285
+	TypeToGTNETSKT285	:Int
+	out286	:POINT286
+	TypeToGTNETSKT286	:Int
+	out287	:POINT287
+	TypeToGTNETSKT287	:Int
+	out288	:POINT288
+	TypeToGTNETSKT288	:Int
+	out289	:POINT289
+	TypeToGTNETSKT289	:Int
+	out290	:POINT290
+	TypeToGTNETSKT290	:Int
+	out291	:POINT291
+	TypeToGTNETSKT291	:Int
+	out292	:POINT292
+	TypeToGTNETSKT292	:Int
+	out293	:POINT293
+	TypeToGTNETSKT293	:Int
+	out294	:POINT294
+	TypeToGTNETSKT294	:Int
+	out295	:POINT295
+	TypeToGTNETSKT295	:Int
+	out296	:POINT296
+	TypeToGTNETSKT296	:Int
+	out297	:POINT297
+	TypeToGTNETSKT297	:Int
+	out298	:POINT298
+	TypeToGTNETSKT298	:Int
+	out299	:POINT299
+	TypeToGTNETSKT299	:Int
+	numVarsFromGTNETSKT	:9
+	in0	:sc_brk1
+	TypeFrGTNETSKT0	:Float
+	in1	:sc_brk2
+	TypeFrGTNETSKT1	:Float
+	in2	:sc_brk3
+	TypeFrGTNETSKT2	:Float
+	in3	:Pref1
+	TypeFrGTNETSKT3	:Float
+	in4	:Pref2
+	TypeFrGTNETSKT4	:Float
+	in5	:Pref3
+	TypeFrGTNETSKT5	:Float
+	in6	:Qref1
+	TypeFrGTNETSKT6	:Float
+	in7	:Qref2
+	TypeFrGTNETSKT7	:Float
+	in8	:Qref3
+	TypeFrGTNETSKT8	:Float
+	in9	:b
+	TypeFrGTNETSKT9	:Float
+	in10	:a
+	TypeFrGTNETSKT10	:Float
+	in11	:set_f
+	TypeFrGTNETSKT11	:Float
+	in12	:set_v
+	TypeFrGTNETSKT12	:Float
+	in13	:POINT13
+	TypeFrGTNETSKT13	:Int
+	in14	:POINT14
+	TypeFrGTNETSKT14	:Int
+	in15	:POINT15
+	TypeFrGTNETSKT15	:Int
+	in16	:POINT16
+	TypeFrGTNETSKT16	:Int
+	in17	:POINT17
+	TypeFrGTNETSKT17	:Int
+	in18	:POINT18
+	TypeFrGTNETSKT18	:Int
+	in19	:POINT19
+	TypeFrGTNETSKT19	:Int
+	in20	:POINT20
+	TypeFrGTNETSKT20	:Int
+	in21	:POINT21
+	TypeFrGTNETSKT21	:Int
+	in22	:POINT22
+	TypeFrGTNETSKT22	:Int
+	in23	:POINT23
+	TypeFrGTNETSKT23	:Int
+	in24	:POINT24
+	TypeFrGTNETSKT24	:Int
+	in25	:POINT25
+	TypeFrGTNETSKT25	:Int
+	in26	:POINT26
+	TypeFrGTNETSKT26	:Int
+	in27	:POINT27
+	TypeFrGTNETSKT27	:Int
+	in28	:POINT28
+	TypeFrGTNETSKT28	:Int
+	in29	:POINT29
+	TypeFrGTNETSKT29	:Int
+	in30	:POINT30
+	TypeFrGTNETSKT30	:Int
+	in31	:POINT31
+	TypeFrGTNETSKT31	:Int
+	in32	:POINT32
+	TypeFrGTNETSKT32	:Int
+	in33	:POINT33
+	TypeFrGTNETSKT33	:Int
+	in34	:POINT34
+	TypeFrGTNETSKT34	:Int
+	in35	:POINT35
+	TypeFrGTNETSKT35	:Int
+	in36	:POINT36
+	TypeFrGTNETSKT36	:Int
+	in37	:POINT37
+	TypeFrGTNETSKT37	:Int
+	in38	:POINT38
+	TypeFrGTNETSKT38	:Int
+	in39	:POINT39
+	TypeFrGTNETSKT39	:Int
+	in40	:POINT40
+	TypeFrGTNETSKT40	:Int
+	in41	:POINT41
+	TypeFrGTNETSKT41	:Int
+	in42	:POINT42
+	TypeFrGTNETSKT42	:Int
+	in43	:POINT43
+	TypeFrGTNETSKT43	:Int
+	in44	:POINT44
+	TypeFrGTNETSKT44	:Int
+	in45	:POINT45
+	TypeFrGTNETSKT45	:Int
+	in46	:POINT46
+	TypeFrGTNETSKT46	:Int
+	in47	:POINT47
+	TypeFrGTNETSKT47	:Int
+	in48	:POINT48
+	TypeFrGTNETSKT48	:Int
+	in49	:POINT49
+	TypeFrGTNETSKT49	:Int
+	in50	:POINT50
+	TypeFrGTNETSKT50	:Int
+	in51	:POINT51
+	TypeFrGTNETSKT51	:Int
+	in52	:POINT52
+	TypeFrGTNETSKT52	:Int
+	in53	:POINT53
+	TypeFrGTNETSKT53	:Int
+	in54	:POINT54
+	TypeFrGTNETSKT54	:Int
+	in55	:POINT55
+	TypeFrGTNETSKT55	:Int
+	in56	:POINT56
+	TypeFrGTNETSKT56	:Int
+	in57	:POINT57
+	TypeFrGTNETSKT57	:Int
+	in58	:POINT58
+	TypeFrGTNETSKT58	:Int
+	in59	:POINT59
+	TypeFrGTNETSKT59	:Int
+	in60	:POINT60
+	TypeFrGTNETSKT60	:Int
+	in61	:POINT61
+	TypeFrGTNETSKT61	:Int
+	in62	:POINT62
+	TypeFrGTNETSKT62	:Int
+	in63	:POINT63
+	TypeFrGTNETSKT63	:Int
+	in64	:POINT64
+	TypeFrGTNETSKT64	:Int
+	in65	:POINT65
+	TypeFrGTNETSKT65	:Int
+	in66	:POINT66
+	TypeFrGTNETSKT66	:Int
+	in67	:POINT67
+	TypeFrGTNETSKT67	:Int
+	in68	:POINT68
+	TypeFrGTNETSKT68	:Int
+	in69	:POINT69
+	TypeFrGTNETSKT69	:Int
+	in70	:POINT70
+	TypeFrGTNETSKT70	:Int
+	in71	:POINT71
+	TypeFrGTNETSKT71	:Int
+	in72	:POINT72
+	TypeFrGTNETSKT72	:Int
+	in73	:POINT73
+	TypeFrGTNETSKT73	:Int
+	in74	:POINT74
+	TypeFrGTNETSKT74	:Int
+	in75	:POINT75
+	TypeFrGTNETSKT75	:Int
+	in76	:POINT76
+	TypeFrGTNETSKT76	:Int
+	in77	:POINT77
+	TypeFrGTNETSKT77	:Int
+	in78	:POINT78
+	TypeFrGTNETSKT78	:Int
+	in79	:POINT79
+	TypeFrGTNETSKT79	:Int
+	in80	:POINT80
+	TypeFrGTNETSKT80	:Int
+	in81	:POINT81
+	TypeFrGTNETSKT81	:Int
+	in82	:POINT82
+	TypeFrGTNETSKT82	:Int
+	in83	:POINT83
+	TypeFrGTNETSKT83	:Int
+	in84	:POINT84
+	TypeFrGTNETSKT84	:Int
+	in85	:POINT85
+	TypeFrGTNETSKT85	:Int
+	in86	:POINT86
+	TypeFrGTNETSKT86	:Int
+	in87	:POINT87
+	TypeFrGTNETSKT87	:Int
+	in88	:POINT88
+	TypeFrGTNETSKT88	:Int
+	in89	:POINT89
+	TypeFrGTNETSKT89	:Int
+	in90	:POINT90
+	TypeFrGTNETSKT90	:Int
+	in91	:POINT91
+	TypeFrGTNETSKT91	:Int
+	in92	:POINT92
+	TypeFrGTNETSKT92	:Int
+	in93	:POINT93
+	TypeFrGTNETSKT93	:Int
+	in94	:POINT94
+	TypeFrGTNETSKT94	:Int
+	in95	:POINT95
+	TypeFrGTNETSKT95	:Int
+	in96	:POINT96
+	TypeFrGTNETSKT96	:Int
+	in97	:POINT97
+	TypeFrGTNETSKT97	:Int
+	in98	:POINT98
+	TypeFrGTNETSKT98	:Int
+	in99	:POINT99
+	TypeFrGTNETSKT99	:Int
+	in100	:POINT100
+	TypeFrGTNETSKT100	:Int
+	in101	:POINT101
+	TypeFrGTNETSKT101	:Int
+	in102	:POINT102
+	TypeFrGTNETSKT102	:Int
+	in103	:POINT103
+	TypeFrGTNETSKT103	:Int
+	in104	:POINT104
+	TypeFrGTNETSKT104	:Int
+	in105	:POINT105
+	TypeFrGTNETSKT105	:Int
+	in106	:POINT106
+	TypeFrGTNETSKT106	:Int
+	in107	:POINT107
+	TypeFrGTNETSKT107	:Int
+	in108	:POINT108
+	TypeFrGTNETSKT108	:Int
+	in109	:POINT109
+	TypeFrGTNETSKT109	:Int
+	in110	:POINT110
+	TypeFrGTNETSKT110	:Int
+	in111	:POINT111
+	TypeFrGTNETSKT111	:Int
+	in112	:POINT112
+	TypeFrGTNETSKT112	:Int
+	in113	:POINT113
+	TypeFrGTNETSKT113	:Int
+	in114	:POINT114
+	TypeFrGTNETSKT114	:Int
+	in115	:POINT115
+	TypeFrGTNETSKT115	:Int
+	in116	:POINT116
+	TypeFrGTNETSKT116	:Int
+	in117	:POINT117
+	TypeFrGTNETSKT117	:Int
+	in118	:POINT118
+	TypeFrGTNETSKT118	:Int
+	in119	:POINT119
+	TypeFrGTNETSKT119	:Int
+	in120	:POINT120
+	TypeFrGTNETSKT120	:Int
+	in121	:POINT121
+	TypeFrGTNETSKT121	:Int
+	in122	:POINT122
+	TypeFrGTNETSKT122	:Int
+	in123	:POINT123
+	TypeFrGTNETSKT123	:Int
+	in124	:POINT124
+	TypeFrGTNETSKT124	:Int
+	in125	:POINT125
+	TypeFrGTNETSKT125	:Int
+	in126	:POINT126
+	TypeFrGTNETSKT126	:Int
+	in127	:POINT127
+	TypeFrGTNETSKT127	:Int
+	in128	:POINT128
+	TypeFrGTNETSKT128	:Int
+	in129	:POINT129
+	TypeFrGTNETSKT129	:Int
+	in130	:POINT130
+	TypeFrGTNETSKT130	:Int
+	in131	:POINT131
+	TypeFrGTNETSKT131	:Int
+	in132	:POINT132
+	TypeFrGTNETSKT132	:Int
+	in133	:POINT133
+	TypeFrGTNETSKT133	:Int
+	in134	:POINT134
+	TypeFrGTNETSKT134	:Int
+	in135	:POINT135
+	TypeFrGTNETSKT135	:Int
+	in136	:POINT136
+	TypeFrGTNETSKT136	:Int
+	in137	:POINT137
+	TypeFrGTNETSKT137	:Int
+	in138	:POINT138
+	TypeFrGTNETSKT138	:Int
+	in139	:POINT139
+	TypeFrGTNETSKT139	:Int
+	in140	:POINT140
+	TypeFrGTNETSKT140	:Int
+	in141	:POINT141
+	TypeFrGTNETSKT141	:Int
+	in142	:POINT142
+	TypeFrGTNETSKT142	:Int
+	in143	:POINT143
+	TypeFrGTNETSKT143	:Int
+	in144	:POINT144
+	TypeFrGTNETSKT144	:Int
+	in145	:POINT145
+	TypeFrGTNETSKT145	:Int
+	in146	:POINT146
+	TypeFrGTNETSKT146	:Int
+	in147	:POINT147
+	TypeFrGTNETSKT147	:Int
+	in148	:POINT148
+	TypeFrGTNETSKT148	:Int
+	in149	:POINT149
+	TypeFrGTNETSKT149	:Int
+	in150	:POINT150
+	TypeFrGTNETSKT150	:Int
+	in151	:POINT151
+	TypeFrGTNETSKT151	:Int
+	in152	:POINT152
+	TypeFrGTNETSKT152	:Int
+	in153	:POINT153
+	TypeFrGTNETSKT153	:Int
+	in154	:POINT154
+	TypeFrGTNETSKT154	:Int
+	in155	:POINT155
+	TypeFrGTNETSKT155	:Int
+	in156	:POINT156
+	TypeFrGTNETSKT156	:Int
+	in157	:POINT157
+	TypeFrGTNETSKT157	:Int
+	in158	:POINT158
+	TypeFrGTNETSKT158	:Int
+	in159	:POINT159
+	TypeFrGTNETSKT159	:Int
+	in160	:POINT160
+	TypeFrGTNETSKT160	:Int
+	in161	:POINT161
+	TypeFrGTNETSKT161	:Int
+	in162	:POINT162
+	TypeFrGTNETSKT162	:Int
+	in163	:POINT163
+	TypeFrGTNETSKT163	:Int
+	in164	:POINT164
+	TypeFrGTNETSKT164	:Int
+	in165	:POINT165
+	TypeFrGTNETSKT165	:Int
+	in166	:POINT166
+	TypeFrGTNETSKT166	:Int
+	in167	:POINT167
+	TypeFrGTNETSKT167	:Int
+	in168	:POINT168
+	TypeFrGTNETSKT168	:Int
+	in169	:POINT169
+	TypeFrGTNETSKT169	:Int
+	in170	:POINT170
+	TypeFrGTNETSKT170	:Int
+	in171	:POINT171
+	TypeFrGTNETSKT171	:Int
+	in172	:POINT172
+	TypeFrGTNETSKT172	:Int
+	in173	:POINT173
+	TypeFrGTNETSKT173	:Int
+	in174	:POINT174
+	TypeFrGTNETSKT174	:Int
+	in175	:POINT175
+	TypeFrGTNETSKT175	:Int
+	in176	:POINT176
+	TypeFrGTNETSKT176	:Int
+	in177	:POINT177
+	TypeFrGTNETSKT177	:Int
+	in178	:POINT178
+	TypeFrGTNETSKT178	:Int
+	in179	:POINT179
+	TypeFrGTNETSKT179	:Int
+	in180	:POINT180
+	TypeFrGTNETSKT180	:Int
+	in181	:POINT181
+	TypeFrGTNETSKT181	:Int
+	in182	:POINT182
+	TypeFrGTNETSKT182	:Int
+	in183	:POINT183
+	TypeFrGTNETSKT183	:Int
+	in184	:POINT184
+	TypeFrGTNETSKT184	:Int
+	in185	:POINT185
+	TypeFrGTNETSKT185	:Int
+	in186	:POINT186
+	TypeFrGTNETSKT186	:Int
+	in187	:POINT187
+	TypeFrGTNETSKT187	:Int
+	in188	:POINT188
+	TypeFrGTNETSKT188	:Int
+	in189	:POINT189
+	TypeFrGTNETSKT189	:Int
+	in190	:POINT190
+	TypeFrGTNETSKT190	:Int
+	in191	:POINT191
+	TypeFrGTNETSKT191	:Int
+	in192	:POINT192
+	TypeFrGTNETSKT192	:Int
+	in193	:POINT193
+	TypeFrGTNETSKT193	:Int
+	in194	:POINT194
+	TypeFrGTNETSKT194	:Int
+	in195	:POINT195
+	TypeFrGTNETSKT195	:Int
+	in196	:POINT196
+	TypeFrGTNETSKT196	:Int
+	in197	:POINT197
+	TypeFrGTNETSKT197	:Int
+	in198	:POINT198
+	TypeFrGTNETSKT198	:Int
+	in199	:POINT199
+	TypeFrGTNETSKT199	:Int
+	in200	:POINT200
+	TypeFrGTNETSKT200	:Int
+	in201	:POINT201
+	TypeFrGTNETSKT201	:Int
+	in202	:POINT202
+	TypeFrGTNETSKT202	:Int
+	in203	:POINT203
+	TypeFrGTNETSKT203	:Int
+	in204	:POINT204
+	TypeFrGTNETSKT204	:Int
+	in205	:POINT205
+	TypeFrGTNETSKT205	:Int
+	in206	:POINT206
+	TypeFrGTNETSKT206	:Int
+	in207	:POINT207
+	TypeFrGTNETSKT207	:Int
+	in208	:POINT208
+	TypeFrGTNETSKT208	:Int
+	in209	:POINT209
+	TypeFrGTNETSKT209	:Int
+	in210	:POINT210
+	TypeFrGTNETSKT210	:Int
+	in211	:POINT211
+	TypeFrGTNETSKT211	:Int
+	in212	:POINT212
+	TypeFrGTNETSKT212	:Int
+	in213	:POINT213
+	TypeFrGTNETSKT213	:Int
+	in214	:POINT214
+	TypeFrGTNETSKT214	:Int
+	in215	:POINT215
+	TypeFrGTNETSKT215	:Int
+	in216	:POINT216
+	TypeFrGTNETSKT216	:Int
+	in217	:POINT217
+	TypeFrGTNETSKT217	:Int
+	in218	:POINT218
+	TypeFrGTNETSKT218	:Int
+	in219	:POINT219
+	TypeFrGTNETSKT219	:Int
+	in220	:POINT220
+	TypeFrGTNETSKT220	:Int
+	in221	:POINT221
+	TypeFrGTNETSKT221	:Int
+	in222	:POINT222
+	TypeFrGTNETSKT222	:Int
+	in223	:POINT223
+	TypeFrGTNETSKT223	:Int
+	in224	:POINT224
+	TypeFrGTNETSKT224	:Int
+	in225	:POINT225
+	TypeFrGTNETSKT225	:Int
+	in226	:POINT226
+	TypeFrGTNETSKT226	:Int
+	in227	:POINT227
+	TypeFrGTNETSKT227	:Int
+	in228	:POINT228
+	TypeFrGTNETSKT228	:Int
+	in229	:POINT229
+	TypeFrGTNETSKT229	:Int
+	in230	:POINT230
+	TypeFrGTNETSKT230	:Int
+	in231	:POINT231
+	TypeFrGTNETSKT231	:Int
+	in232	:POINT232
+	TypeFrGTNETSKT232	:Int
+	in233	:POINT233
+	TypeFrGTNETSKT233	:Int
+	in234	:POINT234
+	TypeFrGTNETSKT234	:Int
+	in235	:POINT235
+	TypeFrGTNETSKT235	:Int
+	in236	:POINT236
+	TypeFrGTNETSKT236	:Int
+	in237	:POINT237
+	TypeFrGTNETSKT237	:Int
+	in238	:POINT238
+	TypeFrGTNETSKT238	:Int
+	in239	:POINT239
+	TypeFrGTNETSKT239	:Int
+	in240	:POINT240
+	TypeFrGTNETSKT240	:Int
+	in241	:POINT241
+	TypeFrGTNETSKT241	:Int
+	in242	:POINT242
+	TypeFrGTNETSKT242	:Int
+	in243	:POINT243
+	TypeFrGTNETSKT243	:Int
+	in244	:POINT244
+	TypeFrGTNETSKT244	:Int
+	in245	:POINT245
+	TypeFrGTNETSKT245	:Int
+	in246	:POINT246
+	TypeFrGTNETSKT246	:Int
+	in247	:POINT247
+	TypeFrGTNETSKT247	:Int
+	in248	:POINT248
+	TypeFrGTNETSKT248	:Int
+	in249	:POINT249
+	TypeFrGTNETSKT249	:Int
+	in250	:POINT250
+	TypeFrGTNETSKT250	:Int
+	in251	:POINT251
+	TypeFrGTNETSKT251	:Int
+	in252	:POINT252
+	TypeFrGTNETSKT252	:Int
+	in253	:POINT253
+	TypeFrGTNETSKT253	:Int
+	in254	:POINT254
+	TypeFrGTNETSKT254	:Int
+	in255	:POINT255
+	TypeFrGTNETSKT255	:Int
+	in256	:POINT256
+	TypeFrGTNETSKT256	:Int
+	in257	:POINT257
+	TypeFrGTNETSKT257	:Int
+	in258	:POINT258
+	TypeFrGTNETSKT258	:Int
+	in259	:POINT259
+	TypeFrGTNETSKT259	:Int
+	in260	:POINT260
+	TypeFrGTNETSKT260	:Int
+	in261	:POINT261
+	TypeFrGTNETSKT261	:Int
+	in262	:POINT262
+	TypeFrGTNETSKT262	:Int
+	in263	:POINT263
+	TypeFrGTNETSKT263	:Int
+	in264	:POINT264
+	TypeFrGTNETSKT264	:Int
+	in265	:POINT265
+	TypeFrGTNETSKT265	:Int
+	in266	:POINT266
+	TypeFrGTNETSKT266	:Int
+	in267	:POINT267
+	TypeFrGTNETSKT267	:Int
+	in268	:POINT268
+	TypeFrGTNETSKT268	:Int
+	in269	:POINT269
+	TypeFrGTNETSKT269	:Int
+	in270	:POINT270
+	TypeFrGTNETSKT270	:Int
+	in271	:POINT271
+	TypeFrGTNETSKT271	:Int
+	in272	:POINT272
+	TypeFrGTNETSKT272	:Int
+	in273	:POINT273
+	TypeFrGTNETSKT273	:Int
+	in274	:POINT274
+	TypeFrGTNETSKT274	:Int
+	in275	:POINT275
+	TypeFrGTNETSKT275	:Int
+	in276	:POINT276
+	TypeFrGTNETSKT276	:Int
+	in277	:POINT277
+	TypeFrGTNETSKT277	:Int
+	in278	:POINT278
+	TypeFrGTNETSKT278	:Int
+	in279	:POINT279
+	TypeFrGTNETSKT279	:Int
+	in280	:POINT280
+	TypeFrGTNETSKT280	:Int
+	in281	:POINT281
+	TypeFrGTNETSKT281	:Int
+	in282	:POINT282
+	TypeFrGTNETSKT282	:Int
+	in283	:POINT283
+	TypeFrGTNETSKT283	:Int
+	in284	:POINT284
+	TypeFrGTNETSKT284	:Int
+	in285	:POINT285
+	TypeFrGTNETSKT285	:Int
+	in286	:POINT286
+	TypeFrGTNETSKT286	:Int
+	in287	:POINT287
+	TypeFrGTNETSKT287	:Int
+	in288	:POINT288
+	TypeFrGTNETSKT288	:Int
+	in289	:POINT289
+	TypeFrGTNETSKT289	:Int
+	in290	:POINT290
+	TypeFrGTNETSKT290	:Int
+	in291	:POINT291
+	TypeFrGTNETSKT291	:Int
+	in292	:POINT292
+	TypeFrGTNETSKT292	:Int
+	in293	:POINT293
+	TypeFrGTNETSKT293	:Int
+	in294	:POINT294
+	TypeFrGTNETSKT294	:Int
+	in295	:POINT295
+	TypeFrGTNETSKT295	:Int
+	in296	:POINT296
+	TypeFrGTNETSKT296	:Int
+	in297	:POINT297
+	TypeFrGTNETSKT297	:Int
+	in298	:POINT298
+	TypeFrGTNETSKT298	:Int
+	in299	:POINT299
+	TypeFrGTNETSKT299	:Int
+	LocalPort	:12334
+	RemotePort	:12334
+	rem_ip_0	:134
+	rem_ip_1	:130
+	rem_ip_2	:169
+	rem_ip_3	:12
+wirelabel
+	1808 1744 0 0 3
+	Name	:NewData1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1808 1712 0 0 3
+	Name	:NewDataSeq
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	1520 1712 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_EDGEDET
+	1456 1712 0 0 4
+	ED	:0 -> 1
+	OV	:1
+	Proc	:1
+	Pri	:9
+WIRE
+	1392 1712 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1520 1712 0 0 3
+	Name	:SendData
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_IEEE2INT
+	1360 1712 0 0 3
+	Op	:Round
+	Proc	:1
+	Pri	:8
+rtds_sharc_ctl_SRCABSPH
+	1296 1712 0 0 5
+	WType	:Square
+	Units	:volts
+	Duty	:50
+	Proc	:1
+	Pri	:3
+rtds_sharc_ctl_CONSTANT
+	1232 1680 0 0 1
+	Val	:1.0
+rtds_sharc_ctl_CONSTANT
+	1232 1744 0 0 1
+	Val	:0.0
+WIRE
+	1232 1712 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SLIDER
+	1168 1712 0 0 5
+	Name	:SamplingFreq
+	Init	:1.0
+	Max	:10000
+	Min	:1
+	Units	:volts
+HIERARCHY
+	1328 1584 0 0 28
+	Name	:ForController
+	FCOL	:WHITE
+	BCOL	:BLUE
+	LW	:1.0
+	DESC1	:Data For Controller
+	DESC2	:in the Cloud
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:58
+	x1	:-32
+	y1	:-64
+	x2	:64
+	y2	:32
+	canvasX	:34
+	canvasY	:41
+	canvasWidth	:1115
+	canvasHeight	:730
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+rtds_sharc_ctl_FREQ
+	176 112 0 0 6
+	mo	:Freq
+	pu	:No
+	Sc	:50
+	Type	:DFT
+	Proc	:1
+	Pri	:25
+WIRE
+	112 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 112 0 0 2
+	-32 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	112 112 0 0 3
+	Name	:VloadA
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	272 112 0 0 3
+	Name	:f_VloadA
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	208 144 1 0 2
+	-4 -32 4 32
+	COL	:RED
+	LW	:1.0
+WIRE
+	208 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_SDELAY
+	272 176 0 0 6
+	IorF	:Real
+	DEL	:0.02
+	NS	:1
+	INIT	:0.0
+	Proc	:1
+	Pri	:69
+wirelabel
+	336 176 0 0 3
+	Name	:fdelay_VloadA
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	560 144 0 0 3
+	Name	:rocof_VloadA
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_SUM3
+	464 144 2 1 7
+	Num	:TWO
+	IorF	:REAL
+	IN1	:+
+	IN2	:-
+	IN3	:-
+	Proc	:1
+	Pri	:84
+WIRE
+	432 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_XDIVY
+	496 144 0 0 4
+	DBZ	:Halt
+	Val	:1e8
+	Proc	:1
+	Pri	:95
+rtds_sharc_ctl_CONSTANT
+	464 176 0 0 1
+	Val	:0.02
+WIRE
+	528 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_RMS
+	752 336 0 0 7
+	Mode	:Three Phase
+	pu	:No
+	Sc	:400
+	LL	:Line-Line
+	unit	:volts
+	Proc	:1
+	Pri	:24
+WIRE
+	688 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	816 336 0 0 3
+	Name	:Vo4LLRMS
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	784 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_RMS
+	176 336 0 0 7
+	Mode	:Three Phase
+	pu	:No
+	Sc	:400
+	LL	:Line-Line
+	unit	:volts
+	Proc	:1
+	Pri	:23
+WIRE
+	112 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	112 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	112 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	240 336 0 0 3
+	Name	:Vo1LLRMS
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	208 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_RMS
+	368 336 0 0 7
+	Mode	:Three Phase
+	pu	:No
+	Sc	:400
+	LL	:Line-Line
+	unit	:volts
+	Proc	:1
+	Pri	:22
+WIRE
+	304 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	304 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	432 336 0 0 3
+	Name	:Vo2LLRMS
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	400 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	112 336 0 0 0
+	3
+wirelabel
+	112 368 0 0 3
+	Name	:Vo1C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	112 336 0 0 3
+	Name	:Vo1B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	112 304 0 0 3
+	Name	:Vo1A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	496 336 0 0 0
+	3
+wirelabel
+	496 368 0 0 3
+	Name	:Vo3C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 336 0 0 3
+	Name	:Vo3B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	496 304 0 0 3
+	Name	:Vo3A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	368 464 0 0 0
+	3
+rtds_sharc_ctl_GAIN
+	368 464 0 0 3
+	K	:1
+	Proc	:1
+	Pri	:20
+WIRE
+	432 464 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 464 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	368 496 0 0 0
+	3
+rtds_sharc_ctl_GAIN
+	368 496 0 0 3
+	K	:1
+	Proc	:1
+	Pri	:19
+WIRE
+	432 496 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 496 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	368 528 0 0 0
+	3
+rtds_sharc_ctl_GAIN
+	368 528 0 0 3
+	K	:1
+	Proc	:1
+	Pri	:18
+WIRE
+	432 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	336 528 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	304 336 0 0 0
+	3
+wirelabel
+	304 368 0 0 3
+	Name	:Vo2C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 336 0 0 3
+	Name	:Vo2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 304 0 0 3
+	Name	:Vo2A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	304 496 0 0 0
+	3
+wirelabel
+	304 528 0 0 3
+	Name	:Vo2C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 496 0 0 3
+	Name	:Vo2B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	304 464 0 0 3
+	Name	:Vo2A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	688 336 0 0 0
+	3
+wirelabel
+	688 368 0 0 3
+	Name	:Vo4C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 336 0 0 3
+	Name	:Vo4B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 304 0 0 3
+	Name	:Vo4A
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	432 496 0 0 0
+	3
+wirelabel
+	432 528 0 0 3
+	Name	:Vo4C
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 496 0 0 3
+	Name	:Vo4B
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 464 0 0 3
+	Name	:Vo4A
+	COL	:BLUE
+	Monitor	:Yes
+annotation
+	368 432 0 0 3
+	AL1	:just to copy
+	AL2	:
+	FSize	:10
+wirelabel
+	432 144 0 0 3
+	Name	:f_VloadA
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 112 0 0 3
+	Name	:fdelay_VloadA
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 464 0 0 3
+	Name	:VloadA
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 496 0 0 3
+	Name	:VloadB
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	592 528 0 0 3
+	Name	:VloadC
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	624 336 0 0 3
+	Name	:Vo3LLRMS
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	528 336 0 0 0
+	5
+WIRE
+	592 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 368 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 336 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	496 304 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_RMS
+	560 336 0 0 7
+	Mode	:Three Phase
+	pu	:No
+	Sc	:400
+	LL	:Line-Line
+	unit	:volts
+	Proc	:1
+	Pri	:21
+rtds_sharc_ctl_RMS
+	656 496 0 0 7
+	Mode	:Three Phase
+	pu	:No
+	Sc	:400
+	LL	:Line-Line
+	unit	:volts
+	Proc	:1
+	Pri	:21
+WIRE
+	592 464 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	592 496 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	592 528 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 496 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	720 496 0 0 3
+	Name	:VloadLLRMS
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	1488 1776 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1520 1776 0 0 3
+	Name	:txCnt
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_IEEE2INT
+	1968 1648 0 0 3
+	Op	:Round
+	Proc	:1
+	Pri	:5
+WIRE
+	1904 1648 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	2000 1648 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_IEEE2INT
+	1968 1616 0 0 3
+	Op	:Round
+	Proc	:1
+	Pri	:6
+WIRE
+	1904 1616 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	2000 1616 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+rtds_sharc_ctl_IEEE2INT
+	1968 1584 0 0 3
+	Op	:Round
+	Proc	:1
+	Pri	:7
+WIRE
+	1904 1584 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	2000 1584 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	1904 1584 0 0 3
+	Name	:sc_brk1
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1904 1616 0 0 3
+	Name	:sc_brk2
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	1904 1648 0 0 3
+	Name	:sc_brk3
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	2032 1584 0 0 3
+	Name	:sc_brk1int
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	2032 1616 0 0 3
+	Name	:sc_brk2int
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	2032 1648 0 0 3
+	Name	:sc_brk3int
+	COL	:BLUE
+	Monitor	:Yes
+lf_rtds_sharc_sld_SHUNTRLC
+	752 1040 3 1 16
+	R	:0.1
+	L	:0
+	CuF	:1e-5
+	type	:Y
+	NR	:No
+	Imon	:No
+	IAnam	:IA
+	IBnam	:IB
+	ICnam	:IC
+	IABnam	:IAB
+	IBCnam	:IBC
+	ICAnam	:ICA
+	A1PosY	:32
+	C1PosY	:-32
+	P_L0	:0.0
+	Q_L0	:0.0
+rtds_risc_ctl_PROCASN
+	1648 1456 0 0 3
+	CPRO	:30
+	BRD	:2
+	ABC	:A
+rtds_sharc_ctl_SLIDER
+	336 1712 0 0 5
+	Name	:set_f_slider
+	Init	:50
+	Max	:100
+	Min	:0.01
+	Units	:Hz
+rtds_sharc_ctl_SLIDER
+	432 1680 0 0 5
+	Name	:set_v_slider
+	Init	:10
+	Max	:100
+	Min	:0
+	Units	:volts
+rtds_sharc_ctl_SLIDER
+	464 1744 0 0 5
+	Name	:set_ph_slider
+	Init	:0
+	Max	:6.283
+	Min	:0
+	Units	:rad
+rtds_sharc_ctl_CONSTANT
+	336 1680 0 0 1
+	Val	:0
+HIERARCHY
+	1744 688 0 0 28
+	Name	:MeasurementsL3
+	FCOL	:BLACK
+	BCOL	:ORANGE
+	LW	:1.0
+	DESC1	:Measurements
+	DESC2	:
+	IMAGE	:
+	IMAGE_RESIZE	:NO
+	EXCLUDE	:NO
+	Type	:MAIN_TIMESTEP
+	SubstepBoxType	:POWER_SYSTEM
+	SubstepDivisor	:15
+	SuperstepBoxType	:POWER_SYSTEM
+	SuperstepMultiplier	:2
+	ComponentCount	:31
+	x1	:-64
+	y1	:-32
+	x2	:32
+	y2	:64
+	canvasX	:71
+	canvasY	:47
+	canvasWidth	:654
+	canvasHeight	:476
+	isOpen	:NO
+	scrtpass	:
+	smtsProcesses	:1
+	smallTSExecTime	:0
+	cross_chassis_comm_port	:1
+rtds_sharc_ctl_REALPL
+	304 144 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:17
+rtds_sharc_ctl_REALPL
+	304 208 0 0 12
+	T	:0.00079577
+	G	:1
+	RST	:No
+	LIM	:None
+	TGD	:No
+	Xic	:0.0
+	Yic	:0.0
+	PItype	:Fixed
+	Tic	:1.0
+	Gic	:1.0
+	Proc	:35
+	Pri	:16
+wirelabel
+	368 144 0 0 3
+	Name	:Pload
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	368 208 0 0 3
+	Name	:Qload
+	COL	:BLUE
+	Monitor	:Yes
+rtds_sharc_ctl_PQMET
+	112 144 0 0 5
+	pu	:No
+	MVA	:100.0
+	adv	:V by 1dt
+	Proc	:1
+	Pri	:15
+wirelabel
+	176 144 0 0 3
+	Name	:Ploadmeas
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	176 176 0 0 3
+	Name	:Qloadmeas
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	144 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	144 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 80 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 112 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	48 240 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	48 208 0 0 0
+	3
+wirelabel
+	48 240 0 0 3
+	Name	:IloadC
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 208 0 0 3
+	Name	:IloadB
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 176 0 0 3
+	Name	:IloadA
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	240 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	240 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+annotation
+	304 80 0 0 3
+	AL1	:
+	AL2	:T=1/2pi*f_pctrl
+	FSize	:10
+rtds_sharc_ctl_PLLT2
+	496 176 0 0 9
+	Frat	:50
+	Ainit	:0.0
+	PIPG	:5.0
+	PIIT	:0.01
+	Ft	:0.0015
+	WMON	:rad/sec
+	EMON	:No
+	Proc	:1
+	Pri	:14
+WIRE
+	528 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	528 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	560 176 0 0 3
+	Name	:wload
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	432 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 176 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	432 208 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	560 144 0 0 3
+	Name	:phiload
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 144 0 0 3
+	Name	:Ploadmeas
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	240 208 0 0 3
+	Name	:Qloadmeas
+	COL	:BLUE
+	Monitor	:Yes
+GROUP
+	48 112 0 0 0
+	3
+wirelabel
+	48 144 0 0 3
+	Name	:VloadC
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 112 0 0 3
+	Name	:VloadB
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	48 80 0 0 3
+	Name	:VloadA
+	COL	:BLUE
+	Monitor	:Yes
+WIRE
+	48 144 0 0 2
+	0 -4 32 4
+	COL	:RED
+	LW	:1.0
+GROUP
+	432 176 0 0 0
+	3
+wirelabel
+	432 208 0 0 3
+	Name	:VloadC
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 176 0 0 3
+	Name	:VloadB
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	432 144 0 0 3
+	Name	:VloadA
+	COL	:BLUE
+	Monitor	:Yes
+BUS
+	1552 912 3 0 26
+	LW3	:1.0
+	ACOL	:ORANGE
+	BCOL	:RED
+	CCOL	:RED
+	LW1	:3.0
+	SCOL	:RED
+	CONVERGE	:NO
+	DOCUMENT	:NO
+	x1L1	:-32
+	y1L1	:-32
+	x2L1	:96
+	y2L1	:-32
+	x1L2	:-64
+	y1L2	:0
+	x2L2	:96
+	y2L2	:0
+	x1L3	:-96
+	y1L3	:32
+	x2L3	:96
+	y2L3	:32
+	L1ArcAtEnd1	:0
+	L1ArcAtEnd2	:0
+	L2ArcAtEnd1	:1
+	L2ArcAtEnd2	:0
+	L3ArcAtEnd1	:1
+	L3ArcAtEnd2	:0
+WIRE
+	688 1744 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 1648 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 1616 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	624 1616 1 0 2
+	-4 -64 4 96
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 1584 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 1552 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 1776 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 1808 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 1840 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 1872 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	720 1904 0 0 2
+	-32 -4 0 4
+	COL	:RED
+	LW	:1.0
+WIRE
+	688 1680 0 0 2
+	-64 -4 32 4
+	COL	:RED
+	LW	:1.0
+wirelabel
+	688 1808 0 0 3
+	Name	:Vo2A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 1840 0 0 3
+	Name	:Vo3A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 1872 0 0 3
+	Name	:Vo4A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 1904 0 0 3
+	Name	:V3A
+	COL	:BLUE
+	Monitor	:Yes
+wirelabel
+	688 1776 0 0 3
+	Name	:Vo1A
+	COL	:BLUE
+	Monitor	:Yes
