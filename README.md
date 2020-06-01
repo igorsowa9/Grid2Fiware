@@ -24,11 +24,7 @@ Final docker is the controller container, which cooperate with other containers.
 ![](Figures/fig1.png)\
 **Figure 1**: Overview of the cloud setup (based on figure in Fiware Time Seried Data tutorial)
 
-The IoT devices of the setup are twofold: 
-1) Phasor measurement unit (PMU), which is the IoT device in form of a physical hardware that communicates measurements to the cloud through publishing MQTT messages and 
-2) RTDSvm, which is a virtual machine (i.e. non-physical entity) that forwards measurements or control settings from and to the enviornment in RTDS simulator, respectively. 
- 
-The virtual machine emulates multiple devices, both those suppyling meter data to the cloud as well as those receiving setpoint from the controller (i.e. actuators). The measurements data are sent using IoT Agent, Mosquitto Broker, stored in Mongo/Crate DB, and through subsriptions of Quantum Leap also avialable in Grafana for visualisation. Similarly with the output of MG controller i.e. control setpoints for inverters and circuit breakers of loads. 
+The IoT devices of the setup are the following: (1) Phasor measurement unit (PMU), which is the IoT device in form of a physical hardware that communicates measurements to the cloud through publishing MQTT messages and (2) RTDSvm, which is a virtual machine (i.e. non-physical entity) that forwards measurements or control settings from and to the enviornment in RTDS simulator, respectively. The virtual machine emulates multiple devices, both those suppyling meter data to the cloud as well as those receiving setpoint from the controller (i.e. actuators). The measurements data are sent using IoT Agent, Mosquitto Broker, stored in Mongo/Crate DB, and through subsriptions of Quantum Leap also avialable in Grafana for visualisation. Similarly with the output of MG controller i.e. control setpoints for inverters and circuit breakers of loads. 
 
 **MG controller**\
 MG Controller container is implemented in Python 3. It has an additional connection to the IoT agent (with respect to the setup in [2]) in order to send or receive the measurements in sub-second intervals (marked as dashed line in the Fig. 1). Due to the nature of the phenomena in islanded microgrid (high dynamics of electrical waveforms), a quick communication is necessary. 
@@ -43,7 +39,7 @@ The microgrid service provides secondary frequency control in an islanded microg
 Real-time digital simulator (RTDS) simulates a islanded microgrid with 3 distributed generators run by 3 inverters. In the folder grid_model one can find the model of microgrid. It is configured for communication with the RTDSvm, which is responsible for further communication with the cloud.
 
 **PMU**\
-Phasor Measurement Unit used in the setup is the extended version of low-cost PMU developed in ACS of RWTH Aachen. The complete basic version of the PMU software is published: link, while the extension-development developed for the purpose of this setup is included in the pmu folder. As the result, PMU can act as IoT device and publish messages into the cloud with higher reporting rate.
+Phasor Measurement Unit used in the setup is the extended version of low-cost PMU developed in ACS of RWTH Aachen. The complete basic version of the PMU software is published: https://www.fein-aachen.org/en/projects/, while the extension-development developed for the purpose of this setup is included in the pmu folder. As the result, PMU can act as IoT device and publish messages into the cloud with higher reporting rate.
 
 PMU calculates the phasors using Modulated Sliding Enchanced Interpolated DFT based on [1]-[3] as a state of the art phasor estimation algorithm. It is therefore able to calculate magnitude, frequency, RoCoF as required by c37.118 [4] and these data are then sent and used by the controller. The algorithm has been implemented with the purposed of very high reporting rate (reporting of measurement data to the controller in the cloud) and thus the PMU is able to calculate and publish to the broker up to 50 frames (aforementioned sets of measurements) per second.
 
