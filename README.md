@@ -21,7 +21,7 @@ The first 7 containers are well-known elements of a FIWARE implementation such a
 
 Final docker is the controller container, which cooperate with other containers. The following scheme describes how it is located with respect to other elements.
 
-![](Figures/fig1.png)
+![](Figures/fig1.png)\
 **Figure 1**: Overview of the cloud setup (based on figure in Fiware Time Seried Data tutorial)
 
 The IoT devices of the setup are twofold: 
@@ -50,10 +50,10 @@ PMU calculates the phasors using Modulated Sliding Enchanced Interpolated DFT ba
 **Results**\
 Due to the nature of electrical grid with high dynamics (like islanded microgrid), the main purpose of the setup is to investigate how the FIWARE powered cloud can handle a service requiring relatively quick communication (low communication latency). Figure 2 presents a delay of one-way communication between the PMU phasors timestamps (defined as the middle of acquisition window) and the moment of acquiring the data by the MG controller, while Figure 3 shows the total delay between the measurement timestamp and the moment of control setpoints arrival.
 
-![](Figures/fig2.png)
+![](Figures/fig2.png)\
 **Figure 2**: One-way i.e. sensor to controller delay.
 
-![](Figures/fig3.png)
+![](Figures/fig3.png)\
 **Figure 3**: Total delay i.e. sensor-controller-actuator delay.
 
 The one-way delay includes following components of the delay:
