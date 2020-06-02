@@ -31,8 +31,8 @@ MG Controller container is implemented in Python 3. It has an additional connect
 
 Microgrid secondary load shedding (frequency control):
 The microgrid service provides secondary frequency control in an islanded microgrid with three inverters (grid forming, grid feeding and grid supporting) and loads. Dynamic conditions are emulated through connection and disconnection of loads (eventually through modifying their dynamic load values). The controller service running in the cloud needs to therefore exectue the following tasks:
-* Synchronize the measurements including phasors from different sources (PDC - phasor data concentrator, as recommended by standard [])
-* Assess whether any action needs to be taken by the controller ()
+* Synchronize the measurements including phasors from different sources (PDC - phasor data concentrator, as recommended by standard [4])
+* Assess whether any action needs to be taken by the controller (Disturbance Detector)
 * Derive an appropriate action for frequency control and execute it through sending appropriate commands (MGCC - microgrid centralized controller)
 
 **RTDS environment**\
