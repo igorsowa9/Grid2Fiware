@@ -14,10 +14,7 @@ from settings import *
 manager = multiprocessing.Manager()
 
 # Default values
-data_to_RTDS = manager.list([1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
-rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3",
-                          "pref1", "pref2", "pref3", "pref4",
-                          "qref1", "qref2", "qref3", "qref4"])
+data_to_RTDS = manager.list(default_controls)
 
 
 def on_connect(client, userdata, flags, rc):
@@ -50,9 +47,6 @@ def on_message(client, userdata, msg):
     elif "rtds001@pref3|" in entire_str:
         value = float(entire_str.replace("rtds001@pref3|", ""))
         data_to_RTDS[5] = value
-    elif "rtds001@pref4|" in entire_str:
-        value = float(entire_str.replace("rtds001@pref4|", ""))
-        data_to_RTDS[6] = value
     elif "rtds001@qref1|" in entire_str:
         value = float(entire_str.replace("rtds001@qref1|", ""))
         data_to_RTDS[7] = value
@@ -62,9 +56,6 @@ def on_message(client, userdata, msg):
     elif "rtds001@qref3|" in entire_str:
         value = float(entire_str.replace("rtds001@qref3|", ""))
         data_to_RTDS[9] = value
-    elif "rtds001@qref4|" in entire_str:
-        value = float(entire_str.replace("rtds001@qref4|", ""))
-        data_to_RTDS[10] = value
     else:
         print("another setpoint than exepeted")
 
