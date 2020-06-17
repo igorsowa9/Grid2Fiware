@@ -8,19 +8,21 @@ import multiprocessing
 from controller_config import *
 import paho.mqtt.client as paho
 
-# parallel proceses: PDC, detection and controller (at trigger from detection).
+# parallel processes of cloud controller operation:
+# PDC,
+# Event detection,
+# Controller (at trigger from detection).
 
-# PDC receives the phasors and synchronizes them.
-# Because of loss of synchrophasor data due to arrivals and dropouts etc.
-# "Buffers" the arriving data to choose only those from required moment
+# PDC receives the phasors and synchronizes them. It's necessary due to of loss of synchrophasor data due to arrivals and dropouts etc.
+# It buffers the arriving data to choose only those from required moment.
+# It should be synchronized to GPS like the meters and set it's operational frequency with max delay.
+
 # It can reconstruct the missing data as follows:
-# at 0 time it is inicilized with nominal values of measurement nodes
-# Missing Amplitude and phase angle are replaced by last received samples.
-# Missing frequency and ROCOF are interpolated based on maximum likelihood value or arithmetic mean of the available
-# samples.
-# In other words recursive behaviour in terms of local parameter (V, angle) and interpolative for the global
-# paramenters (f, rocof).
-# Recursive behaviour if none of samples come for the required time stamp.
+#  - at 0 time it is inicialized with nominal values of measurement nodes
+#  - Missing Amplitude and phase angle are replaced by last received samples.
+#  - Missing frequency and ROCOF are interpolated based on maximum likelihood value or arithmetic mean of the available samples.
+# In other words recursive behaviour in terms of local parameter (V, angle) and interpolative for the global paramenters (f, rocof).
+# Recursive behaviour also in case no samples come for the required time stamp.
 
 
 ran = np.concatenate((rtds_names, rtds_text))
@@ -32,7 +34,7 @@ f2_alert = 0
 f3_alert = 0
 v_alert = 0
 
-meas_set = multiprocessing.Manager().list(np.zeros(len(ras)).tolist()) # measurements from RTDS and PMU to update
+meas_set = multiprocessing.Manager().list(np.zeros(len(ras)).tolist())  # measurements from RTDS and PMU to update
 
 # Setpoints updated by different modules and sent to devices (VM). See config for what is what
 setpoints = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
@@ -70,7 +72,7 @@ def on_message_rtds(client, userdata, msg):
 
     ts_measurement = meas_set[np.argwhere(ras == "ts_measurement")[0][0]]
     delay = datetime.utcnow().timestamp() * 1000 - float(ts_measurement)
-    print("\ndelay " + str(np.round(delay / 1000, 3)) + "s (measurement (" + str(ts_measurement) + ") to PDC of controller). ")
+    print("\nNew RTDS measurement: delay " + str(np.round(delay / 1000, 3)) + "s (measurement (" + str(ts_measurement) + ") to PDC of controller). ")
 
     return
 
@@ -162,7 +164,8 @@ def pdc_fromDB(mode):
 
 
 def shedding_detector():
-    """Detector for simple secondary shedding actions in case of serious deviations."""
+    """Detector for secondary shedding actions in case of violated limits.
+    Runs in parallel to reading meters."""
 
     global f1_alert, f2_alert, f3_alert, v_alert, setpoints
 
@@ -229,10 +232,10 @@ def main():
     (ii) continous PQ control for f and V control,
     (iii) descrete actions of controller, e.g. load shedding for frequency control"""
     if not data_fromDB:
-        p1 = multiprocessing.Process(target=mqtt_loop)  # subscribe directly from devices instead of from DB
+        p1 = multiprocessing.Process(target=mqtt_loop)  # subscribe directly from MQTT Broker instead of from DB
         p1.start()
     else:
-        p1 = multiprocessing.Process(target=pdc_fromDB(2))
+        p1 = multiprocessing.Process(target=pdc_fromDB(2))  # subscribe from DB, two modes
         p1.start()
 
     p2 = multiprocessing.Process(target=sc_continous)
