@@ -28,8 +28,7 @@ def on_message(client, userdata, msg):
 
     now = datetime.utcnow()
     entire_str = msg.payload.decode("utf-8")
-    print(entire_str)
-    return
+
     if "rtds001@sc_brk1|" in entire_str:
         value = float(entire_str.replace("rtds001@sc_brk1|", ""))
         data_to_RTDS[0] = value
@@ -57,7 +56,7 @@ def on_message(client, userdata, msg):
     elif "rtds001@qref3|" in entire_str:
         value = float(entire_str.replace("rtds001@qref3|", ""))
         data_to_RTDS[9] = value
-    elif "rtds001@ts_min|" in entire_str:
+    elif "rtds001@min_ts|" in entire_str:
         data_to_RTDS[10] = float(entire_str.replace("rtds001@min_ts|", ""))
     else:
         print("another setpoint than expected")
@@ -87,13 +86,13 @@ def send_to_RTDS():
         ts_sendtortds = round(datetime.utcnow().timestamp() * 1000, 0)
         send(data_to_RTDS[0:-1], IP_send, Port_send)
         print("Sent at ts="+str(ts_sendtortds)+": " + str(data_to_RTDS[0:-1]))
-        time.sleep(0.1)
+        time.sleep(0.033)
 
 
 if __name__ == '__main__':
     p1 = multiprocessing.Process(target=mqtt_loop)
     p1.start()
-    # p2 = multiprocessing.Process(target=send_to_RTDS)
-    # p2.start()
+    p2 = multiprocessing.Process(target=send_to_RTDS)
+    p2.start()
     p1.join()
-    # p2.join()
+    p2.join()

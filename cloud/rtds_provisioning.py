@@ -9,14 +9,6 @@ from settings import *
 n_pmu_analog_channels = 8  # determined by number of chanells in DAQ
 n_pmu_streams_to_cloud = 40  # 8x5 from each channel with have magn, ang, freq, rocof, time, ... (?)
 
-# rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4", "rtds5", "rtds6", "rtds7"])
-# rtds_text = np.array(["ts1", "add1"])
-#
-# rtds_signals = np.array(["w3", "f_v3a", "rocof_v3a", "vo1llrms", "vo2llrms", "vo3llrms", "vo4llrms"])
-# rtds_tsignals = np.array(["ts_measurement", "notes"])
-#
-# rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3", "pref1", "pref2", "pref3", "pref4", "qref1", "qref2", "qref3", "qref4"])
-
 fiware_service = "grid_uc"
 device_type = "rtds1"
 device_id = "rtds001"

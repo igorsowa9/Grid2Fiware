@@ -23,7 +23,7 @@ rtds_signals = np.array(["w_bus", "f_bus", "rocof_bus", "v_bus",
 rtds_tsignals = np.array(["ts_measurement", "notes"])
 NumData_fromRTDS = 13
 
-default_controls = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+default_controls = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3",
                           "pref1", "pref2", "pref3",
                           "qref1", "qref2", "qref3"])
