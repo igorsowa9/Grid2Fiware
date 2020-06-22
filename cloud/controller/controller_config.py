@@ -6,6 +6,7 @@ device_type = "rtds1"
 cloud_ip = "10.12.0.10"
 api_key = "asd1234rtds"
 
+# RTDS
 rtds_names = np.array(["rtds1", "rtds2", "rtds3", "rtds4",
                        "rtds5", "rtds6", "rtds7",
                        "rtds8", "rtds9", "rtds10", "rtds11", "rtds12", "rtds13"])
@@ -16,17 +17,24 @@ rtds_signals = np.array(["w_bus", "f_bus", "rocof_bus", "v_bus",
 rtds_tsignals = np.array(["ts_measurement", "notes"])
 NumData_fromRTDS = 13
 
-default_controls = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+default_controls = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3",
                           "pref1", "pref2", "pref3",
                           "qref1", "qref2", "qref3"])
+rtds_commands_attch = ['min_ts']
+
+# PMU
+channel_names = np.array(["ch0", "ch1", "ch2", "ch3", "ch4", "ch5"])
+sub_names = np.array(["a", "b", "c", "d", "e"])
+
+channel_signals = np.array(["vo1a", "vo2a", "vo3a", "vo4a", "v3a", "vt"])
+sub_signals = np.array(["magnitude", "frequency", "angle", "rocof", "timestamp"])
 
 # subscription of data from RTDS and PMU (directly, not through CrateDB)
 rtds_topic = "/asd1234rtds/rtds001/attrs"
-pmu_topic = ""
+pmu_topic = "/asd1234/pmu001/attrs"
 
 data_fromDB = False  # data from controller either from DB (True) or directly through MQTT subscription from meters
-
 
 # settings for shedding:
 f_constr1 = np.array([49.0, 51.0])

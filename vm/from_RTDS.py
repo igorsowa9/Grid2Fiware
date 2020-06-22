@@ -12,8 +12,8 @@ fiware_service = "grid_uc"
 device_type = "rtds1"
 device_id = "rtds001"
 
-cloud_ip = "10.12.0.10"  # if tunelled!
-broker_ip = cloud_ip
+broker_ip = "10.12.0.10"  # if tunelled!
+for_controller = "10.12.0.1"
 port = 1883
 api_key = "asd1234rtds"
 
@@ -23,7 +23,7 @@ def on_publish(client, userdata, result):
     pass
 
 
-def storedata_attempt(client1):
+def storedata_attempt(client1, client2):
     # receive from RTDS:
     npdata = np.round(np.array(receive(IP_receive, Port_receive, NumData_fromRTDS)),4)
     ts_prec = 3
@@ -49,12 +49,13 @@ def storedata_attempt(client1):
 
     print("Payload before publishing: \n" + str(test_payload))
     client1.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
-    
+    client2.publish("/" + api_key + "/" + device_id + "/attrs", test_payload)
 
-def storedata_once(client1):
+
+def storedata_once(client1, client2):
     while True:
         try:
-            storedata_attempt(client1)
+            storedata_attempt(client1, client2)
         except:
             print("Unexpected error:", sys.exc_info())
             # logging.error(" When: " + str(datetime.now()) + " --- " + "Error in storedataOnce(): ", sys.exc_info())
@@ -64,11 +65,13 @@ def storedata_once(client1):
 
 
 def storedata_repeatedly():
-    client1 = paho.Client("control1")  # create client object
-    client1.on_publish = on_publish  # assign function to callback
-    client1.connect(broker_ip, port)  # establish connection
+    client1 = paho.Client("controller")  # create client object
+    client2 = paho.Client("cloud")
+    client2.on_publish = on_publish  # assign function to callback
+    client1.connect(for_controller, port)  # establish connection
+    client2.connect(broker_ip, port)
     while True:
-        storedata_once(client1)
+        storedata_once(client1, client2)
         time.sleep(0.1)
 
 

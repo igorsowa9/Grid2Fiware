@@ -4,15 +4,16 @@ import time
 import paho.mqtt.client as paho
 import numpy as np
 import sys
+from settings import *
 
 n_pmu_analog_channels = 8  # determined by number of chanells in DAQ
 n_pmu_streams_to_cloud = 40  # 8x5 from each channel with have magn, ang, freq, rocof, time, ... (?)
 
-channel_names = np.array(["ch0", "ch1", "ch2", "ch3", "ch4", "ch5"])
-sub_names = np.array(["a", "b", "c", "d", "e"])
-
-channel_signals = np.array(["vo1a", "vo2a", "vo3a", "vo4a", "v3a", "vt"])
-sub_signals = np.array(["magnitude", "frequency", "angle", "rocof", "timestamp"])
+# channel_names = np.array(["ch0", "ch1", "ch2", "ch3", "ch4", "ch5"])
+# sub_names = np.array(["a", "b", "c", "d", "e"])
+#
+# channel_signals = np.array(["vo1a", "vo2a", "vo3a", "vo4a", "v3a", "vt"])
+# sub_signals = np.array(["magnitude", "frequency", "angle", "rocof", "timestamp"])
 
 fiware_service = "grid_uc"
 device_type = "PMU"

@@ -14,12 +14,12 @@ from settings import *
 manager = multiprocessing.Manager()
 
 # Default values
-data_to_RTDS = manager.list(default_controls)
+data_to_RTDS = manager.list(default_controls + [0])  # with min_ts to pass
 
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
-    client.subscribe("/asd1234rtds/rtds001/cmd") # Subscribing in on_connect() means that if we lose the connection and reconnect then subscriptions will be renewed.
+    client.subscribe("/asd1234rtds/rtds001/cmd")  # Subscribing in on_connect() means that if we lose the connection and reconnect then subscriptions will be renewed.
 
 
 # The callback for when a PUBLISH message is received from the server.
@@ -28,7 +28,8 @@ def on_message(client, userdata, msg):
 
     now = datetime.utcnow()
     entire_str = msg.payload.decode("utf-8")
-
+    print(entire_str)
+    return
     if "rtds001@sc_brk1|" in entire_str:
         value = float(entire_str.replace("rtds001@sc_brk1|", ""))
         data_to_RTDS[0] = value
@@ -56,8 +57,10 @@ def on_message(client, userdata, msg):
     elif "rtds001@qref3|" in entire_str:
         value = float(entire_str.replace("rtds001@qref3|", ""))
         data_to_RTDS[9] = value
+    elif "rtds001@ts_min|" in entire_str:
+        data_to_RTDS[10] = float(entire_str.replace("rtds001@min_ts|", ""))
     else:
-        print("another setpoint than exepeted")
+        print("another setpoint than expected")
 
 
 def find_between(s, first, last):
@@ -81,15 +84,16 @@ def mqtt_loop():
 def send_to_RTDS():
     print('Sending to RTDS: starting')
     while True:
-        send(data_to_RTDS, IP_send, Port_send)
-        print("Sent.")
+        ts_sendtortds = round(datetime.utcnow().timestamp() * 1000, 0)
+        send(data_to_RTDS[0:-1], IP_send, Port_send)
+        print("Sent at ts="+str(ts_sendtortds)+": " + str(data_to_RTDS[0:-1]))
         time.sleep(0.1)
 
 
 if __name__ == '__main__':
     p1 = multiprocessing.Process(target=mqtt_loop)
     p1.start()
-    p2 = multiprocessing.Process(target=send_to_RTDS)
-    p2.start()
+    # p2 = multiprocessing.Process(target=send_to_RTDS)
+    # p2.start()
     p1.join()
-    p2.join()
+    # p2.join()
