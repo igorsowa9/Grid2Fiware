@@ -9,6 +9,7 @@ from controller_config import *
 import paho.mqtt.client as paho
 import itertools
 import pandas as pd
+from csv import writer
 
 # parallel processes of cloud controller operation:
 # PDC,
@@ -51,7 +52,6 @@ v_alert = 0
 meas_set_rtds = multiprocessing.Manager().list(np.zeros(len(ras)).tolist())  # measurements from RTDS to update
 meas_set_pmu = multiprocessing.Manager().list(np.zeros(len(pas)).tolist())
 
-mem_size = 5
 df_rtds = pd.DataFrame(np.nan, index=list(range(mem_size)), columns=list(ras))
 ns_rtds = multiprocessing.Manager().Namespace()
 ns_rtds.df = df_rtds
@@ -64,13 +64,29 @@ ns_pmu.df = df_pmu
 meas_synch = multiprocessing.Manager().list(np.zeros(len(ras)+len(pas)+1).tolist())  # measurements from RTDS to update
 
 # Setpoints updated by different modules and sent to devices (VM). See config for what is what
-setpoints = multiprocessing.Manager().list(default_controls + [0, "description"])  # 2 last elements for ts and description
+setpoints = multiprocessing.Manager().list(default_controls)  # 2 last elements for ts and description
 
 # message to RTDS:
 url = 'http://' + cloud_ip + ':1026/v2/entities/Simulation:1/attrs?type=' + device_type
 h = {'Content-Type': 'application/json',
      'fiware-service': fiware_service,
      'fiware-servicepath': '/'}
+
+
+# file for results accessible from controller:
+with open('results_controller.csv', 'w', newline='') as file:
+    csv_writer = writer(file)
+    csv_writer.writerow(["ts_pdc", "min_ts", "ts_send", "ts_patch"])
+
+with open('results_pdc_only.csv', 'w', newline='') as file:
+    csv_writer = writer(file)
+    csv_writer.writerow(["ts_pdc"])
+
+
+def append_list_as_row(file_name, list_of_elem):
+    with open(file_name, 'a+', newline='') as file:
+        csv_writer = writer(file)
+        csv_writer.writerow(list_of_elem)
 
 
 def on_connect_rtds(client, userdata, flags, rc):
@@ -171,14 +187,11 @@ def mqtt_loop2():
 def pdc_mqtt():
     """synchronization is done at the end of the period (looking back at the measurements from the period which is
     finishing. """
-    global ns_rtds, ns_pmu
-    squence_ms = 1000  # that often the whole sequence of synchronization run, what define a granularity of calculations
-    delay_ms = 200  # that much delay can each sequence allow. After they are either approximated or copied.
 
     mem_rtds_latest = 0  # local single copy in case of need for approximation / average etc.
     mem_pmu_latest = 0
 
-    time.sleep(0.3)  # wait for first measurements before running
+    time.sleep(pdc_init_sleep)  # wait for first measurements before running
 
     while True:
         now_ms = round(datetime.utcnow().timestamp() * 1000, 0)
@@ -215,58 +228,59 @@ def pdc_mqtt():
             meas_synch[1:len(ras)+1] = rtds_latest.values.tolist()
             meas_synch[len(ras)+1:] = pmu_latest.values.tolist()
 
-        # print(meas_synch[14])
-        time.sleep(0.05)
+            append_list_as_row("results_pdc_only.csv", [now_ms])
+
+        time.sleep(pdc_loop_sleep)
 
 
-def pdc_fromDB(mode):
-    """Phasor data concentrator synchronizing data from different sources in the controller"""
-    while True:
-        # Get the data (through QL API but it could be also SQL request)
-        now = datetime.utcnow().timestamp()
-
-        if mode == 1:
-
-            ts_down_ms = np.round(now*1000)-1000
-            ts_up_ms = np.round(now*1000)+1000
-            d = {"stmt":"SELECT * FROM mtgrid_uc.etrtds1 WHERE ts_measurement > "+str(int(np.round(ts_down_ms)))+" AND ts_measurement < "+str(int(np.round(ts_up_ms)))+" ORDER BY ts_measurement DESC"}
-
-            # Alternatively download of data through API of fiware
-            url = 'http://' + cloud_ip + ':8668/v2/entities/Simulation:1/attrs/ts_measurement?lastN=1'
-            h = {
-                'Accept': 'application/json',
-                'fiware-service': fiware_service,
-                'fiware-servicepath': '/'
-            }
-            response = requests.get(url, headers=h)
-            parsed = json.loads(response.text)
-            ts_measurement = 0
-
-        if mode == 2:
-            url = 'http://' + cloud_ip + ':4200/_sql'
-            h = {'Content-Type': 'application/json',
-                 'fiware-service': fiware_service,
-                 'fiware-servicepath': '/'}
-            strg = ""
-            n_sig = len(ras)
-            for si in range(n_sig):
-                strg = strg + ras[si]
-                if not si == n_sig-1:
-                    strg = strg + ", "
-
-            d = {"stmt": "SELECT "+strg+" FROM mtgrid_uc.etrtds1 ORDER BY ts_measurement DESC LIMIT 1"}
-            d = json.dumps(d).encode('utf8')
-            response = requests.post(url, data=d, headers=h)
-
-            # print(response.status_code, response.reason)  # HTTP
-            # print(response.text)  # TEXT/HTML
-            parsed = json.loads(response.text)
-
-            meas_set = np.array(parsed['rows'][0])
-            ts_measurement = meas_set[ras == "ts_measurement"][0]
-
-        delay = now*1000 - float(ts_measurement)
-        print("\ndelay (measurement ("+str(ts_measurement)+") -> pdc): " + str(np.round(delay/1000, 3)) + " s")
+# def pdc_fromDB(mode):
+#     """Phasor data concentrator synchronizing data from different sources in the controller"""
+#     while True:
+#         # Get the data (through QL API but it could be also SQL request)
+#         now = datetime.utcnow().timestamp()
+#
+#         if mode == 1:
+#
+#             ts_down_ms = np.round(now*1000)-1000
+#             ts_up_ms = np.round(now*1000)+1000
+#             d = {"stmt":"SELECT * FROM mtgrid_uc.etrtds1 WHERE ts_measurement > "+str(int(np.round(ts_down_ms)))+" AND ts_measurement < "+str(int(np.round(ts_up_ms)))+" ORDER BY ts_measurement DESC"}
+#
+#             # Alternatively download of data through API of fiware
+#             url = 'http://' + cloud_ip + ':8668/v2/entities/Simulation:1/attrs/ts_measurement?lastN=1'
+#             h = {
+#                 'Accept': 'application/json',
+#                 'fiware-service': fiware_service,
+#                 'fiware-servicepath': '/'
+#             }
+#             response = requests.get(url, headers=h)
+#             parsed = json.loads(response.text)
+#             ts_measurement = 0
+#
+#         if mode == 2:
+#             url = 'http://' + cloud_ip + ':4200/_sql'
+#             h = {'Content-Type': 'application/json',
+#                  'fiware-service': fiware_service,
+#                  'fiware-servicepath': '/'}
+#             strg = ""
+#             n_sig = len(ras)
+#             for si in range(n_sig):
+#                 strg = strg + ras[si]
+#                 if not si == n_sig-1:
+#                     strg = strg + ", "
+#
+#             d = {"stmt": "SELECT "+strg+" FROM mtgrid_uc.etrtds1 ORDER BY ts_measurement DESC LIMIT 1"}
+#             d = json.dumps(d).encode('utf8')
+#             response = requests.post(url, data=d, headers=h)
+#
+#             # print(response.status_code, response.reason)  # HTTP
+#             # print(response.text)  # TEXT/HTML
+#             parsed = json.loads(response.text)
+#
+#             meas_set = np.array(parsed['rows'][0])
+#             ts_measurement = meas_set[ras == "ts_measurement"][0]
+#
+#         delay = now*1000 - float(ts_measurement)
+#         print("\ndelay (measurement ("+str(ts_measurement)+") -> pdc): " + str(np.round(delay/1000, 3)) + " s")
 
 
 def shedding_detector():
@@ -278,7 +292,6 @@ def shedding_detector():
     ts_pdc_mem = 0
 
     while True:
-        time.sleep(0.05)
         meas_synch_now = meas_synch
 
         if meas_synch_now[ctr_names.index("ts_pdc")] == ts_pdc_mem:  # skip if the function was already running for this timestep (regardless output)
@@ -297,30 +310,30 @@ def shedding_detector():
                 and np.abs(meas_synch_now[ctr_names.index("rocof_bus")]) > rocof_abs_constr:
             f1_alert = 1
             setpoints[BR1] = 0.0  # 1. stage shedding
-            setpoints[-2] = min_ts
-            setpoints[-1] = "1. stage shedding"
+            setpoints[TS_PDC] = ts_pdc_mem
+            setpoints[DESC] = "1. stage shedding"
 
             print("\tShed. Det.: delay when f detector triggers send_setpoints (relatively to min_ts): " + str(
                 round(datetime.utcnow().timestamp() * 1000 - min_ts, 0)) + "ms")
             send_setpoints(min_ts, "Shedding from detector")  # with the earliest (synchronized) timestamp
             # shedding_restoration(BR1, meas_synch[ctr_names.index("ts_measurement")])
 
-        if (meas_synch_now[ctr_names.index("f_bus")] < f_constr2[0]
+        elif (meas_synch_now[ctr_names.index("f_bus")] < f_constr2[0]
             or meas_synch_now[ctr_names.index("f_bus")] > f_constr2[1]) \
                 and np.abs(meas_synch_now[ctr_names.index("rocof_bus")]) > rocof_abs_constr:
             f1_alert = 1
             f2_alert = 1
             setpoints[BR1] = 0.0  # 1. stage shedding
             setpoints[BR2] = 0.0  # 2. stage shedding
-            setpoints[-2] = min_ts
-            setpoints[-1] = "2. stage shedding"
+            setpoints[TS_PDC] = ts_pdc_mem
+            setpoints[DESC] = "2. stage shedding"
 
             print("\tShed. Det.: delay when f detector triggers send_setpoints (relatively to min_ts): " + str(
                 round(datetime.utcnow().timestamp() * 1000 - min_ts, 0)) + "ms")
             send_setpoints(min_ts, "Shedding from detector")  # with the earliest (synchronized) timestamp
             # shedding_restoration(BR1, meas_synch[ctr_names.index("ts_measurement")])
 
-        if (meas_synch_now[ctr_names.index("f_bus")] < f_constr3[0]
+        elif (meas_synch_now[ctr_names.index("f_bus")] < f_constr3[0]
             or meas_synch_now[ctr_names.index("f_bus")] > f_constr3[1]) \
                  and np.abs(meas_synch_now[ctr_names.index("rocof_bus")]) > rocof_abs_constr:
             f1_alert = 1
@@ -329,12 +342,17 @@ def shedding_detector():
             setpoints[BR1] = 0.0  # 1. stage shedding
             setpoints[BR2] = 0.0  # 2. stage shedding
             setpoints[BR3] = 0.0  # 3. stage shedding
-            setpoints[-2] = min_ts
-            setpoints[-1] = "3. stage shedding"
+            setpoints[TS_PDC] = ts_pdc_mem
+            setpoints[DESC] = "3. stage shedding"
 
             print("\tShed. Det.: delay when f detector triggers send_setpoints (relatively to min_ts): " + str(round(datetime.utcnow().timestamp() * 1000 - min_ts, 0)) + "ms")
             send_setpoints(min_ts, "Shedding from detector")  # with the earliest (synchronized) timestamp
             # shedding_restoration(BR1, meas_synch[ctr_names.index("ts_measurement")])
+
+        else:
+            append_list_as_row("results_controller.csv", [meas_synch_now[ctr_names.index("ts_pdc")], min_ts, 0, 0])
+
+        time.sleep(sd_loop_sleep)
 
 
 # def shedding_restoration(br_idx, ts):
@@ -366,30 +384,31 @@ def shedding_detector():
 
 def send_setpoints(min_ts, description):
     """ Sends setpoints to the devices. SEtpoints can be updated by different modules of controller."""
-    # time.sleep(0.5)
+    # time.sleep(2)  # if run as parallel process, then could be necessary
 
-    curr_setpoints = setpoints
+    curr_setpoints = setpoints  # includes ts_pdc and description!
 
     if True:
-        # time.sleep(0.00)
+        # time.sleep(0.1)
         d = {}
         for rc in range(len(rtds_commands)):
+            val = curr_setpoints[rc]
             d.update({rtds_commands[rc]: {
                 "type": "command",
-                "value": str(curr_setpoints[rc])
+                "value": str(val)
             }})
-        # d.update({rtds_commands_attch[0]: {
-        #     "type": "command",
-        #     "value": "123"
-        # }})
-        print(d)
+
         d = json.dumps(d).encode('utf8')
 
         ts_send = round(datetime.utcnow().timestamp() * 1000, 0)
-        print("\t\tSend_setp.: is about to send current setpoints (ts_send="+str(ts_send)+
+        print("\t\tSend_setp.: is about to send current setpoints (ts_send="+str(ts_send) +
               ") due to trigger: "+str(description)+". Based on measurements with min_ts=" + str(min_ts))
         response = requests.patch(url, d, headers=h)
-        delay_for_patch = datetime.utcnow().timestamp() * 1000 - ts_send
+        ts_patch = datetime.utcnow().timestamp() * 1000
+        delay_for_patch = ts_patch - ts_send
+
+        append_list_as_row("results_controller.csv", [float(curr_setpoints[-2]), min_ts, ts_send, ts_patch])
+
         if False:
             print(response.status_code, response.reason)  # HTTP
             print(response.text)  # TEXT/HTML

@@ -103,7 +103,7 @@ d = {
    {
        "device_id":   device_id,  # rtds001
        "entity_name": "Simulation:1",
-       "entity_type": device_type,  # RTDS
+       "entity_type": device_type,  # rtds1
        "protocol":    "PDI-IoTA-UltraLight",
        "transport":   "MQTT",
        "timezone":    "Europe/Berlin",

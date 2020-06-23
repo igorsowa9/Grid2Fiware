@@ -17,11 +17,14 @@ rtds_signals = np.array(["w_bus", "f_bus", "rocof_bus", "v_bus",
 rtds_tsignals = np.array(["ts_measurement", "notes"])
 NumData_fromRTDS = 13
 
-default_controls = [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+default_controls = [1.0, 1.0, 1.0,
+                    0.0, 0.0, 0.0,
+                    0.0, 0.0, 0.0,
+                    0.0, 0.0]
 rtds_commands = np.array(["sc_brk1", "sc_brk2", "sc_brk3",
                           "pref1", "pref2", "pref3",
-                          "qref1", "qref2", "qref3"])
-rtds_commands_attch = ['min_ts']
+                          "qref1", "qref2", "qref3",
+                          "ts_pdc", "desc"])
 
 # PMU
 channel_names = np.array(["ch0", "ch1", "ch2", "ch3", "ch4", "ch5"])
@@ -29,6 +32,16 @@ sub_names = np.array(["a", "b", "c", "d", "e"])
 
 channel_signals = np.array(["vo1a", "vo2a", "vo3a", "vo4a", "v3a", "vt"])
 sub_signals = np.array(["magnitude", "frequency", "angle", "rocof", "timestamp"])
+
+# PDC
+mem_size = 3  # sizes of df_rtds/pmu processed in PDC
+squence_ms = 1000  # that often the whole sequence of synchronization run, what define a granularity of calculations
+delay_ms = 200  # that much delay can each sequence allow. After they are either approximated or copied.
+pdc_init_sleep = 0.3
+pdc_loop_sleep = 0.04  # 20 Hz minus some for processing (?)
+
+# Shedding detector
+sd_loop_sleep = 0.05  # 20 Hz
 
 # subscription of data from RTDS and PMU (directly, not through CrateDB)
 rtds_topic = "/asd1234rtds/rtds001/attrs"
@@ -53,5 +66,7 @@ P3 = 5
 Q1 = 6
 Q2 = 7
 Q3 = 8
+TS_PDC = 9
+DESC = 10
 
 restoration_delay = 5  # seconds for restoration of basic operation after shedding

@@ -10,11 +10,23 @@ from random import random
 import time
 from send import send
 from settings import *
+from csv import writer
 
 manager = multiprocessing.Manager()
 
 # Default values
-data_to_RTDS = manager.list(default_controls + [0])  # with min_ts to pass
+data_received = manager.list(default_controls)  # with min_ts to pass
+
+# file for results accessible from controller:
+with open('results_vm2rtds.csv', 'w', newline='') as file:
+    csv_writer = writer(file)
+    csv_writer.writerow(["ts_pdc", "ts_execute"])
+
+
+def append_list_as_row(file_name, list_of_elem):
+    with open(file_name, 'a+', newline='') as file:
+        csv_writer = writer(file)
+        csv_writer.writerow(list_of_elem)
 
 
 def on_connect(client, userdata, flags, rc):
@@ -25,39 +37,39 @@ def on_connect(client, userdata, flags, rc):
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
     # print("Topic: " + msg.topic+" Payload: "+str(msg.payload))
-
-    now = datetime.utcnow()
     entire_str = msg.payload.decode("utf-8")
 
     if "rtds001@sc_brk1|" in entire_str:
         value = float(entire_str.replace("rtds001@sc_brk1|", ""))
-        data_to_RTDS[0] = value
+        data_received[0] = value
     elif "rtds001@sc_brk2|" in entire_str:
         value = float(entire_str.replace("rtds001@sc_brk2|", ""))
-        data_to_RTDS[1] = value
+        data_received[1] = value
     elif "rtds001@sc_brk3|" in entire_str:
         value = float(entire_str.replace("rtds001@sc_brk3|", ""))
-        data_to_RTDS[2] = value
+        data_received[2] = value
     elif "rtds001@pref1|" in entire_str:
         value = float(entire_str.replace("rtds001@pref1|", ""))
-        data_to_RTDS[3] = value
+        data_received[3] = value
     elif "rtds001@pref2|" in entire_str:
         value = float(entire_str.replace("rtds001@pref2|", ""))
-        data_to_RTDS[4] = value
+        data_received[4] = value
     elif "rtds001@pref3|" in entire_str:
         value = float(entire_str.replace("rtds001@pref3|", ""))
-        data_to_RTDS[5] = value
+        data_received[5] = value
     elif "rtds001@qref1|" in entire_str:
         value = float(entire_str.replace("rtds001@qref1|", ""))
-        data_to_RTDS[7] = value
+        data_received[6] = value
     elif "rtds001@qref2|" in entire_str:
         value = float(entire_str.replace("rtds001@qref2|", ""))
-        data_to_RTDS[8] = value
+        data_received[7] = value
     elif "rtds001@qref3|" in entire_str:
         value = float(entire_str.replace("rtds001@qref3|", ""))
-        data_to_RTDS[9] = value
-    elif "rtds001@min_ts|" in entire_str:
-        data_to_RTDS[10] = float(entire_str.replace("rtds001@min_ts|", ""))
+        data_received[8] = value
+    elif "rtds001@ts_pdc|" in entire_str:
+        data_received[9] = entire_str.replace("rtds001@ts_pdc|", "")
+    elif "rtds001@desc|" in entire_str:
+        data_received[10] = entire_str.replace("rtds001@desc|", "")
     else:
         print("another setpoint than expected")
 
@@ -82,11 +94,22 @@ def mqtt_loop():
 
 def send_to_RTDS():
     print('Sending to RTDS: starting')
+    mem_ts_pdc = 0
     while True:
-        ts_sendtortds = round(datetime.utcnow().timestamp() * 1000, 0)
-        send(data_to_RTDS[0:-1], IP_send, Port_send)
-        print("Sent at ts="+str(ts_sendtortds)+": " + str(data_to_RTDS[0:-1]))
-        time.sleep(0.033)
+        curr_data_received = data_received
+        data_to_RTDS = curr_data_received[0:-2]
+        if mem_ts_pdc == curr_data_received[-2]:
+            continue
+        print("TS_PDC in received data (no-reps): " + str(curr_data_received[-2]))
+        ts_execute = round(datetime.utcnow().timestamp() * 1000, 0)
+        send(data_to_RTDS, IP_send, Port_send)  # substitute last with 0 due to ts
+        print("\tSent values at ts="+str(ts_execute)+" : " + str(data_to_RTDS) +
+              " with delay to ts_pdc (not min_ts!): " + str(ts_execute-float(mem_ts_pdc)) + "ms")
+
+        append_list_as_row("results_vm2rtds.csv", [mem_ts_pdc, ts_execute])
+
+        mem_ts_pdc = curr_data_received[-2]
+        # time.sleep(0.01)
 
 
 if __name__ == '__main__':
