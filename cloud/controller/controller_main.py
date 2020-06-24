@@ -203,8 +203,11 @@ def pdc_mqtt():
         try:
             rtds_filter = df_rtds.loc[(ns_rtds.df['ts_measurement'] >= start_of_considered_interval) & (ns_rtds.df['ts_measurement'] < now_ms + delay_ms)]
             pmu_filter = ds_pmu.loc[(ns_pmu.df['vt_timestamp'] >= start_of_considered_interval) & (ns_pmu.df['vt_timestamp'] < now_ms + delay_ms)]
+            # print(rtds_filter)
+            # print(pmu_filter)
         except pd.core.indexing.IndexingError:
-            print("Indexing Error in PDC.")
+            pass
+            # print("Indexing Error in PDC.")
 
         if rtds_filter.empty:  # if selection is empty for this ts, take the previous one directly
             print("Missing RTDS data. Approximation.")
@@ -227,6 +230,7 @@ def pdc_mqtt():
             meas_synch[0] = now_ms
             meas_synch[1:len(ras)+1] = rtds_latest.values.tolist()
             meas_synch[len(ras)+1:] = pmu_latest.values.tolist()
+            # print("in pdc: " + str(meas_synch))
 
             append_list_as_row("results_pdc_only.csv", [now_ms])
 
@@ -293,6 +297,7 @@ def shedding_detector():
 
     while True:
         meas_synch_now = meas_synch
+        # print(meas_synch_now)
 
         if meas_synch_now[ctr_names.index("ts_pdc")] == ts_pdc_mem:  # skip if the function was already running for this timestep (regardless output)
             # print("Repeated shedding detection - ignored.")
