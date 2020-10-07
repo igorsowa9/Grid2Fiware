@@ -72,7 +72,7 @@ def storedata_repeatedly():
     client2.connect(broker_ip, port)
     while True:
         storedata_once(client1, client2)
-        time.sleep(0.25)
+        time.sleep(0.04)
 
 
 storedata_repeatedly()

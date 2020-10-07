@@ -34,14 +34,14 @@ channel_signals = np.array(["vo1a", "vo2a", "vo3a", "vo4a", "v3a", "vt"])
 sub_signals = np.array(["magnitude", "frequency", "angle", "rocof", "timestamp"])
 
 # PDC
-mem_size = 3  # sizes of df_rtds/pmu processed in PDC
-squence_ms = 1000  #  1000  # that often the whole sequence of synchronization run, what define a granularity of calculations
+mem_size = 1  # sizes of df_rtds/pmu processed in PDC
+squence_ms = 400  #  1000  # that often the whole sequence of synchronization run, what define a granularity of calculations
 delay_ms = 200  # 200  # that much delay can each sequence allow. After they are either approximated or copied.
 pdc_init_sleep = 0.3
-pdc_loop_sleep = 0.25  # 0.05s/20 Hz minus some for processing (?)
+pdc_loop_sleep = 0.039  # 0.05s/20 Hz minus some for processing (?)
 
 # Shedding detector
-sd_loop_sleep = 0.25  # 0.05s/20 Hz
+sd_loop_sleep = 0.039  # 0.05s/20 Hz
 
 # subscription of data from RTDS and PMU (directly, not through CrateDB)
 rtds_topic = "/asd1234rtds/rtds001/attrs"
